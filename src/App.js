@@ -3,6 +3,8 @@ import { Local } from "boardgame.io/multiplayer";
 import { Debug } from "boardgame.io/debug";
 import { hexxaformGame } from "./game/game";
 import { Board } from "./Board";
+import { theme } from "./ui/styled/theme";
+import { ThemeProvider } from "styled-components";
 
 const GameClient = Client({
   game: hexxaformGame,
@@ -16,8 +18,11 @@ const GameClient = Client({
 });
 
 function App() {
-  // return <h1>Damn Fine App!</h1>;
-  return <GameClient playerID="0" />;
+  return (
+    <ThemeProvider theme={theme}>
+      <GameClient playerID="0" />
+    </ThemeProvider>
+  );
 }
 
 export default App;
