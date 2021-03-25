@@ -8,6 +8,14 @@ function generateChatID() {
     .replace(/[^a-z]+/g, "")
     .substr(0, 5);
 }
+export const Chat = () => {
+  return (
+    <>
+      <ChatInput />
+      <ChatList />
+    </>
+  );
+};
 
 export const ChatInput = () => {
   const [chatInputText, setChatInputText] = React.useState("");

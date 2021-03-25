@@ -1,11 +1,8 @@
 import { contourLinesBG } from "../../assets/contourLinesBG";
 
-const contourLinesBgDataUrlStr = contourLinesBG({
-  color: "#E4572E",
-  opacity: "0.5",
-});
+const bgContourLines = contourLinesBG("%23E4572E", "0.5");
 
 export const theme = {
   playerColor: "#E4572E",
-  bg: contourLinesBgDataUrlStr,
+  bgContourLines,
 };
