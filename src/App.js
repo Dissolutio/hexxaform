@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Client } from "boardgame.io/react";
+import { Local } from "boardgame.io/multiplayer";
+import { Debug } from "boardgame.io/debug";
+import { hexxaformGame } from "./game/game";
+import { Board } from "./Board";
+
+const GameClient = Client({
+  game: hexxaformGame,
+  board: Board,
+  numPlayers: 1,
+  multiplayer: Local(),
+  enhancer:
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__(),
+  debug: { impl: Debug },
+});
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // return <h1>Damn Fine App!</h1>;
+  return <GameClient playerID="0" />;
 }
 
 export default App;
