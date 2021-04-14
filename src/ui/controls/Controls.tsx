@@ -1,5 +1,6 @@
 import { useMapContext } from "ui/hooks/useMapContext";
 import { useBgioMoves } from "../../bgio-contexts";
+import { Chat } from "./Chat";
 
 export const Controls = () => {
   const { undo, redo } = useBgioMoves();
@@ -45,6 +46,7 @@ export const Controls = () => {
       >
         TOGGLE Add Altitude Pen
       </button>
+      <Chat />
     </div>
   );
 };

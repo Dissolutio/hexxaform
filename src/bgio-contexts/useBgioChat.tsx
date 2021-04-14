@@ -5,11 +5,11 @@ import { ChatMessage } from "boardgame.io";
 
 type BgioChatProviderProps = {
   children: React.ReactNode;
-  sendChatMessage: BoardProps["sendChatMessage"];
+  sendChatMessage: (string) => void;
   chatMessages: ChatMessage[];
 };
 type BgioChatValue = {
-  sendChatMessage: BoardProps["sendChatMessage"];
+  sendChatMessage: (string) => void;
   chatMessages: ChatMessage[];
 };
 const BgioChatContext = React.createContext<BgioChatValue | undefined>(
