@@ -1,5 +1,5 @@
 import { generateHexagon } from "./hexGen";
-import { BoardHexes, GType, StartZones } from "./types";
+import { BoardHexes, GType } from "./types";
 
 //!! HEXAGON MAP SCENARIO
 export const hexagonMapScenario = makeHexagonMapScenario();
@@ -26,11 +26,10 @@ export function makeHexagonMapScenario(mapOptions?: MapOptions): GType {
     mapShape: "hexagon",
     mapSize,
   };
-  const startZones: StartZones = {};
   const boardHexes: BoardHexes = generateHexagon(mapSize);
+
   return {
     boardHexes,
-    startZones,
     hexMap,
   };
 }

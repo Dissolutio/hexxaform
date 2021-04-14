@@ -1,7 +1,7 @@
 export type GType = {
   hexMap: HexMap;
   boardHexes: BoardHexes;
-  startZones: StartZones;
+  startZones?: StartZones;
 };
 export type GameMap = {
   boardHexes: BoardHexes;
