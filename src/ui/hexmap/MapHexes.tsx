@@ -25,7 +25,6 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     if (isEraser) {
       voidHex(hex.id);
     }
-    console.log(`🚀 ~ onClickBoardHex ~ sourceHex`, hex);
   };
   function calcClassNames(hex: BoardHex) {
     // blank start

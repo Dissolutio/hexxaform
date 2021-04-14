@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GridGenerator } from "react17-hexgrid";
 
-import { useBgioG } from "bgio-contexts";
 import { MapHexStyles } from "./MapHexStyles";
 import { ReactHexgrid } from "./ReactHexgrid";
 import { ZoomControls } from "./ZoomControls";
@@ -10,8 +8,6 @@ import { MapHexes } from "./MapHexes";
 
 export const MapDisplay = () => {
   //! MAP SETUP/LAYOUT CONFIG
-  const G = useBgioG();
-  console.log(`🚀 ~ MapDisplay ~ G`, G);
   const mapSize = 3;
   const hexSize =
     mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
@@ -24,7 +20,6 @@ export const MapDisplay = () => {
     hexSize,
     spacing: 1.05,
   }));
-  const boardHexes = GridGenerator.hexagon(mapSize);
   const mapRef = React.useRef();
   const zoomInterval = 100;
 

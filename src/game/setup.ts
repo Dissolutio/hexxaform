@@ -18,7 +18,7 @@ export function makeHexagonMapScenario(mapOptions?: MapOptions): GType {
   const pointyDimensions = {
     hexOrientation: "pointy",
     hexHeight: 2,
-    hexWidth: Math.sqrt(3),
+    hexWidth: Math.round(Math.sqrt(3) * 100) / 100,
   };
   const mapDimensions = flat ? flatDimensions : pointyDimensions;
   const hexMap = {
