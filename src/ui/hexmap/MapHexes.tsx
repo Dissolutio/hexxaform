@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from "react";
 import { Hexagon, Text } from "react17-hexgrid";
 
 import { BoardHex } from "game/types";
-import { useBgioClientInfo, useBgioG, useBgioMoves } from "bgio-contexts";
+import { useBgioG, useBgioMoves } from "bgio-contexts";
 import { useMapContext } from "ui/hooks/useMapContext";
 
 type MapHexesProps = {
@@ -11,7 +11,7 @@ type MapHexesProps = {
 
 export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const { G } = useBgioG();
-  const { boardHexes, startZones, hexMap } = G;
+  const { boardHexes } = G;
   const { moves } = useBgioMoves();
   const { voidHex } = moves;
   const {

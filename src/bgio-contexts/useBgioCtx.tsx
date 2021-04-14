@@ -1,8 +1,6 @@
 import * as React from "react";
 import { BoardProps } from "boardgame.io/react";
 
-import { useBgioClientInfo } from "./useBgioClientInfo";
-
 type BgioCtxProviderProps = {
   children: React.ReactNode;
   ctx: BoardProps["ctx"];
@@ -15,7 +13,6 @@ type BgioCtxValue = {
 const BgioCtxContext = React.createContext<BgioCtxValue | undefined>(undefined);
 
 export function BgioCtxProvider({ ctx, children }: BgioCtxProviderProps) {
-  const { playerID } = useBgioClientInfo();
   return (
     <BgioCtxContext.Provider
       value={{

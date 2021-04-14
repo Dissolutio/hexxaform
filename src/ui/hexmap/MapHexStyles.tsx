@@ -32,13 +32,16 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     fill: var(--sub-white);
     font-size: ${(props) => `${props.hexSize / 75}rem`};
   }
-  //🛠 All Hex Styles
+
   // highlight all hexes
+
   /* svg g polygon {
     stroke: var(--white);
     stroke-width: 0.1;
   } */
+
   // paint all hexes
+
   /* .hexagon-group {
     fill: var(--white);
     g polygon {
@@ -50,6 +53,7 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
       }
     }
   } */
+
   .maphex__terrain--void-0 {
     stroke: var(--white);
     stroke-width: 0.1;
@@ -58,6 +62,7 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   }
   .maphex__terrain--grass-0 {
     fill: var(--green);
+    fill-opacity: 0.4;
   }
   //
   //🛠 Selected Map Hex
