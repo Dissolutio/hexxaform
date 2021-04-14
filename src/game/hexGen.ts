@@ -10,11 +10,12 @@ export const generateHexagon = (mapSize: number): BoardHexes => {
 };
 
 function hexesToBoardHexes(hexgridHexes: Hex[]): BoardHexes {
-  return hexgridHexes.reduce((prev: BoardHexes, curr: Hex): BoardHexes => {
+  return hexgridHexes.reduce((prev, curr, i): BoardHexes => {
     const boardHex = {
       ...curr,
       id: generateHexID(curr),
-      occupyingUnitID: "",
+      terrain: "grass-0",
+      startzonePlayerIDs: [`${i % 6}`],
       altitude: 1,
     };
     return {

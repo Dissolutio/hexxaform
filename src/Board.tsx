@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { BoardProps } from "boardgame.io/react";
 import { ChatMessage } from "boardgame.io";
-import { theme } from "./ui/styled/theme";
+import { theme } from "./ui/layout/theme";
 import {
   BgioClientInfoProvider,
   BgioGProvider,
@@ -10,6 +10,9 @@ import {
   BgioCtxProvider,
   BgioChatProvider,
 } from "./bgio-contexts";
+import { Layout } from "./ui/layout/Layout";
+import { GType } from "./game/types";
+import { MapContextProvider } from "ui/hooks/useMapContext";
 
 type MyBoardProps = BoardProps<GType> & { chatMessages?: ChatMessage[] };
 
@@ -59,7 +62,9 @@ export function Board(props: MyBoardProps) {
                   chatMessages={chatMessages}
                   sendChatMessage={sendChatMessage}
                 >
-                  <Layout />
+                  <MapContextProvider>
+                    <Layout />
+                  </MapContextProvider>
                 </BgioChatProvider>
               </BgioEventsProvider>
             </BgioMovesProvider>

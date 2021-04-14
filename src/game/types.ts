@@ -11,7 +11,7 @@ export type GameMap = {
 export type HexMap = {
   mapShape: string;
   mapSize: number;
-  hexGridLayout: string;
+  hexOrientation: string;
   hexHeight: number;
   hexWidth: number;
 };
@@ -21,9 +21,11 @@ export type BoardHex = {
   r: number;
   s: number;
   altitude: number;
+  startzonePlayerIDs: string[];
+  terrain: "void-0" | "grass-0";
 };
 export type BoardHexes = {
-  [key: string]: BoardHex;
+  [hexID: string]: BoardHex;
 };
 export type StartZones = {
   [playerID: string]: string[];

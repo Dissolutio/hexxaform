@@ -1,11 +1,10 @@
 import { BoardProps } from "boardgame.io/react";
-import { HexUtils } from "react17-hexgrid";
-
-import { GType, BoardHexes, BoardHex } from "./types";
+import { GType } from "./types";
 
 export const moves = {
-  deleteHex,
+  voidHex,
 };
-function deleteHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID] = null;
+function voidHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
+  G.boardHexes[hexID].terrain = "void-0";
+  G.boardHexes[hexID].startzonePlayerIDs = [];
 }
