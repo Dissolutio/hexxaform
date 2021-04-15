@@ -1,4 +1,5 @@
 import React, { SyntheticEvent } from "react";
+import styled from "styled-components";
 import { Hexagon, Text } from "react17-hexgrid";
 
 import { BoardHex } from "game/types";
@@ -13,17 +14,21 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const { G } = useBgioG();
   const { boardHexes } = G;
   const { moves } = useBgioMoves();
-  const { voidHex } = moves;
+  const { voidHex, incAltitudeOfHex } = moves;
   const {
     selectedMapHex,
     showStartzones,
-    isEraser,
     showTerrain,
+    isEraser,
+    isIncAltitudePen,
   } = useMapContext();
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     if (isEraser) {
       voidHex(hex.id);
+    }
+    if (isIncAltitudePen) {
+      incAltitudeOfHex(hex.id);
     }
   };
   function calcClassNames(hex: BoardHex) {
@@ -59,17 +64,18 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     return Object.values(boardHexes).map((hex: BoardHex, i) => {
       const { altitude } = hex;
       return (
-        <Hexagon
-          key={i}
-          hex={hex}
-          onClick={(e) => onClickBoardHex(e, hex)}
-          className={calcClassNames(hex)}
-        >
-          <g>
-            {true && <HexIDText hexSize={hexSize} text={hex.id} />}
-            {false && <HexIDText hexSize={hexSize} text={altitude} />}
-          </g>
-        </Hexagon>
+        <StyledHexagon key={i} altitude={hex.altitude}>
+          <Hexagon
+            hex={hex}
+            onClick={(e) => onClickBoardHex(e, hex)}
+            className={calcClassNames(hex)}
+          >
+            <g>
+              {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
+              <HexIDText hexSize={hexSize} text={altitude} />
+            </g>
+          </Hexagon>
+        </StyledHexagon>
       );
     });
   };
@@ -83,3 +89,22 @@ const HexIDText = ({ hexSize, text }) => {
     </Text>
   );
 };
+
+const StyledHexagon = styled.g`
+  polygon {
+    stroke: gray;
+    stroke-width: ${(props) => {
+      let start = props.altitude;
+      let acc = 0;
+      if (start > 6) {
+        acc = 6 * 0.3;
+        start = start - 6;
+      } else {
+        acc = start * 0.3;
+        start = 0;
+      }
+      acc += start * 0.1;
+      return `${acc}`;
+    }};
+  }
+`;

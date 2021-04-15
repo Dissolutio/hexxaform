@@ -10,8 +10,8 @@ export const Controls = () => {
     toggleShowTerrain,
     isEraser,
     toggleEraserMode,
-    isAddAltitudePen,
-    toggleAddAltitudePen,
+    isIncAltitudePen,
+    toggleIncAltitudePen,
   } = useMapContext();
   const greenOnRedOff = (state) => {
     return state
@@ -40,8 +40,8 @@ export const Controls = () => {
         TOGGLE ERASER
       </button>
       <button
-        style={greenOnRedOff(isAddAltitudePen)}
-        onClick={toggleAddAltitudePen}
+        style={greenOnRedOff(isIncAltitudePen)}
+        onClick={toggleIncAltitudePen}
       >
         TOGGLE Add Altitude Pen
       </button>
