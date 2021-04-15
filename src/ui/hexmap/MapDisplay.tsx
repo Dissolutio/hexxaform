@@ -5,20 +5,22 @@ import { MapHexStyles } from "./MapHexStyles";
 import { ReactHexgrid } from "./ReactHexgrid";
 import { ZoomControls } from "./ZoomControls";
 import { MapHexes } from "./MapHexes";
+import { useBgioG } from "bgio-contexts";
 
 export const MapDisplay = () => {
+  const { G } = useBgioG();
+  const { hexMap } = G;
+  const { mapSize, hexOrientation } = hexMap;
   //! MAP SETUP/LAYOUT CONFIG
-  const mapSize = 3;
+  const flat = hexOrientation === "flat";
   const hexSize =
     mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
   const initialMapState = {
-    mapSize,
-    hexSize,
     width: 100,
     height: 100,
     origin: { x: 0, y: 0 },
-    flat: true,
-    spacing: 1.05,
+    flat,
+    spacing: 0.99,
   };
   const [mapState, setMapState] = React.useState(() => initialMapState);
 
@@ -57,17 +59,17 @@ export const MapDisplay = () => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <MapHexStyles hexSize={mapState.hexSize} ref={mapRef}>
+      <MapHexStyles hexSize={hexSize} ref={mapRef}>
         <ReactHexgrid
-          mapSize={mapState.mapSize}
-          hexSize={mapState.hexSize}
+          mapSize={mapSize}
+          hexSize={hexSize}
           width={`${mapState.width}%`}
           height={`${mapState.height}%`}
           flat={mapState.flat}
           spacing={mapState.spacing}
           origin={mapState.origin}
         >
-          <MapHexes hexSize={mapState.hexSize} />
+          <MapHexes hexSize={hexSize} />
         </ReactHexgrid>
       </MapHexStyles>
     </MapStyle>
@@ -76,4 +78,5 @@ export const MapDisplay = () => {
 
 const MapStyle = styled.div`
   height: 100%;
+  transform-style: preserve-3d;
 `;
