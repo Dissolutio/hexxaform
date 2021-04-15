@@ -10,15 +10,12 @@ import { useBgioG } from "bgio-contexts";
 export const MapDisplay = () => {
   const { G } = useBgioG();
   const { hexMap } = G;
-  const { mapSize, hexOrientation } = hexMap;
+  const { hexSize, mapSize, flat } = hexMap;
   //! MAP SETUP/LAYOUT CONFIG
-  const flat = hexOrientation === "flat";
-  const hexSize =
-    mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
   const initialMapState = {
     width: 100,
     height: 100,
-    origin: { x: 0, y: 0 },
+    origin: { x: -500, y: -500 },
     flat,
     spacing: 0.99,
   };

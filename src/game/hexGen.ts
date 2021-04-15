@@ -28,17 +28,25 @@ function hexesToBoardHexes(hexgridHexes: Hex[]): BoardHexes {
   }, {});
 }
 
+export function generateOrientedRectangle(
+  mapLength: number,
+  mapWidth: number
+): BoardHexes {
+  const hexgridHexes = GridGenerator.orientedRectangle(mapLength, mapWidth);
+  const boardHexes = hexesToBoardHexes(hexgridHexes);
+  return boardHexes;
+}
+
+export function generateRectangle(
+  mapLength: number,
+  mapWidth: number
+): BoardHexes {
+  const hexgridHexes = GridGenerator.rectangle(mapLength, mapWidth);
+  const boardHexes = hexesToBoardHexes(hexgridHexes);
+  return boardHexes;
+}
+
 //TODO -- generate other maps -- WIP
-// function generateOrientedRectangle(mapSize: number): BoardHexes {
-//   const hexgridHexes = GridGenerator.orientedRectangle(mapSize, mapSize)
-//   const boardHexes = hexesToBoardHexes(hexgridHexes)
-//   return boardHexes
-// }
-// function generateRectangle(mapSize: number): BoardHexes {
-//   const hexgridHexes = GridGenerator.rectangle(mapSize + 1, mapSize + 1)
-//   const boardHexes = hexesToBoardHexes(hexgridHexes)
-//   return boardHexes
-// }
 // function generateParallelogram(mapSize: number): BoardHexes {
 //   const hexgridHexes = GridGenerator.parallelogram(
 //     -mapSize - 2,

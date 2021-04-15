@@ -6,9 +6,12 @@ export type GType = {
 export type HexMap = {
   mapShape: string;
   mapSize: number;
-  hexOrientation: string;
+  mapLength: number;
+  mapWidth: number;
+  flat: boolean;
   hexHeight: number;
   hexWidth: number;
+  hexSize: number;
 };
 
 export type BoardHexes = {
