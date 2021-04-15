@@ -13,7 +13,7 @@ export const colors = {
 };
 
 const bgContourLines = (playerID: string) =>
-  contourLinesBG(encodeURIComponent(playerColors[playerID]), "0.1");
+  contourLinesBG(encodeURIComponent(playerColors[playerID]), "0.05");
 const hexSvgBgUrl = (playerID: string) =>
   makeHexagonsHeroPatternDataUrl(playerColors[playerID], 0.2);
 

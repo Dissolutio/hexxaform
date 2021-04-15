@@ -11,18 +11,21 @@ export const MapDisplay = () => {
   const mapSize = 3;
   const hexSize =
     mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
-  const [mapState, setMapState] = React.useState(() => ({
+  const initialMapState = {
+    mapSize,
+    hexSize,
     width: 100,
     height: 100,
     origin: { x: 0, y: 0 },
     flat: true,
-    mapSize,
-    hexSize,
     spacing: 1.05,
-  }));
+  };
+  const [mapState, setMapState] = React.useState(() => initialMapState);
+
+  //! ZOOM FEATURE
   const mapRef = React.useRef();
   const zoomInterval = 100;
-
+  // increases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomIn = () => {
     const el = mapRef.current;
     setMapState((mapState) => ({
@@ -37,6 +40,7 @@ export const MapDisplay = () => {
       }, 1);
     }
   };
+  // decreases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomOut = () => {
     const el: any = mapRef.current;
     setMapState((s) => ({
