@@ -29,8 +29,8 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   }
   //🛠 Style Hex Text
   .maphex_text {
-    fill: var(--sub-white);
-    font-size: ${(props) => `${props.hexSize / 75}rem`};
+    fill: var(--white);
+    font-size: ${(props) => `${props.hexSize / 60}rem`};
   }
 
   // highlight all hexes
@@ -58,7 +58,8 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     stroke: var(--white);
     stroke-width: 0.1;
     border: 1px solid red;
-    fill: transparent;
+    fill: var(--white);
+    fill-opacity: 0.02;
   }
   .maphex__terrain--grass-0 {
     fill: var(--green);

@@ -84,7 +84,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
 
 const HexIDText = ({ hexSize, text }) => {
   return (
-    <Text className="maphex_text" y={hexSize * 0.6}>
+    <Text className="maphex_text" y={hexSize * 0.7}>
       {text.toString()}
     </Text>
   );
@@ -106,5 +106,6 @@ const StyledHexagon = styled.g`
       acc += start * 0.1;
       return `${acc}`;
     }};
+    cursor: pointer;
   }
 `;
