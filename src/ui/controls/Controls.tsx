@@ -1,8 +1,10 @@
+import styled from "styled-components";
+import { FaEraser } from "react-icons/fa";
+import { GiUpCard } from "react-icons/gi";
+
 import { useMapContext } from "ui/hooks/useMapContext";
-import { useBgioMoves } from "../../bgio-contexts";
 
 export const Controls = () => {
-  const { undo, redo } = useBgioMoves();
   const {
     showStartzones,
     toggleShowStartzones,
@@ -12,6 +14,8 @@ export const Controls = () => {
     toggleEraserMode,
     isIncAltitudePen,
     toggleIncAltitudePen,
+    isDecAltitudePen,
+    toggleDecAltitudePen,
   } = useMapContext();
   const greenOnRedOff = (state) => {
     return state
@@ -24,27 +28,46 @@ export const Controls = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-      <button onClick={undo}>UNDO</button>
-      <button onClick={redo}>REDO</button>
-      <button
-        style={greenOnRedOff(showStartzones)}
-        onClick={toggleShowStartzones}
-      >
-        TOGGLE SHOW STARTZONES
-      </button>
-      <button style={greenOnRedOff(showTerrain)} onClick={toggleShowTerrain}>
-        TOGGLE SHOW TERRAIN
-      </button>
-      <button style={greenOnRedOff(isEraser)} onClick={toggleEraserMode}>
-        TOGGLE ERASER
-      </button>
-      <button
-        style={greenOnRedOff(isIncAltitudePen)}
-        onClick={toggleIncAltitudePen}
-      >
-        TOGGLE Add Altitude Pen
-      </button>
-    </div>
+    <>
+      <StyledSection>
+        <h4>Set Pen Mode:</h4>
+        <button style={greenOnRedOff(isEraser)} onClick={toggleEraserMode}>
+          <FaEraser />
+          Eraser
+        </button>
+        <button onClick={toggleIncAltitudePen}>
+          <GiUpCard />
+          Increase Altitude
+        </button>
+        <button onClick={toggleDecAltitudePen}>
+          <GiUpCard style={{ transform: "translateY(0.2em) rotate(180deg)" }} />
+          Decrease Altitude
+        </button>
+      </StyledSection>
+      <StyledSection>
+        <h4>Toggle Lenses:</h4>
+        <button
+          style={greenOnRedOff(showStartzones)}
+          onClick={toggleShowStartzones}
+        >
+          STARTZONES
+        </button>
+        <button style={greenOnRedOff(showTerrain)} onClick={toggleShowTerrain}>
+          TERRAIN
+        </button>
+      </StyledSection>
+    </>
   );
 };
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  h4 {
+    padding: 5px;
+    margin: 0;
+    font-size: 1rem;
+  }
+`;

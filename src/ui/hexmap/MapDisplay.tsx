@@ -3,14 +3,16 @@ import styled from "styled-components";
 
 import { MapHexStyles } from "./MapHexStyles";
 import { ReactHexgrid } from "./ReactHexgrid";
-import { ZoomControls } from "./ZoomControls";
+import { MapZoomControls } from "./MapZoomControls";
 import { MapHexes } from "./MapHexes";
 import { useBgioG } from "bgio-contexts";
+import { UndoRedo } from "ui/controls/UndoRedo";
 
 export const MapDisplay = () => {
   const { G } = useBgioG();
   const { hexMap } = G;
   const { hexSize, mapSize, flat } = hexMap;
+
   //! MAP SETUP/LAYOUT CONFIG
   const initialMapState = {
     width: 100,
@@ -52,10 +54,11 @@ export const MapDisplay = () => {
 
   return (
     <MapStyle>
-      <ZoomControls
+      <MapZoomControls
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
+      <UndoRedo />
       <MapHexStyles hexSize={hexSize} ref={mapRef}>
         <ReactHexgrid
           mapSize={mapSize}
@@ -76,4 +79,5 @@ export const MapDisplay = () => {
 const MapStyle = styled.div`
   height: 100%;
   transform-style: preserve-3d;
+  position: relative;
 `;

@@ -14,6 +14,8 @@ const MapContext = React.createContext<
       toggleEraserMode: () => void;
       isIncAltitudePen: boolean;
       toggleIncAltitudePen: () => void;
+      isDecAltitudePen: boolean;
+      toggleDecAltitudePen: () => void;
     }
   | undefined
 >(undefined);
@@ -23,7 +25,8 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const [showStartzones, setShowStartzones] = React.useState(false);
   const [showTerrain, setShowTerrain] = React.useState(true);
   const [isEraser, setIsEraser] = React.useState(false);
-  const [isIncAltitudePen, setIsIncAltitudePen] = React.useState(true);
+  const [isIncAltitudePen, setIsIncAltitudePen] = React.useState(false);
+  const [isDecAltitudePen, setIsDecAltitudePen] = React.useState(true);
   const toggleShowStartzones = () => {
     setShowStartzones((s) => !s);
   };
@@ -35,6 +38,9 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   };
   const toggleIncAltitudePen = () => {
     setIsIncAltitudePen((s) => !s);
+  };
+  const toggleDecAltitudePen = () => {
+    setIsDecAltitudePen((s) => !s);
   };
   const selectMapHex = (hexID: string) => {
     setSelectedMapHex(hexID);
@@ -52,6 +58,8 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         toggleEraserMode,
         isIncAltitudePen,
         toggleIncAltitudePen,
+        isDecAltitudePen,
+        toggleDecAltitudePen,
       }}
     >
       {children}

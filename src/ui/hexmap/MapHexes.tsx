@@ -14,21 +14,23 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const { G } = useBgioG();
   const { boardHexes } = G;
   const { moves } = useBgioMoves();
-  const { voidHex, incAltitudeOfHex } = moves;
+  const { voidHex, unVoidHex, incAltitudeOfHex, decAltitudeOfHex } = moves;
   const {
     selectedMapHex,
     showStartzones,
     showTerrain,
     isEraser,
     isIncAltitudePen,
+    isDecAltitudePen,
   } = useMapContext();
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     if (isEraser) {
-      voidHex(hex.id);
-    }
-    if (isIncAltitudePen) {
+      hex.terrain === "void-0" ? unVoidHex(hex.id) : voidHex(hex.id);
+    } else if (isIncAltitudePen) {
       incAltitudeOfHex(hex.id);
+    } else if (isDecAltitudePen) {
+      decAltitudeOfHex(hex.id);
     }
   };
   function calcClassNames(hex: BoardHex) {
@@ -72,7 +74,9 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
           >
             <g>
               {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
-              <HexIDText hexSize={hexSize} text={altitude} />
+              {hex.terrain === "void-0" ? null : (
+                <HexIDText hexSize={hexSize} text={altitude} />
+              )}
             </g>
           </Hexagon>
         </StyledHexagon>
