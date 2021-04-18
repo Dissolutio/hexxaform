@@ -1,8 +1,16 @@
 import styled from "styled-components";
 import { FaEraser } from "react-icons/fa";
-import { GiUpCard } from "react-icons/gi";
+import {
+  GiUpCard,
+  GiWaterSplash,
+  GiGrass,
+  GiIsland,
+  GiFallingRocks,
+} from "react-icons/gi";
 
 import { useMapContext } from "ui/hooks/useMapContext";
+import { useBgioMoves } from "bgio-contexts";
+import { giantsTableMap } from "assets/giants-table-map";
 
 export const Controls = () => {
   const {
@@ -10,13 +18,16 @@ export const Controls = () => {
     toggleShowStartzones,
     showTerrain,
     toggleShowTerrain,
-    isEraser,
-    toggleEraserMode,
-    isIncAltitudePen,
+    toggleEraserPen,
     toggleIncAltitudePen,
-    isDecAltitudePen,
     toggleDecAltitudePen,
+    toggleWaterPen,
+    toggleGrassPen,
+    toggleSandPen,
+    toggleRockPen,
   } = useMapContext();
+  const { moves } = useBgioMoves();
+  const { loadMap } = moves;
   const greenOnRedOff = (state) => {
     return state
       ? {
@@ -26,22 +37,31 @@ export const Controls = () => {
           color: "black",
         };
   };
-
+  const flipOverStyle = { transform: "translateY(0.2em) rotate(180deg)" };
   return (
     <>
       <StyledSection>
         <h4>Set Pen Mode:</h4>
-        <button style={greenOnRedOff(isEraser)} onClick={toggleEraserMode}>
+        <button aria-label="Eraser" onClick={toggleEraserPen}>
           <FaEraser />
-          Eraser
         </button>
-        <button onClick={toggleIncAltitudePen}>
+        <button aria-label="Increase Altitude" onClick={toggleIncAltitudePen}>
           <GiUpCard />
-          Increase Altitude
         </button>
-        <button onClick={toggleDecAltitudePen}>
-          <GiUpCard style={{ transform: "translateY(0.2em) rotate(180deg)" }} />
-          Decrease Altitude
+        <button aria-label="Decrease Altitude" onClick={toggleDecAltitudePen}>
+          <GiUpCard style={flipOverStyle} />
+        </button>
+        <button aria-label="Water" onClick={toggleWaterPen}>
+          <GiWaterSplash />
+        </button>
+        <button aria-label="Grass" onClick={toggleGrassPen}>
+          <GiGrass />
+        </button>
+        <button aria-label="Sand" onClick={toggleSandPen}>
+          <GiIsland />
+        </button>
+        <button aria-label="Rock" onClick={toggleRockPen}>
+          <GiFallingRocks />
         </button>
       </StyledSection>
       <StyledSection>
@@ -54,6 +74,16 @@ export const Controls = () => {
         </button>
         <button style={greenOnRedOff(showTerrain)} onClick={toggleShowTerrain}>
           TERRAIN
+        </button>
+      </StyledSection>
+      <StyledSection>
+        <h4>Load Map:</h4>
+        <button
+          onClick={() =>
+            loadMap(giantsTableMap.boardHexes, giantsTableMap.hexMap)
+          }
+        >
+          Load Giants Table Map
         </button>
       </StyledSection>
     </>

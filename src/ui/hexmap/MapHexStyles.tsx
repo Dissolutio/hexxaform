@@ -7,8 +7,9 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;
   position: relative;
   overflow: scroll;
+
   //🛠 Style Map Scrollbars
-  scrollbar-width: thin;
+  /* scrollbar-width: thin;
   scrollbar-color: var(--player-color) var(--black);
   &::-webkit-scrollbar {
     height: 0.2rem;
@@ -26,7 +27,8 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   }
   &::-webkit-scrollbar-corner {
     background: var(--black);
-  }
+  } */
+
   //🛠 Style Hex Text
   .maphex_text {
     fill: var(--white);
@@ -61,8 +63,20 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     fill: var(--white);
     fill-opacity: 0.02;
   }
+  .maphex__terrain--water-0 {
+    fill: var(--water);
+    fill-opacity: 0.4;
+  }
   .maphex__terrain--grass-0 {
     fill: var(--green);
+    fill-opacity: 0.4;
+  }
+  .maphex__terrain--sand-0 {
+    fill: var(--sand);
+    fill-opacity: 0.4;
+  }
+  .maphex__terrain--rock-0 {
+    fill: var(--rock);
     fill-opacity: 0.4;
   }
   //

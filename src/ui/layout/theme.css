@@ -8,10 +8,12 @@ html {
   --gunmetal-transparent: hsla(199, 27%, 18%, 0.2);
   --gray: #5d576b;
   /* TERRAIN */
-  --green: #95c623;
+  --green: #60840d;
   --forest-green: #37480d;
   --wood-brown: #573319;
-  --water-blue: #044389;
+  --water: #3794fd;
+  --sand: #ab8e10;
+  --rock: #475776;
   /* UTILITY */
   --orange: #e8aa14;
   --neon-green: hsla(74, 64%, 59%, 0.5);

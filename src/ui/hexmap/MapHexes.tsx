@@ -2,9 +2,10 @@ import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Hexagon, Text } from "react17-hexgrid";
 
-import { BoardHex } from "game/types";
+import { BoardHex, HexTerrain } from "game/types";
 import { useBgioG, useBgioMoves } from "bgio-contexts";
 import { useMapContext } from "ui/hooks/useMapContext";
+import { PenMode } from "../hooks/useMapContext";
 
 type MapHexesProps = {
   hexSize: number;
@@ -14,23 +15,49 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const { G } = useBgioG();
   const { boardHexes } = G;
   const { moves } = useBgioMoves();
-  const { voidHex, unVoidHex, incAltitudeOfHex, decAltitudeOfHex } = moves;
+  const {
+    voidHex,
+    unVoidHex,
+    incAltitudeOfHex,
+    decAltitudeOfHex,
+    paintWaterHex,
+    paintGrassHex,
+    paintSandHex,
+    paintRockHex,
+  } = moves;
   const {
     selectedMapHex,
     showStartzones,
     showTerrain,
-    isEraser,
-    isIncAltitudePen,
-    isDecAltitudePen,
+    penMode,
   } = useMapContext();
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
-    if (isEraser) {
-      hex.terrain === "void-0" ? unVoidHex(hex.id) : voidHex(hex.id);
-    } else if (isIncAltitudePen) {
+    const isVoidTerrainHex = hex.terrain === HexTerrain.void;
+    if (penMode === PenMode.eraser) {
+      isVoidTerrainHex ? unVoidHex(hex.id) : voidHex(hex.id);
+    }
+    if (penMode === PenMode.incAltitude && !isVoidTerrainHex) {
       incAltitudeOfHex(hex.id);
-    } else if (isDecAltitudePen) {
-      decAltitudeOfHex(hex.id);
+    }
+    if (penMode === PenMode.decAltitude && !isVoidTerrainHex) {
+      // decrease altitude on a level 1 hex, turn it to level 0 water
+      if (hex.altitude === 1) {
+        decAltitudeOfHex(hex.id);
+        paintWaterHex(hex.id);
+      }
+    }
+    if (penMode === PenMode.water) {
+      paintWaterHex(hex.id);
+    }
+    if (penMode === PenMode.grass) {
+      paintGrassHex(hex.id);
+    }
+    if (penMode === PenMode.sand) {
+      paintSandHex(hex.id);
+    }
+    if (penMode === PenMode.rock) {
+      paintRockHex(hex.id);
     }
   };
   function calcClassNames(hex: BoardHex) {
