@@ -59,7 +59,7 @@ export function makeOrientedRectangleScenario(mapOptions?: MapOptions): GType {
   const flat = mapOptions?.flat ?? false;
   const hexDimensions = flat ? flatDimensions : pointyDimensions;
   const hexSize =
-    mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
+    mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 30;
   const hexMap = {
     ...hexDimensions,
     hexSize,
