@@ -79,7 +79,10 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     fill: var(--rock);
     fill-opacity: 0.4;
   }
-  //
+  // Opacify
+  .maphex__terrain--opacify > g polygon {
+    fill-opacity: 0.01;
+  }
   //🛠 Selected Map Hex
   .maphex__selected--active > g polygon {
     stroke: var(--white);

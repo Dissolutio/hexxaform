@@ -30,6 +30,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     showStartzones,
     showTerrain,
     penMode,
+    altitudeViewer,
   } = useMapContext();
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
@@ -74,6 +75,10 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     // Paint Terrain
     if (showTerrain) {
       classNames = classNames.concat(` maphex__terrain--${hex.terrain} `);
+    }
+    // Opacify everything below current altitude viewer level
+    if (altitudeViewer > hex.altitude) {
+      classNames = classNames.concat(` maphex__terrain--opacify `);
     }
     // Highlight Player Startzones -- if toggled on
     if (showStartzones) {

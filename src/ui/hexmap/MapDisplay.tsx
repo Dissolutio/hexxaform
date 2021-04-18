@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { MapHexStyles } from "./MapHexStyles";
-import { ReactHexgrid } from "./ReactHexgrid";
-import { MapZoomControls } from "./MapZoomControls";
-import { MapHexes } from "./MapHexes";
 import { useBgioG } from "bgio-contexts";
-import { UndoRedo } from "ui/controls/UndoRedo";
+import { MapZoomControls } from "./MapZoomControls";
+import { UndoRedo } from "./UndoRedo";
+import { ReactHexgrid } from "./ReactHexgrid";
+import { MapHexes } from "./MapHexes";
+import { MapHexStyles } from "./MapHexStyles";
+import { UpDownAltitudeViewerButtons } from "./UpDownAltitudeViewerButtons";
 
 export const MapDisplay = () => {
   const { G } = useBgioG();
@@ -59,6 +60,7 @@ export const MapDisplay = () => {
         handleClickZoomOut={handleClickZoomOut}
       />
       <UndoRedo />
+      <UpDownAltitudeViewerButtons />
       <MapHexStyles hexSize={hexSize} ref={mapRef}>
         <ReactHexgrid
           mapSize={mapSize}
