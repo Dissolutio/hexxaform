@@ -1,5 +1,5 @@
 import { BoardProps } from "boardgame.io/react";
-import { GType } from "./types";
+import { BoardHexes, GType, HexMap } from "./types";
 
 export const moves = {
   voidHex,
@@ -21,4 +21,14 @@ function incAltitudeOfHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
 }
 function decAltitudeOfHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
   G.boardHexes[hexID].altitude -= 1;
+}
+
+function loadMap(
+  G: GType,
+  ctx: BoardProps["ctx"],
+  boardHexes: BoardHexes,
+  hexMap: HexMap
+) {
+  G.boardHexes = boardHexes;
+  G.hexMap = hexMap;
 }
