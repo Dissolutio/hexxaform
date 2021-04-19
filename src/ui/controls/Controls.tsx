@@ -42,27 +42,40 @@ export const Controls = () => {
     <>
       <StyledSection>
         <h4>Set Pen Mode:</h4>
-        <button aria-label="Eraser" onClick={toggleEraserPen}>
-          <FaEraser />
-        </button>
-        <button aria-label="Increase Altitude" onClick={toggleIncAltitudePen}>
+        <StyledButton
+          aria-label="Increase Altitude"
+          onClick={toggleIncAltitudePen}
+        >
           <GiUpCard />
-        </button>
-        <button aria-label="Decrease Altitude" onClick={toggleDecAltitudePen}>
+          <span>Raise</span>
+        </StyledButton>
+        <StyledButton
+          aria-label="Decrease Altitude"
+          onClick={toggleDecAltitudePen}
+        >
           <GiUpCard style={flipOverStyle} />
-        </button>
-        <button aria-label="Water" onClick={toggleWaterPen}>
+          <span>Lower</span>
+        </StyledButton>
+        <StyledButton aria-label="Eraser" onClick={toggleEraserPen}>
+          <FaEraser />
+          <span>Eraser</span>
+        </StyledButton>
+        <StyledButton aria-label="Water" onClick={toggleWaterPen}>
           <GiWaterSplash />
-        </button>
-        <button aria-label="Grass" onClick={toggleGrassPen}>
+          <span>Water</span>
+        </StyledButton>
+        <StyledButton aria-label="Grass" onClick={toggleGrassPen}>
           <GiGrass />
-        </button>
-        <button aria-label="Sand" onClick={toggleSandPen}>
+          <span>Grass</span>
+        </StyledButton>
+        <StyledButton aria-label="Sand" onClick={toggleSandPen}>
           <GiIsland />
-        </button>
-        <button aria-label="Rock" onClick={toggleRockPen}>
+          <span>Sand</span>
+        </StyledButton>
+        <StyledButton aria-label="Rock" onClick={toggleRockPen}>
           <GiFallingRocks />
-        </button>
+          <span>Rock</span>
+        </StyledButton>
       </StyledSection>
       <StyledSection>
         <h4>Toggle Lenses:</h4>
@@ -100,4 +113,10 @@ const StyledSection = styled.section`
     margin: 0;
     font-size: 1rem;
   }
+`;
+
+const StyledButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
