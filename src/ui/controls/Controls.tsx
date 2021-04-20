@@ -103,7 +103,7 @@ export const Controls = () => {
   );
 };
 
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

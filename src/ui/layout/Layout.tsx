@@ -1,15 +1,12 @@
 import styled from "styled-components";
-import { MapDisplay } from "../hexmap";
-import { Controls } from "../controls";
 
-export const Layout = () => {
+export const Layout = ({ children }) => {
   return (
     <LayoutContainer>
-      <LayoutMiddle>
-        <MapDisplay />
-      </LayoutMiddle>
+      <LayoutMiddle>{children[0]}</LayoutMiddle>
       <LayoutBottom>
-        <Controls />
+        {children[1]}
+        {children[2]}
       </LayoutBottom>
     </LayoutContainer>
   );
