@@ -18,7 +18,7 @@ export const MapDisplay = () => {
   const initialMapState = {
     width: 100,
     height: 100,
-    origin: { x: -500, y: -500 },
+    origin: { x: -750, y: -500 },
     flat,
     spacing: 0.99,
   };

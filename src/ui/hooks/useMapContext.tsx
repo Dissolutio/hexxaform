@@ -9,6 +9,12 @@ export enum PenMode {
   rock = "rock",
   incAltitude = "incAltitude",
   decAltitude = "decAltitude",
+  startZone0 = "startZone0",
+  startZone1 = "startZone1",
+  startZone2 = "startZone2",
+  startZone3 = "startZone3",
+  startZone4 = "startZone4",
+  startZone5 = "startZone5",
 }
 
 type MapContextProviderProps = {
@@ -35,6 +41,7 @@ const MapContext = React.createContext<
       toggleGrassPen: () => void;
       toggleSandPen: () => void;
       toggleRockPen: () => void;
+      toggleStartZonePen: (playerID: string) => void;
     }
   | undefined
 >(undefined);
@@ -87,6 +94,9 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const toggleRockPen = () => {
     setPenMode(PenMode.rock);
   };
+  const toggleStartZonePen = (playerID) => {
+    setPenMode(PenMode[`startZone${playerID}`]);
+  };
   const selectMapHex = (hexID: string) => {
     setSelectedMapHex(hexID);
   };
@@ -111,6 +121,7 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         toggleGrassPen,
         toggleSandPen,
         toggleRockPen,
+        toggleStartZonePen,
       }}
     >
       {children}

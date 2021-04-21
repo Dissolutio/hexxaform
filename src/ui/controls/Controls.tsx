@@ -10,7 +10,7 @@ import {
 
 import { useMapContext } from "ui/hooks/useMapContext";
 import { useBgioMoves } from "bgio-contexts";
-import { giantsTableMap } from "assets/giants-table-map";
+import giantsTable from "assets/giantsTable.json";
 
 export const Controls = () => {
   const {
@@ -25,6 +25,7 @@ export const Controls = () => {
     toggleGrassPen,
     toggleSandPen,
     toggleRockPen,
+    toggleStartZonePen,
   } = useMapContext();
   const { moves } = useBgioMoves();
   const { loadMap } = moves;
@@ -77,6 +78,29 @@ export const Controls = () => {
           <span>Rock</span>
         </StyledButton>
       </StyledSection>
+
+      <StyledSection>
+        <h4>Set Pen Mode to Player StartZone:</h4>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("0")}>
+          1
+        </StyledButton>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("1")}>
+          2
+        </StyledButton>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("2")}>
+          3
+        </StyledButton>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("3")}>
+          4
+        </StyledButton>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("4")}>
+          5
+        </StyledButton>
+        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("5")}>
+          6
+        </StyledButton>
+      </StyledSection>
+
       <StyledSection>
         <h4>Toggle Lenses:</h4>
         <button
@@ -92,9 +116,7 @@ export const Controls = () => {
       <StyledSection>
         <h4>Load Map:</h4>
         <button
-          onClick={() =>
-            loadMap(giantsTableMap.boardHexes, giantsTableMap.hexMap)
-          }
+          onClick={() => loadMap(giantsTable.boardHexes, giantsTable.hexMap)}
         >
           Load Giants Table Map
         </button>
