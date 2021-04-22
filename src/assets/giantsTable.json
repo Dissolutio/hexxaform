@@ -86,7 +86,7 @@
       "r": 0,
       "s": -9,
       "id": "9,0,-9",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -95,7 +95,7 @@
       "r": 0,
       "s": -10,
       "id": "10,0,-10",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -104,7 +104,7 @@
       "r": 0,
       "s": -11,
       "id": "11,0,-11",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -113,7 +113,7 @@
       "r": 0,
       "s": -12,
       "id": "12,0,-12",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -122,7 +122,7 @@
       "r": 0,
       "s": -13,
       "id": "13,0,-13",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -131,7 +131,7 @@
       "r": 0,
       "s": -14,
       "id": "14,0,-14",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -140,7 +140,7 @@
       "r": 0,
       "s": -15,
       "id": "15,0,-15",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -302,7 +302,7 @@
       "r": 1,
       "s": -9,
       "id": "8,1,-9",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -311,7 +311,7 @@
       "r": 1,
       "s": -10,
       "id": "9,1,-10",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -320,7 +320,7 @@
       "r": 1,
       "s": -11,
       "id": "10,1,-11",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -329,7 +329,7 @@
       "r": 1,
       "s": -12,
       "id": "11,1,-12",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -338,7 +338,7 @@
       "r": 1,
       "s": -13,
       "id": "12,1,-13",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -347,7 +347,7 @@
       "r": 1,
       "s": -14,
       "id": "13,1,-14",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -356,7 +356,7 @@
       "r": 1,
       "s": -15,
       "id": "14,1,-15",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -365,7 +365,7 @@
       "r": 1,
       "s": -16,
       "id": "15,1,-16",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -374,7 +374,7 @@
       "r": 1,
       "s": -17,
       "id": "16,1,-17",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -527,7 +527,7 @@
       "r": 2,
       "s": -9,
       "id": "7,2,-9",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -536,7 +536,7 @@
       "r": 2,
       "s": -10,
       "id": "8,2,-10",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -545,7 +545,7 @@
       "r": 2,
       "s": -11,
       "id": "9,2,-11",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -554,7 +554,7 @@
       "r": 2,
       "s": -12,
       "id": "10,2,-12",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -563,7 +563,7 @@
       "r": 2,
       "s": -13,
       "id": "11,2,-13",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -572,7 +572,7 @@
       "r": 2,
       "s": -14,
       "id": "12,2,-14",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -581,7 +581,7 @@
       "r": 2,
       "s": -15,
       "id": "13,2,-15",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -590,7 +590,7 @@
       "r": 2,
       "s": -16,
       "id": "14,2,-16",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -599,7 +599,7 @@
       "r": 2,
       "s": -17,
       "id": "15,2,-17",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -608,7 +608,7 @@
       "r": 2,
       "s": -18,
       "id": "16,2,-18",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 1
     },
@@ -743,7 +743,7 @@
       "r": 3,
       "s": -9,
       "id": "6,3,-9",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -752,7 +752,7 @@
       "r": 3,
       "s": -10,
       "id": "7,3,-10",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -761,7 +761,7 @@
       "r": 3,
       "s": -11,
       "id": "8,3,-11",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -770,7 +770,7 @@
       "r": 3,
       "s": -12,
       "id": "9,3,-12",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -779,7 +779,7 @@
       "r": 3,
       "s": -13,
       "id": "10,3,-13",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -788,7 +788,7 @@
       "r": 3,
       "s": -14,
       "id": "11,3,-14",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -797,7 +797,7 @@
       "r": 3,
       "s": -15,
       "id": "12,3,-15",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -806,7 +806,7 @@
       "r": 3,
       "s": -16,
       "id": "13,3,-16",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -815,7 +815,7 @@
       "r": 3,
       "s": -17,
       "id": "14,3,-17",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -824,7 +824,7 @@
       "r": 3,
       "s": -18,
       "id": "15,3,-18",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -833,7 +833,7 @@
       "r": 3,
       "s": -19,
       "id": "16,3,-19",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -923,7 +923,7 @@
       "r": 4,
       "s": -4,
       "id": "0,4,-4",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -932,7 +932,7 @@
       "r": 4,
       "s": -5,
       "id": "1,4,-5",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -941,7 +941,7 @@
       "r": 4,
       "s": -6,
       "id": "2,4,-6",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -950,7 +950,7 @@
       "r": 4,
       "s": -7,
       "id": "3,4,-7",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -959,7 +959,7 @@
       "r": 4,
       "s": -8,
       "id": "4,4,-8",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -968,7 +968,7 @@
       "r": 4,
       "s": -9,
       "id": "5,4,-9",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -977,7 +977,7 @@
       "r": 4,
       "s": -10,
       "id": "6,4,-10",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -986,7 +986,7 @@
       "r": 4,
       "s": -11,
       "id": "7,4,-11",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -995,7 +995,7 @@
       "r": 4,
       "s": -12,
       "id": "8,4,-12",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1004,7 +1004,7 @@
       "r": 4,
       "s": -13,
       "id": "9,4,-13",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1013,7 +1013,7 @@
       "r": 4,
       "s": -14,
       "id": "10,4,-14",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1022,7 +1022,7 @@
       "r": 4,
       "s": -15,
       "id": "11,4,-15",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1031,7 +1031,7 @@
       "r": 4,
       "s": -16,
       "id": "12,4,-16",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1040,7 +1040,7 @@
       "r": 4,
       "s": -17,
       "id": "13,4,-17",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1049,7 +1049,7 @@
       "r": 4,
       "s": -18,
       "id": "14,4,-18",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1058,7 +1058,7 @@
       "r": 4,
       "s": -19,
       "id": "15,4,-19",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -1067,7 +1067,7 @@
       "r": 4,
       "s": -20,
       "id": "16,4,-20",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -1130,7 +1130,7 @@
       "r": 5,
       "s": -3,
       "id": "-2,5,-3",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1148,7 +1148,7 @@
       "r": 5,
       "s": -5,
       "id": "0,5,-5",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1157,7 +1157,7 @@
       "r": 5,
       "s": -6,
       "id": "1,5,-6",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1166,7 +1166,7 @@
       "r": 5,
       "s": -7,
       "id": "2,5,-7",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1175,7 +1175,7 @@
       "r": 5,
       "s": -8,
       "id": "3,5,-8",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1184,7 +1184,7 @@
       "r": 5,
       "s": -9,
       "id": "4,5,-9",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1193,7 +1193,7 @@
       "r": 5,
       "s": -10,
       "id": "5,5,-10",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1202,7 +1202,7 @@
       "r": 5,
       "s": -11,
       "id": "6,5,-11",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1211,7 +1211,7 @@
       "r": 5,
       "s": -12,
       "id": "7,5,-12",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1220,7 +1220,7 @@
       "r": 5,
       "s": -13,
       "id": "8,5,-13",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1229,7 +1229,7 @@
       "r": 5,
       "s": -14,
       "id": "9,5,-14",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1238,7 +1238,7 @@
       "r": 5,
       "s": -15,
       "id": "10,5,-15",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1247,7 +1247,7 @@
       "r": 5,
       "s": -16,
       "id": "11,5,-16",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1256,7 +1256,7 @@
       "r": 5,
       "s": -17,
       "id": "12,5,-17",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1265,7 +1265,7 @@
       "r": 5,
       "s": -18,
       "id": "13,5,-18",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1274,7 +1274,7 @@
       "r": 5,
       "s": -19,
       "id": "14,5,-19",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1283,7 +1283,7 @@
       "r": 5,
       "s": -20,
       "id": "15,5,-20",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -1292,7 +1292,7 @@
       "r": 5,
       "s": -21,
       "id": "16,5,-21",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -1364,7 +1364,7 @@
       "r": 6,
       "s": -4,
       "id": "-2,6,-4",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1373,7 +1373,7 @@
       "r": 6,
       "s": -5,
       "id": "-1,6,-5",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1382,7 +1382,7 @@
       "r": 6,
       "s": -6,
       "id": "0,6,-6",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1391,7 +1391,7 @@
       "r": 6,
       "s": -7,
       "id": "1,6,-7",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1400,7 +1400,7 @@
       "r": 6,
       "s": -8,
       "id": "2,6,-8",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1409,7 +1409,7 @@
       "r": 6,
       "s": -9,
       "id": "3,6,-9",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1418,7 +1418,7 @@
       "r": 6,
       "s": -10,
       "id": "4,6,-10",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1427,7 +1427,7 @@
       "r": 6,
       "s": -11,
       "id": "5,6,-11",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1436,7 +1436,7 @@
       "r": 6,
       "s": -12,
       "id": "6,6,-12",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1445,7 +1445,7 @@
       "r": 6,
       "s": -13,
       "id": "7,6,-13",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1454,7 +1454,7 @@
       "r": 6,
       "s": -14,
       "id": "8,6,-14",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1463,7 +1463,7 @@
       "r": 6,
       "s": -15,
       "id": "9,6,-15",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1472,7 +1472,7 @@
       "r": 6,
       "s": -16,
       "id": "10,6,-16",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1481,7 +1481,7 @@
       "r": 6,
       "s": -17,
       "id": "11,6,-17",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1490,7 +1490,7 @@
       "r": 6,
       "s": -18,
       "id": "12,6,-18",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1499,7 +1499,7 @@
       "r": 6,
       "s": -19,
       "id": "13,6,-19",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1508,7 +1508,7 @@
       "r": 6,
       "s": -20,
       "id": "14,6,-20",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1517,7 +1517,7 @@
       "r": 6,
       "s": -21,
       "id": "15,6,-21",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "sand-0",
       "altitude": 1
     },
@@ -1580,7 +1580,7 @@
       "r": 7,
       "s": -4,
       "id": "-3,7,-4",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1589,7 +1589,7 @@
       "r": 7,
       "s": -5,
       "id": "-2,7,-5",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1598,7 +1598,7 @@
       "r": 7,
       "s": -6,
       "id": "-1,7,-6",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1607,7 +1607,7 @@
       "r": 7,
       "s": -7,
       "id": "0,7,-7",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1616,7 +1616,7 @@
       "r": 7,
       "s": -8,
       "id": "1,7,-8",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1625,7 +1625,7 @@
       "r": 7,
       "s": -9,
       "id": "2,7,-9",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1634,7 +1634,7 @@
       "r": 7,
       "s": -10,
       "id": "3,7,-10",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1643,7 +1643,7 @@
       "r": 7,
       "s": -11,
       "id": "4,7,-11",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1652,7 +1652,7 @@
       "r": 7,
       "s": -12,
       "id": "5,7,-12",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1661,7 +1661,7 @@
       "r": 7,
       "s": -13,
       "id": "6,7,-13",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1670,7 +1670,7 @@
       "r": 7,
       "s": -14,
       "id": "7,7,-14",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1679,7 +1679,7 @@
       "r": 7,
       "s": -15,
       "id": "8,7,-15",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1688,7 +1688,7 @@
       "r": 7,
       "s": -16,
       "id": "9,7,-16",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1697,7 +1697,7 @@
       "r": 7,
       "s": -17,
       "id": "10,7,-17",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1706,7 +1706,7 @@
       "r": 7,
       "s": -18,
       "id": "11,7,-18",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1715,7 +1715,7 @@
       "r": 7,
       "s": -19,
       "id": "12,7,-19",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1724,7 +1724,7 @@
       "r": 7,
       "s": -20,
       "id": "13,7,-20",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1733,7 +1733,7 @@
       "r": 7,
       "s": -21,
       "id": "14,7,-21",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "water-0",
       "altitude": 1
     },
@@ -1742,7 +1742,7 @@
       "r": 7,
       "s": -22,
       "id": "15,7,-22",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1805,7 +1805,7 @@
       "r": 8,
       "s": -4,
       "id": "-4,8,-4",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1814,7 +1814,7 @@
       "r": 8,
       "s": -5,
       "id": "-3,8,-5",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1823,7 +1823,7 @@
       "r": 8,
       "s": -6,
       "id": "-2,8,-6",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1832,7 +1832,7 @@
       "r": 8,
       "s": -7,
       "id": "-1,8,-7",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -1850,7 +1850,7 @@
       "r": 8,
       "s": -9,
       "id": "1,8,-9",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1859,7 +1859,7 @@
       "r": 8,
       "s": -10,
       "id": "2,8,-10",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1868,7 +1868,7 @@
       "r": 8,
       "s": -11,
       "id": "3,8,-11",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1877,7 +1877,7 @@
       "r": 8,
       "s": -12,
       "id": "4,8,-12",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1886,7 +1886,7 @@
       "r": 8,
       "s": -13,
       "id": "5,8,-13",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1895,7 +1895,7 @@
       "r": 8,
       "s": -14,
       "id": "6,8,-14",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1904,7 +1904,7 @@
       "r": 8,
       "s": -15,
       "id": "7,8,-15",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1913,7 +1913,7 @@
       "r": 8,
       "s": -16,
       "id": "8,8,-16",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1922,7 +1922,7 @@
       "r": 8,
       "s": -17,
       "id": "9,8,-17",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1931,7 +1931,7 @@
       "r": 8,
       "s": -18,
       "id": "10,8,-18",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1940,7 +1940,7 @@
       "r": 8,
       "s": -19,
       "id": "11,8,-19",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -1949,7 +1949,7 @@
       "r": 8,
       "s": -20,
       "id": "12,8,-20",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1958,7 +1958,7 @@
       "r": 8,
       "s": -21,
       "id": "13,8,-21",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1967,7 +1967,7 @@
       "r": 8,
       "s": -22,
       "id": "14,8,-22",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -1976,7 +1976,7 @@
       "r": 8,
       "s": -23,
       "id": "15,8,-23",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2030,7 +2030,7 @@
       "r": 9,
       "s": -5,
       "id": "-4,9,-5",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2039,7 +2039,7 @@
       "r": 9,
       "s": -6,
       "id": "-3,9,-6",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2048,7 +2048,7 @@
       "r": 9,
       "s": -7,
       "id": "-2,9,-7",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2066,7 +2066,7 @@
       "r": 9,
       "s": -9,
       "id": "0,9,-9",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2075,7 +2075,7 @@
       "r": 9,
       "s": -10,
       "id": "1,9,-10",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2084,7 +2084,7 @@
       "r": 9,
       "s": -11,
       "id": "2,9,-11",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 2
     },
@@ -2093,7 +2093,7 @@
       "r": 9,
       "s": -12,
       "id": "3,9,-12",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 2
     },
@@ -2102,7 +2102,7 @@
       "r": 9,
       "s": -13,
       "id": "4,9,-13",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 4
     },
@@ -2111,7 +2111,7 @@
       "r": 9,
       "s": -14,
       "id": "5,9,-14",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 4
     },
@@ -2120,7 +2120,7 @@
       "r": 9,
       "s": -15,
       "id": "6,9,-15",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -2129,7 +2129,7 @@
       "r": 9,
       "s": -16,
       "id": "7,9,-16",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -2138,7 +2138,7 @@
       "r": 9,
       "s": -17,
       "id": "8,9,-17",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2147,7 +2147,7 @@
       "r": 9,
       "s": -18,
       "id": "9,9,-18",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -2156,7 +2156,7 @@
       "r": 9,
       "s": -19,
       "id": "10,9,-19",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 6
     },
@@ -2165,7 +2165,7 @@
       "r": 9,
       "s": -20,
       "id": "11,9,-20",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 4
     },
@@ -2174,7 +2174,7 @@
       "r": 9,
       "s": -21,
       "id": "12,9,-21",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "rock-0",
       "altitude": 4
     },
@@ -2183,7 +2183,7 @@
       "r": 9,
       "s": -22,
       "id": "13,9,-22",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 2
     },
@@ -2192,7 +2192,7 @@
       "r": 9,
       "s": -23,
       "id": "14,9,-23",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 2
     },
@@ -2201,7 +2201,7 @@
       "r": 9,
       "s": -24,
       "id": "15,9,-24",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2210,7 +2210,7 @@
       "r": 9,
       "s": -25,
       "id": "16,9,-25",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2219,7 +2219,7 @@
       "r": 9,
       "s": -26,
       "id": "17,9,-26",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2237,7 +2237,7 @@
       "r": 9,
       "s": -28,
       "id": "19,9,-28",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2246,7 +2246,7 @@
       "r": 9,
       "s": -29,
       "id": "20,9,-29",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2255,7 +2255,7 @@
       "r": 10,
       "s": -5,
       "id": "-5,10,-5",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2264,7 +2264,7 @@
       "r": 10,
       "s": -6,
       "id": "-4,10,-6",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2282,7 +2282,7 @@
       "r": 10,
       "s": -8,
       "id": "-2,10,-8",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2291,7 +2291,7 @@
       "r": 10,
       "s": -9,
       "id": "-1,10,-9",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2300,7 +2300,7 @@
       "r": 10,
       "s": -10,
       "id": "0,10,-10",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["0"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2309,7 +2309,7 @@
       "r": 10,
       "s": -11,
       "id": "1,10,-11",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2318,7 +2318,7 @@
       "r": 10,
       "s": -12,
       "id": "2,10,-12",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2327,7 +2327,7 @@
       "r": 10,
       "s": -13,
       "id": "3,10,-13",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2336,7 +2336,7 @@
       "r": 10,
       "s": -14,
       "id": "4,10,-14",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2345,7 +2345,7 @@
       "r": 10,
       "s": -15,
       "id": "5,10,-15",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2354,7 +2354,7 @@
       "r": 10,
       "s": -16,
       "id": "6,10,-16",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2363,7 +2363,7 @@
       "r": 10,
       "s": -17,
       "id": "7,10,-17",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2372,7 +2372,7 @@
       "r": 10,
       "s": -18,
       "id": "8,10,-18",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2381,7 +2381,7 @@
       "r": 10,
       "s": -19,
       "id": "9,10,-19",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2390,7 +2390,7 @@
       "r": 10,
       "s": -20,
       "id": "10,10,-20",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2399,7 +2399,7 @@
       "r": 10,
       "s": -21,
       "id": "11,10,-21",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2408,7 +2408,7 @@
       "r": 10,
       "s": -22,
       "id": "12,10,-22",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2417,7 +2417,7 @@
       "r": 10,
       "s": -23,
       "id": "13,10,-23",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2426,7 +2426,7 @@
       "r": 10,
       "s": -24,
       "id": "14,10,-24",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2435,7 +2435,7 @@
       "r": 10,
       "s": -25,
       "id": "15,10,-25",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2453,7 +2453,7 @@
       "r": 10,
       "s": -27,
       "id": "17,10,-27",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2462,7 +2462,7 @@
       "r": 10,
       "s": -28,
       "id": "18,10,-28",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2471,7 +2471,7 @@
       "r": 10,
       "s": -29,
       "id": "19,10,-29",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2516,7 +2516,7 @@
       "r": 11,
       "s": -10,
       "id": "-1,11,-10",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2525,7 +2525,7 @@
       "r": 11,
       "s": -11,
       "id": "0,11,-11",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2534,7 +2534,7 @@
       "r": 11,
       "s": -12,
       "id": "1,11,-12",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2543,7 +2543,7 @@
       "r": 11,
       "s": -13,
       "id": "2,11,-13",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2552,7 +2552,7 @@
       "r": 11,
       "s": -14,
       "id": "3,11,-14",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2561,7 +2561,7 @@
       "r": 11,
       "s": -15,
       "id": "4,11,-15",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2570,7 +2570,7 @@
       "r": 11,
       "s": -16,
       "id": "5,11,-16",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2579,7 +2579,7 @@
       "r": 11,
       "s": -17,
       "id": "6,11,-17",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2588,7 +2588,7 @@
       "r": 11,
       "s": -18,
       "id": "7,11,-18",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2597,7 +2597,7 @@
       "r": 11,
       "s": -19,
       "id": "8,11,-19",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2606,7 +2606,7 @@
       "r": 11,
       "s": -20,
       "id": "9,11,-20",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2615,7 +2615,7 @@
       "r": 11,
       "s": -21,
       "id": "10,11,-21",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2624,7 +2624,7 @@
       "r": 11,
       "s": -22,
       "id": "11,11,-22",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2633,7 +2633,7 @@
       "r": 11,
       "s": -23,
       "id": "12,11,-23",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2642,7 +2642,7 @@
       "r": 11,
       "s": -24,
       "id": "13,11,-24",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2651,7 +2651,7 @@
       "r": 11,
       "s": -25,
       "id": "14,11,-25",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2669,7 +2669,7 @@
       "r": 11,
       "s": -27,
       "id": "16,11,-27",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2678,7 +2678,7 @@
       "r": 11,
       "s": -28,
       "id": "17,11,-28",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2687,7 +2687,7 @@
       "r": 11,
       "s": -29,
       "id": "18,11,-29",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2696,7 +2696,7 @@
       "r": 11,
       "s": -30,
       "id": "19,11,-30",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2831,7 +2831,7 @@
       "r": 12,
       "s": -20,
       "id": "8,12,-20",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2840,7 +2840,7 @@
       "r": 12,
       "s": -21,
       "id": "9,12,-21",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2849,7 +2849,7 @@
       "r": 12,
       "s": -22,
       "id": "10,12,-22",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2858,7 +2858,7 @@
       "r": 12,
       "s": -23,
       "id": "11,12,-23",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2867,7 +2867,7 @@
       "r": 12,
       "s": -24,
       "id": "12,12,-24",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2876,7 +2876,7 @@
       "r": 12,
       "s": -25,
       "id": "13,12,-25",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2885,7 +2885,7 @@
       "r": 12,
       "s": -26,
       "id": "14,12,-26",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2894,7 +2894,7 @@
       "r": 12,
       "s": -27,
       "id": "15,12,-27",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -2903,7 +2903,7 @@
       "r": 12,
       "s": -28,
       "id": "16,12,-28",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2912,7 +2912,7 @@
       "r": 12,
       "s": -29,
       "id": "17,12,-29",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -2921,7 +2921,7 @@
       "r": 12,
       "s": -30,
       "id": "18,12,-30",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -3074,7 +3074,7 @@
       "r": 13,
       "s": -23,
       "id": "10,13,-23",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3083,7 +3083,7 @@
       "r": 13,
       "s": -24,
       "id": "11,13,-24",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3092,7 +3092,7 @@
       "r": 13,
       "s": -25,
       "id": "12,13,-25",
-      "startzonePlayerIDs": ["1"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3101,7 +3101,7 @@
       "r": 13,
       "s": -26,
       "id": "13,13,-26",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3110,7 +3110,7 @@
       "r": 13,
       "s": -27,
       "id": "14,13,-27",
-      "startzonePlayerIDs": ["3"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3119,7 +3119,7 @@
       "r": 13,
       "s": -28,
       "id": "15,13,-28",
-      "startzonePlayerIDs": ["4"],
+      "startzonePlayerIDs": [],
       "terrain": "grass-0",
       "altitude": 1
     },
@@ -3128,7 +3128,7 @@
       "r": 13,
       "s": -29,
       "id": "16,13,-29",
-      "startzonePlayerIDs": ["5"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -3137,7 +3137,7 @@
       "r": 13,
       "s": -30,
       "id": "17,13,-30",
-      "startzonePlayerIDs": ["0"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     },
@@ -3371,7 +3371,7 @@
       "r": 14,
       "s": -31,
       "id": "17,14,-31",
-      "startzonePlayerIDs": ["2"],
+      "startzonePlayerIDs": ["1"],
       "terrain": "rock-0",
       "altitude": 2
     }

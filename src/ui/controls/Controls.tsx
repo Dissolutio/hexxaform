@@ -19,6 +19,7 @@ export const Controls = () => {
     showTerrain,
     toggleShowTerrain,
     toggleEraserPen,
+    toggleEraserStartZonePen,
     toggleIncAltitudePen,
     toggleDecAltitudePen,
     toggleWaterPen,
@@ -81,23 +82,47 @@ export const Controls = () => {
 
       <StyledSection>
         <h4>Set Pen Mode to Player StartZone:</h4>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("0")}>
+        <StyledButton
+          aria-label="Start Zone 0"
+          onClick={() => toggleStartZonePen("0")}
+        >
+          0
+        </StyledButton>
+        <StyledButton
+          aria-label="Start Zone 1"
+          onClick={() => toggleStartZonePen("1")}
+        >
           1
         </StyledButton>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("1")}>
+        <StyledButton
+          aria-label="Start Zone 2"
+          onClick={() => toggleStartZonePen("2")}
+        >
           2
         </StyledButton>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("2")}>
+        <StyledButton
+          aria-label="Start Zone 3"
+          onClick={() => toggleStartZonePen("3")}
+        >
           3
         </StyledButton>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("3")}>
+        <StyledButton
+          aria-label="Start Zone 4"
+          onClick={() => toggleStartZonePen("4")}
+        >
           4
         </StyledButton>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("4")}>
+        <StyledButton
+          aria-label="Start Zone 5"
+          onClick={() => toggleStartZonePen("5")}
+        >
           5
         </StyledButton>
-        <StyledButton aria-label="Start Zone" onClick={toggleStartZonePen("5")}>
-          6
+        <StyledButton
+          aria-label="Start Zone"
+          onClick={() => toggleEraserStartZonePen()}
+        >
+          Erase Start Zones
         </StyledButton>
       </StyledSection>
 

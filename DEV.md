@@ -1,5 +1,7 @@
 # Current Work
 
+MAP 3 Holds what is now the Giant's Table file. The map + startzones added for players 0-1
+
 ## To add a pen mode
 
 Update the `HexTerrains` enum and the `PenModes` enum, whereever you're keeping those these days.

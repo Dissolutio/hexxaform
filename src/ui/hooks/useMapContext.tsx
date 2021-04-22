@@ -3,6 +3,7 @@ import * as React from "react";
 export enum PenMode {
   none = "none",
   eraser = "void",
+  eraserStartZone = "eraserStartZone",
   water = "water",
   grass = "grass",
   sand = "sand",
@@ -35,6 +36,7 @@ const MapContext = React.createContext<
       toggleShowTerrain: () => void;
       showTerrain: boolean;
       toggleEraserPen: () => void;
+      toggleEraserStartZonePen: () => void;
       toggleIncAltitudePen: () => void;
       toggleDecAltitudePen: () => void;
       toggleWaterPen: () => void;
@@ -76,6 +78,9 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const toggleEraserPen = () => {
     setPenMode(PenMode.eraser);
   };
+  const toggleEraserStartZonePen = () => {
+    setPenMode(PenMode.eraserStartZone);
+  };
   const toggleIncAltitudePen = () => {
     setPenMode(PenMode.incAltitude);
   };
@@ -94,8 +99,29 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const toggleRockPen = () => {
     setPenMode(PenMode.rock);
   };
-  const toggleStartZonePen = (playerID) => {
-    setPenMode(PenMode[`startZone${playerID}`]);
+  const toggleStartZonePen = (playerID: string) => {
+    switch (playerID) {
+      case "0":
+        setPenMode(PenMode.startZone0);
+        break;
+      case "1":
+        setPenMode(PenMode.startZone1);
+        break;
+      case "2":
+        setPenMode(PenMode.startZone2);
+        break;
+      case "3":
+        setPenMode(PenMode.startZone3);
+        break;
+      case "4":
+        setPenMode(PenMode.startZone4);
+        break;
+      case "5":
+        setPenMode(PenMode.startZone5);
+        break;
+      default:
+        break;
+    }
   };
   const selectMapHex = (hexID: string) => {
     setSelectedMapHex(hexID);
@@ -115,6 +141,7 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         showTerrain,
         toggleShowTerrain,
         toggleEraserPen,
+        toggleEraserStartZonePen,
         toggleIncAltitudePen,
         toggleDecAltitudePen,
         toggleWaterPen,

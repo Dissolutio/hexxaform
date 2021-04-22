@@ -4,6 +4,8 @@ import { BoardHexes, GType, HexMap, HexTerrain } from "./types";
 export const moves = {
   voidHex,
   unVoidHex,
+  paintStartZone,
+  voidStartZone,
   incAltitudeOfHex,
   decAltitudeOfHex,
   paintWaterHex,
@@ -21,6 +23,20 @@ function voidHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
 function unVoidHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
   G.boardHexes[hexID].terrain = HexTerrain.grass;
   G.boardHexes[hexID].altitude = 1;
+}
+function paintStartZone(
+  G: GType,
+  ctx: BoardProps["ctx"],
+  hexID: string,
+  playerID: string
+) {
+  const currentStartZonePlayerIDs = G.boardHexes[hexID].startzonePlayerIDs;
+  if (!currentStartZonePlayerIDs.includes(playerID) && Boolean(playerID)) {
+    G.boardHexes[hexID].startzonePlayerIDs.push(playerID);
+  }
+}
+function voidStartZone(G: GType, ctx: BoardProps["ctx"], hexID: string) {
+  G.boardHexes[hexID].startzonePlayerIDs = [];
 }
 function incAltitudeOfHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
   G.boardHexes[hexID].altitude += 1;

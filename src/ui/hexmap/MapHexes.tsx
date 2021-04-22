@@ -18,6 +18,8 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const {
     voidHex,
     unVoidHex,
+    voidStartZone,
+    paintStartZone,
     incAltitudeOfHex,
     decAltitudeOfHex,
     paintWaterHex,
@@ -35,8 +37,16 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     const isVoidTerrainHex = hex.terrain === HexTerrain.void;
+    console.log(`🚀 ~ onClickBoardHex ~ penMode`, penMode);
     if (penMode === PenMode.eraser) {
       isVoidTerrainHex ? unVoidHex(hex.id) : voidHex(hex.id);
+    }
+    if (penMode === PenMode.eraserStartZone) {
+      voidStartZone(hex.id);
+    }
+    // last letter in string is playerID, but this seems inelegant
+    if (penMode.slice(0, -1) === "startZone") {
+      paintStartZone(hex.id, penMode.slice(-1));
     }
     if (penMode === PenMode.incAltitude && !isVoidTerrainHex) {
       incAltitudeOfHex(hex.id);
