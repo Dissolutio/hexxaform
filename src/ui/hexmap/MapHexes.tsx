@@ -116,7 +116,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
           >
             <g>
               {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
-              {hex.terrain === "void-0" ? null : (
+              {hex.terrain === HexTerrain.void ? null : (
                 <HexIDText hexSize={hexSize} text={altitude} />
               )}
             </g>

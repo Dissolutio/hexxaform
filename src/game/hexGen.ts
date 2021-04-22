@@ -1,5 +1,5 @@
 import { GridGenerator, Hex } from "react17-hexgrid";
-import { BoardHexes } from "./types";
+import { BoardHexes, HexTerrain } from "./types";
 import { generateHexID } from "./constants";
 
 // REACT-HEXGRID GENERATORS
@@ -17,7 +17,7 @@ function hexesToBoardHexes(hexgridHexes: Hex[]): BoardHexes {
       // just assign every board hex startzone to include the next player id, from 0 to 5 over and over
       startzonePlayerIDs: [`${i % 6}`],
       // assign all to grass
-      terrain: "grass-0",
+      terrain: HexTerrain.grass,
       // assign all to altitude 1
       altitude: 1,
     };

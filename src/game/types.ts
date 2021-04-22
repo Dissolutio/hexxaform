@@ -26,11 +26,10 @@ export type BoardHex = {
   startzonePlayerIDs: string[];
   terrain: HexTerrain;
 };
-// TODO Figure out how you're going to vary terrain, but this -num seems sloppy
 export enum HexTerrain {
-  void = "void-0",
-  water = "water-0",
-  grass = "grass-0",
-  sand = "sand-0",
-  rock = "rock-0",
+  void = "void",
+  water = "water",
+  grass = "grass",
+  sand = "sand",
+  rock = "rock",
 }

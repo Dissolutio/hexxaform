@@ -56,26 +56,26 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     }
   } */
 
-  .maphex__terrain--void-0 {
+  .maphex__terrain--void {
     stroke: var(--white);
     stroke-width: 0.1;
     border: 1px solid red;
     fill: var(--white);
     fill-opacity: 0.02;
   }
-  .maphex__terrain--water-0 {
+  .maphex__terrain--water {
     fill: var(--water);
     fill-opacity: 0.4;
   }
-  .maphex__terrain--grass-0 {
+  .maphex__terrain--grass {
     fill: var(--green);
     fill-opacity: 0.4;
   }
-  .maphex__terrain--sand-0 {
+  .maphex__terrain--sand {
     fill: var(--sand);
     fill-opacity: 0.4;
   }
-  .maphex__terrain--rock-0 {
+  .maphex__terrain--rock {
     fill: var(--rock);
     fill-opacity: 0.4;
   }
