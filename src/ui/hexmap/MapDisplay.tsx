@@ -80,6 +80,4 @@ export const MapDisplay = () => {
 
 const MapStyle = styled.div`
   height: 100%;
-  transform-style: preserve-3d;
-  position: relative;
 `;

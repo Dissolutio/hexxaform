@@ -6,60 +6,25 @@ type MapHexStylesProps = {
 export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;
   position: relative;
-  overflow: scroll;
-
-  //🛠 Style Map Scrollbars
-  /* scrollbar-width: thin;
-  scrollbar-color: var(--player-color) var(--black);
-  &::-webkit-scrollbar {
-    height: 0.2rem;
-    width: 0.2rem;
-    background: var(--black);
-  }
-  &::-webkit-scrollbar-track {
-    border-radius: 10px;
-    box-shadow: inset 0 0 1px var(--player-color);
-    background: var(--black);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--player-color);
-    border-radius: 10px;
-  }
   &::-webkit-scrollbar-corner {
     background: var(--black);
-  } */
+  }
 
-  //🛠 Style Hex Text
+  // Style Hex Text
   .maphex_text {
     fill: var(--white);
     font-size: ${(props) => `${props.hexSize / 60}rem`};
   }
 
   // highlight all hexes
-
   /* svg g polygon {
     stroke: var(--white);
     stroke-width: 0.1;
   } */
-
-  // paint all hexes
-
-  /* .hexagon-group {
-    fill: var(--white);
-    g polygon {
-      @media (hover: hover) {
-        &:hover {
-          fill: var(--neon-orange);
-          fill-opacity: 0.6;
-        }
-      }
-    }
-  } */
-
   .maphex__terrain--void {
     stroke: var(--white);
     stroke-width: 0.1;
-    border: 1px solid red;
+    border: 3px dashed var(--white);
     fill: var(--white);
     fill-opacity: 0.02;
   }
@@ -83,7 +48,7 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   .maphex__terrain--opacify > g polygon {
     fill-opacity: 0.01;
   }
-  //🛠 Selected Map Hex
+  // Selected Map Hex
   .maphex__selected--active > g polygon {
     stroke: var(--white);
     stroke-width: 0.6;

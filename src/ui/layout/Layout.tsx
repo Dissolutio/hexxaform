@@ -13,10 +13,11 @@ export const Layout = ({ children }) => {
 };
 
 const LayoutContainer = styled.div`
-  //🛠 SET CSS VARS
+  // SET CSS VARS
   --player-color: ${(props) => props.theme.playerColor};
-
-  position: relative;
+  // Perspective makes this element the parent for position sticky children
+  // see: https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed
+  perspective: 1000px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -30,7 +31,6 @@ const LayoutContainer = styled.div`
 const LayoutMiddle = styled.div`
   width: 100%;
   height: 70vh;
-  position: relative;
   overflow: auto;
 `;
 const LayoutBottom = styled.div`
