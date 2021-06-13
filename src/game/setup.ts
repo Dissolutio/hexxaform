@@ -49,8 +49,8 @@ export function makeHexagonMapScenario(mapOptions?: MapOptions): GType {
   };
 }
 export const orientedRectangleScenario = makeOrientedRectangleScenario({
-  mapLength: 25,
-  mapWidth: 15,
+  mapLength: 4,
+  mapWidth: 3,
 });
 export function makeOrientedRectangleScenario(mapOptions?: MapOptions): GType {
   const mapLength = mapOptions?.mapLength ?? 1;
@@ -67,6 +67,14 @@ export function makeOrientedRectangleScenario(mapOptions?: MapOptions): GType {
       ? 20
       : mapSize <= 10
       ? 25
+      : 30;
+  const origin =
+    mapSize >= 20
+      ? { x: -700, y: -500 }
+      : mapSize <= 8
+      ? { x: -100, y: -100 }
+      : mapSize <= 4
+      ? { x: -50, y: -50 }
       : 30;
   const hexMap = {
     ...hexDimensions,
