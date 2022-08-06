@@ -1,27 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "react-bootstrap/esm/Button";
 import { ImZoomIn, ImZoomOut } from "react-icons/im";
 
 export const MapZoomControls = ({ handleClickZoomIn, handleClickZoomOut }) => {
   return (
     <StyledMapZoomControls>
-      <Button
-        aria-label="Zoom out"
-        size="sm"
-        variant="dark"
-        onClick={handleClickZoomOut}
-      >
+      <button aria-label="Zoom out" onClick={handleClickZoomOut}>
         <ImZoomOut color="var(--player-color)" />
-      </Button>
-      <Button
-        aria-label="Zoom in"
-        size="sm"
-        variant="dark"
-        onClick={handleClickZoomIn}
-      >
+      </button>
+      <button aria-label="Zoom in" onClick={handleClickZoomIn}>
         <ImZoomIn color="var(--player-color)" />
-      </Button>
+      </button>
     </StyledMapZoomControls>
   );
 };

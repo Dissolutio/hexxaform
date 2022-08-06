@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "react-bootstrap/esm/Button";
 import { ImMoveDown, ImMoveUp } from "react-icons/im";
 import { useMapContext } from "ui/hooks/useMapContext";
-import Badge from "react-bootstrap/Badge";
 import { useBgioG } from "bgio-contexts";
 
 export const UpDownAltitudeViewerButtons = () => {
@@ -16,11 +14,8 @@ export const UpDownAltitudeViewerButtons = () => {
       return prev;
     }
   }, 0);
-  const {
-    altitudeViewer,
-    goUpAltitudeViewer,
-    goDownAltitudeViewer,
-  } = useMapContext();
+  const { altitudeViewer, goUpAltitudeViewer, goDownAltitudeViewer } =
+    useMapContext();
   // Handling this case here instead of in context, so as not to access context in context
   const handleUp = () => {
     if (altitudeViewer > maxHeightHex) {
@@ -31,18 +26,13 @@ export const UpDownAltitudeViewerButtons = () => {
 
   return (
     <StyledUpDownAltitudeViewer>
-      <Button
-        aria-label="Zoom out"
-        size="sm"
-        variant="dark"
-        onClick={goDownAltitudeViewer}
-      >
+      <button aria-label="Zoom out" onClick={goDownAltitudeViewer}>
         <ImMoveDown color="var(--player-color)" />
-      </Button>
-      <Badge variant="info">{altitudeViewer}</Badge>
-      <Button aria-label="Zoom in" size="sm" variant="dark" onClick={handleUp}>
+      </button>
+      <span>{altitudeViewer}</span>
+      <button aria-label="Zoom in" onClick={handleUp}>
         <ImMoveUp color="var(--player-color)" />
-      </Button>
+      </button>
     </StyledUpDownAltitudeViewer>
   );
 };

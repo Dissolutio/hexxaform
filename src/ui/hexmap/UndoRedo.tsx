@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "react-bootstrap/esm/Button";
 import { ImUndo, ImRedo } from "react-icons/im";
 
 import { useBgioMoves } from "bgio-contexts";
@@ -9,12 +8,12 @@ export const UndoRedo = () => {
   const { undo, redo } = useBgioMoves();
   return (
     <StyledUndoRedo>
-      <Button aria-label="Undo" size="sm" variant="dark" onClick={undo}>
+      <button aria-label="Undo" onClick={undo}>
         <ImUndo color="var(--player-color)" />
-      </Button>
-      <Button aria-label="Redo" size="sm" variant="dark" onClick={redo}>
+      </button>
+      <button aria-label="Redo" onClick={redo}>
         <ImRedo color="var(--player-color)" />
-      </Button>
+      </button>
     </StyledUndoRedo>
   );
 };
