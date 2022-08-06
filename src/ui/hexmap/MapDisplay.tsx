@@ -12,16 +12,25 @@ import { UpDownAltitudeViewerButtons } from "./UpDownAltitudeViewerButtons";
 export const MapDisplay = () => {
   const { G } = useBgioG();
   const { hexMap } = G;
-  const { hexSize, mapSize, flat } = hexMap;
-
+  const { hexSize, mapSize, flat, mapShape } = hexMap;
+  
   //! MAP SETUP/LAYOUT CONFIG
-  const initialMapState = {
+  const isHexagonShapedMap = mapShape === 'hexagon';
+  const hexagonalMapState = {
+    width: 100,
+    height: 100,
+    origin: { x: 0, y: 0 },
+    flat,
+    spacing: 0.99,
+  }
+  const rectangularMapState = {
     width: 100,
     height: 100,
     origin: { x: -750, y: -500 },
     flat,
     spacing: 0.99,
-  };
+  }
+  const initialMapState = isHexagonShapedMap ? hexagonalMapState : rectangularMapState;
   const [mapState, setMapState] = React.useState(() => initialMapState);
 
   //! ZOOM FEATURE
