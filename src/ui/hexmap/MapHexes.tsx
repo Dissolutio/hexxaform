@@ -37,7 +37,6 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     const isVoidTerrainHex = hex.terrain === HexTerrain.void;
-    console.log(`🚀 ~ onClickBoardHex ~ penMode`, penMode);
     if (penMode === PenMode.eraser) {
       isVoidTerrainHex ? unVoidHex(hex.id) : voidHex(hex.id);
     }
@@ -49,14 +48,22 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       paintStartZone(hex.id, penMode.slice(-1));
     }
     if (penMode === PenMode.incAltitude && !isVoidTerrainHex) {
+      /*
+      // if we are raising from level 0 to level 1, and it's a water hex, then turn it to grass, like parting the seas
+      if (hex.altitude === 1) {
+        paintGrassHex(hex.id);
+      }
+      */
       incAltitudeOfHex(hex.id);
     }
     if (penMode === PenMode.decAltitude && !isVoidTerrainHex) {
-      // decrease altitude on a level 1 hex, turn it to level 0 water
+      decAltitudeOfHex(hex.id);
+      /*
+      // when decreasing altitude on a level 1 hex to level 0, turn it to water, like digging a well
       if (hex.altitude === 1) {
-        decAltitudeOfHex(hex.id);
         paintWaterHex(hex.id);
       }
+      */
     }
     if (penMode === PenMode.water) {
       paintWaterHex(hex.id);
