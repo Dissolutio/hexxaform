@@ -1,5 +1,6 @@
 import React from "react";
 import { Hexgrid, HexgridLayout, Point } from "react17-hexgrid";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 type ReactHexgridProps = {
   children?: React.ReactNode;
@@ -29,16 +30,29 @@ export const ReactHexgrid = ({
     return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
   }
   return (
-    <Hexgrid width={width} height={height} viewBox={calcViewBox(mapSize)}>
-      <HexgridLayout
-        className={className}
-        size={{ x: hexSize, y: hexSize }}
-        flat={flat}
-        origin={origin}
-        spacing={spacing}
+    <TransformWrapper>
+      <TransformComponent
+       wrapperStyle={{
+        width:'100%',
+        height: '100%'
+      }}
+      contentStyle={{
+        width: '100%',
+        height: '100%'
+      }}
       >
-        {children}
-      </HexgridLayout>
-    </Hexgrid>
+        <Hexgrid width={width} height={height} viewBox={calcViewBox(mapSize)}>
+          <HexgridLayout
+            className={className}
+            size={{ x: hexSize, y: hexSize }}
+            flat={flat}
+            origin={origin}
+            spacing={spacing}
+          >
+            {children}
+          </HexgridLayout>
+        </Hexgrid>
+      </TransformComponent>
+    </TransformWrapper>
   );
 };
