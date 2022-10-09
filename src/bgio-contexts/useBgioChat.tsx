@@ -1,6 +1,5 @@
 // BgioChatProvider
 import * as React from "react";
-import { BoardProps } from "boardgame.io/react";
 import { ChatMessage } from "boardgame.io";
 
 type BgioChatProviderProps = {
