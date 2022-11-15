@@ -15,7 +15,8 @@ const GameClient = Client({
   board: Board,
   numPlayers: 1,
   multiplayer: Local(),
-  debug: { impl: Debug },
+  // debug: { impl: Debug },
+  debug: false,
   enhancer: reduxDevTools,
 });
 
