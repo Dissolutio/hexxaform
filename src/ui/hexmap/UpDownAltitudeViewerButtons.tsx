@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ImMoveDown, ImMoveUp } from "react-icons/im";
 import { useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts";
+import { StyledButton } from "../controls";
 
 type Props = {
   htmlId: string;
@@ -30,20 +31,35 @@ export const UpDownAltitudeViewerButtons = ({ htmlId }: Props) => {
 
   return (
     <StyledUpDownAltitudeViewer id={htmlId}>
-      <button aria-label="Zoom out" onClick={goDownAltitudeViewer}>
-        <ImMoveDown color="var(--player-color)" />
-      </button>
-      <span>{altitudeViewer}</span>
-      <button aria-label="Zoom in" onClick={handleUp}>
-        <ImMoveUp color="var(--player-color)" />
-      </button>
+      <StyledButton aria-label="Zoom out" onClick={goDownAltitudeViewer}>
+        <ImMoveDown color="var(--black)" />
+        <span>Go Down</span>
+      </StyledButton>
+      <StyledButton aria-label="Zoom in" onClick={handleUp}>
+        <ImMoveUp color="var(--black)" />
+        <span>Go Up</span>
+      </StyledButton>
+      <span style={{ marginRight: "0.5rem", marginLeft: "0.5rem" }}>
+        Altitude:{" "}
+        <span
+          style={{
+            fontWeight: 900,
+          }}
+        >
+          {altitudeViewer}
+        </span>
+      </span>
     </StyledUpDownAltitudeViewer>
   );
 };
-export const StyledUpDownAltitudeViewer = styled.span`
+const StyledUpDownAltitudeViewer = styled.span`
   position: absolute;
   top: 120px;
   left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding-top: 36px;
   padding-left: 36px;
   @media screen and (max-width: 1100px) {
@@ -51,10 +67,6 @@ export const StyledUpDownAltitudeViewer = styled.span`
     padding-left: 14px;
   }
   z-index: 2;
-  button {
-    background-color: var(--gunmetal-transparent);
-    cursor: pointer;
-  }
   svg {
     width: 30px;
     height: 30px;

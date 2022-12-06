@@ -142,7 +142,12 @@ export const Controls = () => {
       <StyledSection>
         <h4>Load Map:</h4>
         <button
-          onClick={() => loadMap({boardHexes: giantsTable.boardHexes, hexMap: giantsTable.hexMap})}
+          onClick={() =>
+            loadMap({
+              boardHexes: giantsTable.boardHexes,
+              hexMap: giantsTable.hexMap,
+            })
+          }
         >
           Load Giants Table Map
         </button>
@@ -164,7 +169,7 @@ export const StyledSection = styled.section`
   }
 `;
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,9 +181,12 @@ const LoadSaveMapControls = () => {
   const currentSaveableMap = { boardHexes, hexMap };
   const { map1, setMap1, map2, setMap2, map3, setMap3 } = useLocalMapMemory();
   const { moves } = useBgioMoves();
-  const handleLoadMap1 = () => moves.loadMap({boardHexes: map1.boardHexes, hexMap: map1.hexMap});
-  const handleLoadMap2 = () => moves.loadMap({boardHexes: map2.boardHexes, hexMap: map2.hexMap});
-  const handleLoadMap3 = () => moves.loadMap({boardHexes: map3.boardHexes, hexMap: map3.hexMap});
+  const handleLoadMap1 = () =>
+    moves.loadMap({ boardHexes: map1.boardHexes, hexMap: map1.hexMap });
+  const handleLoadMap2 = () =>
+    moves.loadMap({ boardHexes: map2.boardHexes, hexMap: map2.hexMap });
+  const handleLoadMap3 = () =>
+    moves.loadMap({ boardHexes: map3.boardHexes, hexMap: map3.hexMap });
   const handleSaveMap1 = () => setMap1(currentSaveableMap);
   const handleSaveMap2 = () => setMap2(currentSaveableMap);
   const handleSaveMap3 = () => setMap3(currentSaveableMap);

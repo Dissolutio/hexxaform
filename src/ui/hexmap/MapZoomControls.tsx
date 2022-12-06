@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ImZoomIn, ImZoomOut } from "react-icons/im";
+import { StyledButton } from "../controls";
 
 export const MapZoomControls = ({
   handleClickZoomIn,
@@ -13,12 +14,14 @@ export const MapZoomControls = ({
 }) => {
   return (
     <StyledMapZoomControls id={htmlId}>
-      <button aria-label="Zoom out" onClick={handleClickZoomOut}>
-        <ImZoomOut color="var(--player-color)" />
-      </button>
-      <button aria-label="Zoom in" onClick={handleClickZoomIn}>
-        <ImZoomIn color="var(--player-color)" />
-      </button>
+      <StyledButton aria-label="Zoom out" onClick={handleClickZoomOut}>
+        <ImZoomOut color="var(--black)" />
+        <span>Zoom out</span>
+      </StyledButton>
+      <StyledButton aria-label="Zoom in" onClick={handleClickZoomIn}>
+        <ImZoomIn color="var(--black)" />
+        <span>Zoom in</span>
+      </StyledButton>
     </StyledMapZoomControls>
   );
 };
@@ -26,6 +29,9 @@ export const StyledMapZoomControls = styled.span<{ x?: string; y?: string }>`
   position: absolute;
   top: ${(props) => props?.y ?? "0%"};
   left: ${(props) => props?.x ?? "0%"};
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding-top: 36px;
   padding-left: 36px;
   @media screen and (max-width: 1100px) {
@@ -34,7 +40,6 @@ export const StyledMapZoomControls = styled.span<{ x?: string; y?: string }>`
   }
   z-index: 2;
   button {
-    background-color: var(--gunmetal-transparent);
     cursor: pointer;
   }
   svg {

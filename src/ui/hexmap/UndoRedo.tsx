@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ImUndo, ImRedo } from "react-icons/im";
 
 import { useBgioMoves } from "../bgio-contexts";
+import { StyledButton } from "../controls";
 type Props = {
   htmlId: string;
 };
@@ -10,12 +11,14 @@ export const UndoRedo = ({ htmlId }: Props) => {
   const { undo, redo } = useBgioMoves();
   return (
     <StyledUndoRedo id={htmlId}>
-      <button aria-label="Undo" onClick={undo}>
-        <ImUndo color="var(--player-color)" />
-      </button>
-      <button aria-label="Redo" onClick={redo}>
-        <ImRedo color="var(--player-color)" />
-      </button>
+      <StyledButton aria-label="Undo" onClick={undo}>
+        <ImUndo color="var(--black)" />
+        <span>Undo</span>
+      </StyledButton>
+      <StyledButton aria-label="Redo" onClick={redo}>
+        <ImRedo color="var(--black)" />
+        <span>Redo</span>
+      </StyledButton>
     </StyledUndoRedo>
   );
 };
@@ -24,6 +27,9 @@ const StyledUndoRedo = styled.span`
   position: absolute;
   top: 60px;
   left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding-top: 36px;
   padding-left: 36px;
   @media screen and (max-width: 1100px) {
@@ -32,7 +38,7 @@ const StyledUndoRedo = styled.span`
   }
   z-index: 2;
   button {
-    background-color: var(--gunmetal-transparent);
+    /* background-color: var(--gunmetal-transparent); */
     cursor: pointer;
   }
   svg {
