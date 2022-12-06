@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { ImZoomIn, ImZoomOut } from "react-icons/im";
 
-export const MapZoomControls = ({ handleClickZoomIn, handleClickZoomOut }) => {
+export const MapZoomControls = ({ handleClickZoomIn, handleClickZoomOut }: {
+  handleClickZoomIn: () => void
+  handleClickZoomOut: () => void
+}) => {
   return (
     <StyledMapZoomControls>
       <button aria-label="Zoom out" onClick={handleClickZoomOut}>

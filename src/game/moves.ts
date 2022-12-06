@@ -1,5 +1,86 @@
-import { BoardProps } from "boardgame.io/react";
+import type { Move } from 'boardgame.io'
 import { BoardHexes, GType, HexMap, HexTerrain } from "./types";
+const voidHex: Move<GType> = (
+  { G, ctx },
+  {
+    hexID,
+  }: { hexID: string; }
+)  => {
+  G.boardHexes[hexID].terrain = HexTerrain.void;
+  G.boardHexes[hexID].startzonePlayerIDs = [];
+  G.boardHexes[hexID].altitude = 0;
+}
+const unVoidHex: Move<GType> = ({ G, ctx },
+  {hexID}: { hexID: string}) => {
+  G.boardHexes[hexID].terrain = HexTerrain.grass;
+  G.boardHexes[hexID].altitude = 1;
+}
+const paintStartZone: Move<GType> = (
+  { G, ctx },
+  {
+    hexID,
+    playerID,
+  }:
+  {hexID: string,
+  playerID: string}
+  ) => {
+  const currentStartZonePlayerIDs = G.boardHexes[hexID].startzonePlayerIDs;
+  if (!currentStartZonePlayerIDs.includes(playerID) && Boolean(playerID)) {
+    G.boardHexes[hexID].startzonePlayerIDs.push(playerID);
+  }
+}
+const voidStartZone: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].startzonePlayerIDs = [];
+}
+const incAltitudeOfHex: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].altitude += 1;
+}
+const decAltitudeOfHex: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].altitude -= 1;
+}
+const paintWaterHex: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].terrain = HexTerrain.water;
+}
+const paintGrassHex: Move<GType> =  ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].terrain = HexTerrain.grass;
+}
+const paintSandHex: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) =>{
+  G.boardHexes[hexID].terrain = HexTerrain.sand;
+}
+const paintRockHex: Move<GType> = ({G}, {
+  hexID,
+}: {hexID: string
+}) => {
+  G.boardHexes[hexID].terrain = HexTerrain.rock;
+}
+const loadMap: Move<GType> = ({G}, {
+  boardHexes,
+  hexMap,
+}: {
+  boardHexes: BoardHexes,
+  hexMap: HexMap
+}) => {
+  G.boardHexes = boardHexes;
+  G.hexMap = hexMap;
+}
 
 export const moves = {
   voidHex,
@@ -14,54 +95,3 @@ export const moves = {
   paintRockHex,
   loadMap,
 };
-
-function voidHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.void;
-  G.boardHexes[hexID].startzonePlayerIDs = [];
-  G.boardHexes[hexID].altitude = 0;
-}
-function unVoidHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.grass;
-  G.boardHexes[hexID].altitude = 1;
-}
-function paintStartZone(
-  G: GType,
-  ctx: BoardProps["ctx"],
-  hexID: string,
-  playerID: string
-) {
-  const currentStartZonePlayerIDs = G.boardHexes[hexID].startzonePlayerIDs;
-  if (!currentStartZonePlayerIDs.includes(playerID) && Boolean(playerID)) {
-    G.boardHexes[hexID].startzonePlayerIDs.push(playerID);
-  }
-}
-function voidStartZone(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].startzonePlayerIDs = [];
-}
-function incAltitudeOfHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].altitude += 1;
-}
-function decAltitudeOfHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].altitude -= 1;
-}
-function paintWaterHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.water;
-}
-function paintGrassHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.grass;
-}
-function paintSandHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.sand;
-}
-function paintRockHex(G: GType, ctx: BoardProps["ctx"], hexID: string) {
-  G.boardHexes[hexID].terrain = HexTerrain.rock;
-}
-function loadMap(
-  G: GType,
-  ctx: BoardProps["ctx"],
-  boardHexes: BoardHexes,
-  hexMap: HexMap
-) {
-  G.boardHexes = boardHexes;
-  G.hexMap = hexMap;
-}

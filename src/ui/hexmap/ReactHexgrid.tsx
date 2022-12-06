@@ -1,15 +1,15 @@
 import React from "react";
-import { Hexgrid, HexgridLayout, Point } from "react17-hexgrid";
+import { HexGrid, Layout } from "react-hexgrid";
 
 type ReactHexgridProps = {
-  children?: React.ReactNode;
+  children?:any;
   mapSize: number;
   width: string | number;
   height: string | number;
   className?: string;
   flat?: boolean;
-  origin?: Point;
-  hexSize?: number;
+  origin?: {x: number; y: number};
+  hexSize: number;
   spacing: number;
 };
 export const ReactHexgrid = ({
@@ -29,16 +29,16 @@ export const ReactHexgrid = ({
     return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
   }
   return (
-    <Hexgrid width={width} height={height} viewBox={calcViewBox(mapSize)}>
-      <HexgridLayout
+    <HexGrid width={width} height={height} viewBox={calcViewBox(mapSize)}>
+      <Layout
         className={className}
-        size={{ x: hexSize, y: hexSize }}
+        size={{ x: hexSize , y: hexSize }}
         flat={flat}
         origin={origin}
         spacing={spacing}
       >
         {children}
-      </HexgridLayout>
-    </Hexgrid>
+      </Layout>
+    </HexGrid>
   );
 };

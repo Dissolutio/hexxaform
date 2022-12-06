@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useBgioG } from "bgio-contexts";
+import { useBgioG } from "../bgio-contexts";
 import { MapZoomControls } from "./MapZoomControls";
 import { UndoRedo } from "./UndoRedo";
 import { ReactHexgrid } from "./ReactHexgrid";
@@ -33,9 +33,22 @@ export const MapDisplay = () => {
   const initialMapState = isHexagonShapedMap ? hexagonalMapState : rectangularMapState;
   const [mapState, setMapState] = React.useState(() => initialMapState);
 
+
+  const [mapZoomScalePercentage, setMapZoomScalePercentage] = React.useState<number>(100)
+
+//! Redo with Scale: ZOOM FEATURE
+
+const zoomScalePercentInterval = 20;
+// const handleClickZoomIn = () => {
+//   setMapZoomScalePercentage(s => (s + zoomScalePercentInterval))
+// }
+// const handleClickZoomOut = () => {
+//   setMapZoomScalePercentage(s => (s - zoomScalePercentInterval))
+// }
+
   //! ZOOM FEATURE
-  const mapRef = React.useRef();
-  const zoomInterval = 100;
+  const mapRef = React.useRef<HTMLDivElement>(null);
+  const zoomInterval = 10;
   // increases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomIn = () => {
     const el = mapRef.current;
@@ -44,24 +57,21 @@ export const MapDisplay = () => {
       width: mapState.width + zoomInterval,
       height: mapState.height + zoomInterval,
     }));
-    if (el) {
-      setTimeout(() => {
-        const el: any = mapRef.current;
-        el && el.scrollBy(2 * zoomInterval, 2 * zoomInterval);
-      }, 1);
-    }
+    // el && el.scrollBy(2 * zoomInterval, 2 * zoomInterval);
+    el && el.scrollTo({left: 50, top: 50});
+    setMapZoomScalePercentage(s => (s + zoomScalePercentInterval))
   };
   // decreases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomOut = () => {
-    const el: any = mapRef.current;
+    const el = mapRef.current;
     setMapState((s) => ({
       ...s,
       width: s.width - zoomInterval,
       height: s.height - zoomInterval,
     }));
-    el && el.scrollBy(-2 * zoomInterval, -2 * zoomInterval);
+    // el && el.scrollBy(-2 * zoomInterval, -2 * zoomInterval);
+      setMapZoomScalePercentage(s => (s - zoomScalePercentInterval))
   };
-
   return (
     <MapStyle>
       <MapZoomControls
@@ -70,7 +80,11 @@ export const MapDisplay = () => {
       />
       <UndoRedo />
       <UpDownAltitudeViewerButtons />
-      <MapHexStyles hexSize={hexSize} ref={mapRef}>
+      <MapHexStyles 
+        ref={mapRef}
+        hexSize={hexSize}
+        mapZoomScalePercentage={mapZoomScalePercentage}
+       >
         <ReactHexgrid
           mapSize={mapSize}
           hexSize={hexSize}

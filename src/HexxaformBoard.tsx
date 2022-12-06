@@ -8,13 +8,13 @@ import {
   BgioEventsProvider,
   BgioCtxProvider,
   BgioChatProvider,
-} from "./bgio-contexts";
+} from "./ui/bgio-contexts";
 import { GType } from "./game/types";
-import { HexxaformUI } from "HexxaformUI";
+import { HexxaformUI } from "./HexxaformUI";
 
 type MyBoardProps = BoardProps<GType> & { chatMessages?: ChatMessage[] };
 
-export function Board(props: MyBoardProps) {
+export function HexxaformBoard(props: MyBoardProps) {
   const {
     // G
     G,
@@ -43,10 +43,10 @@ export function Board(props: MyBoardProps) {
   return (
     <BgioClientInfoProvider
       log={log}
-      playerID={playerID}
+      playerID={playerID || ''}
       matchID={matchID}
       matchData={matchData}
-      credentials={credentials}
+      credentials={credentials || ''}
       isMultiplayer={isMultiplayer}
       isConnected={isConnected}
       isActive={isActive}

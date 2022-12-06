@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children }: { children: ReactNode[] }) => {
   return (
     <LayoutContainer>
       <LayoutMiddle>{children[0]}</LayoutMiddle>
@@ -21,7 +22,7 @@ const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 800px;
+  /* max-width: 800px; */
   min-height: 100vh;
   padding: 0;
   margin: 0 auto;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { ImMoveDown, ImMoveUp } from "react-icons/im";
-import { useMapContext } from "ui/hooks/useMapContext";
-import { useBgioG } from "bgio-contexts";
+import { useMapContext } from "../hooks/useMapContext";
+import { useBgioG } from "../bgio-contexts";
 
 export const UpDownAltitudeViewerButtons = () => {
   const { G } = useBgioG();

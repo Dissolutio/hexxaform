@@ -8,9 +8,9 @@ import {
   GiFallingRocks,
 } from "react-icons/gi";
 
-import { useMapContext } from "ui/hooks/useMapContext";
-import { useBgioMoves } from "bgio-contexts";
-import giantsTable from "assets/giantsTable.json";
+import { useMapContext } from "../hooks/useMapContext";
+import { useBgioMoves } from "../bgio-contexts";
+import giantsTable from "../../assets/giantsTable.json";
 
 export const Controls = () => {
   const {
@@ -30,7 +30,7 @@ export const Controls = () => {
   } = useMapContext();
   const { moves } = useBgioMoves();
   const { loadMap } = moves;
-  const greenOnRedOff = (state) => {
+  const greenOnRedOff = (state: boolean) => {
     return state
       ? {
           color: "green",
@@ -141,7 +141,7 @@ export const Controls = () => {
       <StyledSection>
         <h4>Load Map:</h4>
         <button
-          onClick={() => loadMap(giantsTable.boardHexes, giantsTable.hexMap)}
+          onClick={() => loadMap({boardHexes: giantsTable.boardHexes, hexMap: giantsTable.hexMap})}
         >
           Load Giants Table Map
         </button>

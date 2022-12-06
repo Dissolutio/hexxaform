@@ -17,7 +17,9 @@ const bgContourLines = (playerID: string) =>
 const hexSvgBgUrl = (playerID: string) =>
   makeHexagonsHeroPatternDataUrl(playerColors[playerID], 0.2);
 
-const playerColors = {
+const playerColors: {
+  [key: string]: string
+} = {
   "0": colors.beeYellow,
   "1": colors.butterflyPurple,
   "2": colors.waspRed,

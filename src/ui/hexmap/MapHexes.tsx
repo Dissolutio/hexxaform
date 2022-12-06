@@ -1,11 +1,10 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
-import { Hexagon, Text } from "react17-hexgrid";
+import { Hexagon, Text } from "react-hexgrid";
 
-import { BoardHex, HexTerrain } from "game/types";
-import { useBgioG, useBgioMoves } from "bgio-contexts";
-import { useMapContext } from "ui/hooks/useMapContext";
-import { PenMode } from "../hooks/useMapContext";
+import { PenMode, useMapContext } from "../hooks/useMapContext";
+import { BoardHex, HexTerrain } from "../../game/types";
+import { useBgioG, useBgioMoves } from "../bgio-contexts";
 
 type MapHexesProps = {
   hexSize: number;
@@ -38,14 +37,14 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     const isVoidTerrainHex = hex.terrain === HexTerrain.void;
     if (penMode === PenMode.eraser) {
-      isVoidTerrainHex ? unVoidHex(hex.id) : voidHex(hex.id);
+      isVoidTerrainHex ? unVoidHex({hexID: hex.id}) : voidHex({hexID: hex.id});
     }
     if (penMode === PenMode.eraserStartZone) {
-      voidStartZone(hex.id);
+      voidStartZone({hexID: hex.id});
     }
     // last letter in string is playerID, but this seems inelegant
     if (penMode.slice(0, -1) === "startZone") {
-      paintStartZone(hex.id, penMode.slice(-1));
+      paintStartZone({hexID: hex.id, playerID: penMode.slice(-1)});
     }
     if (penMode === PenMode.incAltitude && !isVoidTerrainHex) {
       /*
@@ -54,10 +53,10 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
         paintGrassHex(hex.id);
       }
       */
-      incAltitudeOfHex(hex.id);
+      incAltitudeOfHex({hexID: hex.id});
     }
     if (penMode === PenMode.decAltitude && !isVoidTerrainHex) {
-      decAltitudeOfHex(hex.id);
+      decAltitudeOfHex({hexID: hex.id});
       /*
       // when decreasing altitude on a level 1 hex to level 0, turn it to water, like digging a well
       if (hex.altitude === 1) {
@@ -66,16 +65,16 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       */
     }
     if (penMode === PenMode.water) {
-      paintWaterHex(hex.id);
+      paintWaterHex({hexID: hex.id});
     }
     if (penMode === PenMode.grass) {
-      paintGrassHex(hex.id);
+      paintGrassHex({hexID: hex.id});
     }
     if (penMode === PenMode.sand) {
-      paintSandHex(hex.id);
+      paintSandHex({hexID: hex.id});
     }
     if (penMode === PenMode.rock) {
-      paintRockHex(hex.id);
+      paintRockHex({hexID: hex.id});
     }
   };
   function calcClassNames(hex: BoardHex) {
@@ -112,19 +111,22 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   }
 
   const hexJSX = () => {
-    return Object.values(boardHexes).map((hex: BoardHex, i) => {
+    return Object.values(boardHexes).map((hex, i) => {
       const { altitude } = hex;
       return (
         <StyledHexagon key={i} altitude={hex.altitude}>
           <Hexagon
-            hex={hex}
+            q={hex.q}
+            r={hex.r}
+            s={hex.s}
+            data={hex}
             onClick={(e) => onClickBoardHex(e, hex)}
             className={calcClassNames(hex)}
           >
             <g>
               {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
               {hex.terrain === HexTerrain.void ? null : (
-                <HexIDText hexSize={hexSize} text={altitude} />
+                <HexIDText hexSize={hexSize} text={`${altitude}`} />
               )}
             </g>
           </Hexagon>
@@ -135,15 +137,15 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   return <>{hexJSX()}</>;
 };
 
-const HexIDText = ({ hexSize, text }) => {
+const HexIDText = ({ hexSize, text }: { hexSize: number; text: string }) => {
   return (
     <Text className="maphex_text" y={hexSize * 0.7}>
-      {text.toString()}
+      {text}
     </Text>
   );
 };
 
-const StyledHexagon = styled.g`
+const StyledHexagon = styled.g<{altitude: number}>`
   polygon {
     stroke: gray;
     stroke-width: ${(props) => {

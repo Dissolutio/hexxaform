@@ -1,13 +1,12 @@
+import {ThemeProvider} from "styled-components";
 import React from "react";
-import { ThemeProvider } from "styled-components";
-
-import { useBgioClientInfo, useBgioG, useBgioMoves } from "bgio-contexts";
+import { useBgioClientInfo, useBgioG, useBgioMoves } from "./ui/bgio-contexts";
+import { Controls, StyledSection } from "./ui/controls";
+import { MapDisplay } from "./ui/hexmap";
+import { useLocalMapMemory } from "./ui/hooks/useLocalMapMemory";
+import { MapContextProvider } from "./ui/hooks/useMapContext";
+import { Layout } from "./ui/layout/Layout";
 import { theme } from "./ui/layout/theme";
-import { MapContextProvider } from "ui/hooks/useMapContext";
-import { Layout } from "ui/layout/Layout";
-import { MapDisplay } from "ui/hexmap";
-import { Controls, StyledSection } from "ui/controls";
-import { useLocalMapMemory } from "ui/hooks/useLocalMapMemory";
 
 export const HexxaformUI = () => {
   const { playerID } = useBgioClientInfo();
@@ -30,9 +29,9 @@ const LoadSaveMapControls = () => {
   const currentSaveableMap = { boardHexes, hexMap };
   const { map1, setMap1, map2, setMap2, map3, setMap3 } = useLocalMapMemory();
   const { moves } = useBgioMoves();
-  const handleLoadMap1 = () => moves.loadMap(map1.boardHexes, map1.hexMap);
-  const handleLoadMap2 = () => moves.loadMap(map2.boardHexes, map2.hexMap);
-  const handleLoadMap3 = () => moves.loadMap(map3.boardHexes, map3.hexMap);
+  const handleLoadMap1 = () => moves.loadMap({boardHexes: map1.boardHexes, hexMap: map1.hexMap});
+  const handleLoadMap2 = () => moves.loadMap({boardHexes: map2.boardHexes, hexMap: map2.hexMap});
+  const handleLoadMap3 = () => moves.loadMap({boardHexes: map3.boardHexes, hexMap: map3.hexMap});
   const handleSaveMap1 = () => setMap1(currentSaveableMap);
   const handleSaveMap2 = () => setMap2(currentSaveableMap);
   const handleSaveMap3 = () => setMap3(currentSaveableMap);

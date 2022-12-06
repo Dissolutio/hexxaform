@@ -25,7 +25,7 @@ type MapContextProviderProps = {
 const MapContext = React.createContext<
   | {
       selectedMapHex: string;
-      selectMapHex: (string) => void;
+      selectMapHex: (hexID: string) => void;
       penMode: PenMode;
       toggleSelectHexMode: () => void;
       altitudeViewer: number;

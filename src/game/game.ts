@@ -5,7 +5,7 @@ import {
 
 export const Hexxaform = {
   name: "Hexxaform",
-  setup: (_ctx) => {
+  setup: () => {
     // Setup returns G - the initial bgio game state
     // return hexagonMapScenario;
     // rectangle is vertical on left/right sides, and horizontal along top and bottom

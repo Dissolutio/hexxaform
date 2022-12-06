@@ -1,7 +1,7 @@
 import * as React from "react"
-import { GType } from "game/types"
+import { GType } from "../../game/types"
 
-type BgioGProviderProps = { children: React.ReactNode; G: any }
+type BgioGProviderProps = { children: React.ReactNode; G: GType }
 
 const BgioGContext = React.createContext<{ G: GType } | undefined>(undefined)
 

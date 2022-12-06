@@ -1,7 +1,7 @@
 import { Client } from "boardgame.io/react";
 import { Local } from "boardgame.io/multiplayer";
 import { Debug } from "boardgame.io/debug";
-import { Board } from "./Board";
+import { HexxaformBoard } from "./HexxaformBoard";
 import { Hexxaform } from "./game/game";
 
 // Enable Redux DevTools in development
@@ -12,11 +12,11 @@ const reduxDevTools =
 
 const GameClient = Client({
   game: Hexxaform,
-  board: Board,
+  board: HexxaformBoard,
   numPlayers: 1,
   multiplayer: Local(),
   // debug: { impl: Debug },
-  debug: false,
+  debug: { impl: Debug },
   enhancer: reduxDevTools,
 });
 

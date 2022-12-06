@@ -1,11 +1,12 @@
-import { BoardProps } from "boardgame.io/react"
-import * as React from "react"
+import { Server } from 'boardgame.io'
+import { BoardProps } from 'boardgame.io/react'
+import * as React from 'react'
 
 type BgioClientInfo = {
   playerID: string
-  log: BoardProps["log"]
+  log: BoardProps['log']
   matchID: string
-  matchData: any[]
+  matchData: Server.PlayerMetadata[] | undefined // An array containing the players that have joined the current match via the Lobby API
   isActive: boolean
   isMultiplayer: boolean
   isConnected: boolean
@@ -13,7 +14,7 @@ type BgioClientInfo = {
 }
 // add a handy utility property
 type BgioClientInfoCtxValue = BgioClientInfo & {
-  belongsToPlayer?: (thing: any) => boolean
+  belongsToPlayer: (thing: any) => boolean
 }
 type BgioClientInfoProviderProps = BgioClientInfo & {
   children: React.ReactNode
@@ -25,6 +26,7 @@ const BgioClientInfoContext = React.createContext<
 export function BgioClientInfoProvider(props: BgioClientInfoProviderProps) {
   const {
     children,
+    playerID,
     log,
     matchID,
     matchData,
@@ -33,8 +35,8 @@ export function BgioClientInfoProvider(props: BgioClientInfoProviderProps) {
     isConnected,
     credentials,
   } = props
-  const belongsToPlayer = (thing: any): boolean => thing?.playerID === playerID
-  const playerID = props.playerID || ""
+  const belongsToPlayer = (thing: any): boolean =>
+    thing && thing?.playerID ? thing.playerID === playerID : false
   return (
     <BgioClientInfoContext.Provider
       value={{
@@ -57,7 +59,7 @@ export function useBgioClientInfo() {
   const context = React.useContext(BgioClientInfoContext)
   if (context === undefined) {
     throw new Error(
-      "useBgioClientInfo must be used within a BgioClientInfoProvider"
+      'useBgioClientInfo must be used within a BgioClientInfoProvider'
     )
   }
   return context
