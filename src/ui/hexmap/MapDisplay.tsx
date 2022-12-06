@@ -3,13 +3,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { useBgioG } from "../bgio-contexts";
-import { MapZoomControls } from "./MapZoomControls";
-import { ExportMapAsImgButton } from "./ExportMapAsImgButton";
-import { UndoRedo } from "./UndoRedo";
 import { ReactHexgrid } from "./ReactHexgrid";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
-import { UpDownAltitudeViewerButtons } from "./UpDownAltitudeViewerButtons";
+import { MapControlButtons } from "./MapControlButtons";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
@@ -41,6 +38,7 @@ export const MapDisplay = ({ printRef }: Props) => {
     ? hexagonalMapState
     : rectangularMapState;
   const [mapState, setMapState] = React.useState(() => initialMapState);
+  const htmlIdMapControls = "hidemeZoom";
 
   const [mapZoomScalePercentage, setMapZoomScalePercentage] =
     React.useState<number>(100);
@@ -78,27 +76,14 @@ export const MapDisplay = ({ printRef }: Props) => {
     // el && el.scrollBy(-2 * zoomInterval, -2 * zoomInterval);
     setMapZoomScalePercentage((s) => s - zoomScalePercentInterval);
   };
-  const htmlIdPhotoButton = "hidemePhoto";
-  const htmlIdZoomButtons = "hidemeZoom";
-  const htmlIdUndoRedoButtons = "hidemeUndoRedo";
-  const htmlIdAltitudeButtons = "hidemeAltitude";
+
   return (
     <MapStyle>
-      <ExportMapAsImgButton
-        printRef={printRef}
-        htmlIdPhotoButton={htmlIdPhotoButton}
-        htmlIdZoomButtons={htmlIdZoomButtons}
-        htmlIdUndoRedoButtons={htmlIdUndoRedoButtons}
-        htmlIdAltitudeButtons={htmlIdAltitudeButtons}
-        imgType="jpg"
-      />
-      <MapZoomControls
-        htmlId={htmlIdZoomButtons}
+      <MapControlButtons
+        htmlId={htmlIdMapControls}
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <UndoRedo htmlId={htmlIdUndoRedoButtons} />
-      <UpDownAltitudeViewerButtons htmlId={htmlIdAltitudeButtons} />
       <MapHexStyles
         ref={mapRef}
         hexSize={hexSize}
