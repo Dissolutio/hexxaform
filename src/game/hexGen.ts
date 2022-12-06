@@ -14,8 +14,7 @@ function hexesToBoardHexes(hexgridHexes: Hex[]): BoardHexes {
     const boardHex = {
       ...curr,
       id: generateHexID(curr),
-      // just assign every board hex startzone to include the next player id, from 0 to 5 over and over
-      startzonePlayerIDs: [`${i % 6}`],
+      startzonePlayerIDs: [],
       // assign all to grass
       terrain: HexTerrain.grass,
       // assign all to altitude 1

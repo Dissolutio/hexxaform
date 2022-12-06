@@ -210,6 +210,17 @@ export const StyledButton = styled.button`
 const LoadSaveMapControls = () => {
   const { G } = useBgioG();
   const { boardHexes, hexMap } = G;
+  // const manipulatedBoardHexes = keyBy(
+  //   Object.values(boardHexes).map((hex) => ({
+  //     ...hex,
+  //     startzonePlayerIDs: [],
+  //   })),
+  //   "id"
+  // );
+  // const manipulatedHexMap = {
+  //   boardHexes: manipulatedBoardHexes,
+  //   hexMap: hexMap,
+  // };
   const currentSaveableMap = { boardHexes, hexMap };
   const { map1, setMap1, map2, setMap2, map3, setMap3 } = useLocalMapMemory();
   const { moves } = useBgioMoves();
