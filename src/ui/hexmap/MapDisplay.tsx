@@ -1,5 +1,4 @@
 import React from "react";
-import html2canvas from "html2canvas";
 
 import styled from "styled-components";
 
@@ -45,7 +44,6 @@ export const MapDisplay = ({ printRef }: Props) => {
 
   const [mapZoomScalePercentage, setMapZoomScalePercentage] =
     React.useState<number>(100);
-  const [isHidingForPicture, setIsHidingForPicture] = React.useState(false);
 
   const zoomScalePercentInterval = 20;
   // const handleClickZoomIn = () => {
@@ -72,7 +70,6 @@ export const MapDisplay = ({ printRef }: Props) => {
   };
   // decreases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomOut = () => {
-    const el = mapRef.current;
     setMapState((s) => ({
       ...s,
       width: s.width - zoomInterval,

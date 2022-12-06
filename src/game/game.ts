@@ -1,7 +1,5 @@
 import { moves } from "./moves";
-import {
-  orientedRectangleScenario, rectangleScenario,
-} from "./setup";
+import { rectangleScenario } from "./setup";
 
 export const Hexxaform = {
   name: "Hexxaform",

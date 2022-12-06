@@ -15,8 +15,8 @@ const GameClient = Client({
   board: HexxaformBoard,
   numPlayers: 1,
   multiplayer: Local(),
+  debug: false,
   // debug: { impl: Debug },
-  debug: { impl: Debug },
   enhancer: reduxDevTools,
 });
 
