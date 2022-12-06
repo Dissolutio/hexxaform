@@ -13,6 +13,7 @@ import { useBgioG, useBgioMoves } from "../bgio-contexts";
 import giantsTable from "../../assets/giantsTable.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 import { UndoRedo } from "./UndoRedo";
+import { ChangeEvent } from "react";
 
 export const Controls = () => {
   const {
@@ -32,6 +33,9 @@ export const Controls = () => {
     penMode,
   } = useMapContext();
   const { moves } = useBgioMoves();
+  const {
+    G: { boardHexes, hexMap },
+  } = useBgioG();
   const { loadMap } = moves;
   const greenOnRedOff = (state: boolean) => {
     return state
@@ -52,6 +56,59 @@ export const Controls = () => {
         }
       : {};
   };
+  const handleClickExportJson = () => {
+    const filename = `MyHexMap.json`;
+    const data = {
+      boardHexes,
+      hexMap,
+    };
+
+    const element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      `data:application/x-ndjson;charset=utf-8,${encodeURIComponent(
+        JSON.stringify(data)
+      )}`
+    );
+    element.setAttribute("download", filename);
+    element.style.display = "none";
+    document.body.append(element);
+    element.click();
+    element.remove();
+  };
+
+  const readFile = (event: ChangeEvent<HTMLInputElement>): void => {
+    const file = event?.target?.files?.[0];
+    if (!file) {
+      return;
+    }
+    const fileReader = new FileReader();
+    fileReader.onloadend = (): void => {
+      if (typeof fileReader.result === "string") {
+        let data;
+        if (file.name.endsWith(".json")) {
+          try {
+            data = JSON.parse(fileReader.result);
+            const loadableMap = {
+              boardHexes: { ...data.boardHexes },
+              hexMap: { ...data.hexMap },
+            };
+            moves.loadMap(loadableMap);
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          throw new Error("Unknown File type to import");
+        }
+      }
+    };
+    try {
+      fileReader.readAsText(file);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <StyledGrid>
       <StyledSection>
@@ -177,10 +234,12 @@ export const Controls = () => {
           TERRAIN
         </button>
       </StyledSection>
+
       <StyledSection>
         <h4>Load/Save Maps:</h4>
         <LoadSaveMapButtons />
       </StyledSection>
+
       <StyledSection>
         <h4>Example Maps:</h4>
         <button
@@ -193,6 +252,21 @@ export const Controls = () => {
         >
           Load Giants Table Map
         </button>
+      </StyledSection>
+
+      <StyledSection>
+        <h4>Export JSON File:</h4>
+        <button onClick={handleClickExportJson}>Export Map JSON</button>
+      </StyledSection>
+
+      <StyledSection>
+        <h4>Import JSON File:</h4>
+        <input
+          id="upload"
+          type="file"
+          accept="application/json"
+          onChange={readFile}
+        />
       </StyledSection>
     </StyledGrid>
   );
