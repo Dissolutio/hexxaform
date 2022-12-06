@@ -15,7 +15,6 @@ export enum PenMode {
   startZone2 = "startZone2",
   startZone3 = "startZone3",
   startZone4 = "startZone4",
-  startZone5 = "startZone5",
 }
 
 type MapContextProviderProps = {
@@ -115,9 +114,6 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         break;
       case "4":
         setPenMode(PenMode.startZone4);
-        break;
-      case "5":
-        setPenMode(PenMode.startZone5);
         break;
       default:
         break;

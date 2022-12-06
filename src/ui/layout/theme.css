@@ -15,6 +15,7 @@ html {
   --sand: #ab8e10;
   --rock: #475776;
   /* UTILITY */
+  --selected-green: #0b5d1e;
   --orange: #e8aa14;
   --neon-green: hsla(74, 64%, 59%, 0.5);
   --neon-orange: rgba(224, 150, 40, 0.5);
