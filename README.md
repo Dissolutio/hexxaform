@@ -1,3 +1,5 @@
+Next map is 18x19!!!
+
 # Hexxaform
 
 Create Hex Maps in the browser. Eventually.
