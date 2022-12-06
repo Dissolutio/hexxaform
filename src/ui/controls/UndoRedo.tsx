@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ImUndo, ImRedo } from "react-icons/im";
 
-import { useBgioMoves } from "../bgio-contexts";
-import { StyledButton } from ".";
+import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
+import { StyledButton } from "./Controls";
 export const UndoRedo = () => {
   const { undo, redo } = useBgioMoves();
   return (

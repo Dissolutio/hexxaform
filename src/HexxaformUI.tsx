@@ -1,8 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import React from "react";
-import { useBgioClientInfo } from "./ui/bgio-contexts";
-import { Controls } from "./ui/controls";
-import { MapDisplay } from "./ui/hexmap";
+import { useBgioClientInfo } from "./ui/bgio-contexts/useBgioClientInfo";
+import { Controls } from "./ui/controls/Controls";
+import { MapDisplay } from "./ui/hexmap/MapDisplay";
 import { MapContextProvider } from "./ui/hooks/useMapContext";
 import { Layout } from "./ui/layout/Layout";
 import { theme } from "./ui/layout/theme";

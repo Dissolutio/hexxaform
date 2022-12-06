@@ -9,7 +9,8 @@ import {
 } from "react-icons/gi";
 
 import { PenMode, useMapContext } from "../hooks/useMapContext";
-import { useBgioG, useBgioMoves } from "../bgio-contexts";
+import { useBgioG } from "../bgio-contexts/useBgioG";
+import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
 import giantsTable from "../../assets/giantsTable.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 import { UndoRedo } from "./UndoRedo";

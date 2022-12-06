@@ -2,11 +2,12 @@ import React from "react";
 
 import styled from "styled-components";
 
-import { useBgioG } from "../bgio-contexts";
+import { useBgioG } from "../bgio-contexts/useBgioG";
 import { ReactHexgrid } from "./ReactHexgrid";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
 import { MapControlButtons } from "./MapControlButtons";
+import { MapShapes } from "../../game/types";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
@@ -19,7 +20,9 @@ export const MapDisplay = ({ printRef }: Props) => {
   const { hexSize, mapSize, flat, mapShape } = hexMap;
 
   //! MAP SETUP/LAYOUT CONFIG
-  const isHexagonShapedMap = mapShape === "hexagon";
+  const isHexagonShapedMap = mapShape === MapShapes.hexagon;
+  const isRectangleShapedMap = mapShape === MapShapes.rectangle;
+  const isOrientedRectangleShapedMap = mapShape === MapShapes.orientedRectangle;
   const hexagonalMapState = {
     width: 100,
     height: 100,
@@ -34,9 +37,19 @@ export const MapDisplay = ({ printRef }: Props) => {
     flat,
     spacing: 0.99,
   };
+  // this works ok if the longer number is the length, and around 25 length/width, otherwise, it's off screen easily
+  const orientedRectangularMapState = {
+    width: 100,
+    height: 100,
+    origin: { x: -750, y: -500 },
+    flat,
+    spacing: 0.99,
+  };
   const initialMapState = isHexagonShapedMap
     ? hexagonalMapState
-    : rectangularMapState;
+    : isRectangleShapedMap
+    ? rectangularMapState
+    : orientedRectangularMapState;
   const [mapState, setMapState] = React.useState(() => initialMapState);
   const htmlIdMapControls = "hidemeZoom";
 
@@ -80,6 +93,7 @@ export const MapDisplay = ({ printRef }: Props) => {
   return (
     <MapStyle>
       <MapControlButtons
+        printRef={printRef}
         htmlId={htmlIdMapControls}
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}

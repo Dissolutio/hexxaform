@@ -2,15 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { ImMoveDown, ImMoveUp, ImZoomIn, ImZoomOut } from "react-icons/im";
 import { useMapContext } from "../hooks/useMapContext";
-import { useBgioG } from "../bgio-contexts";
+import { useBgioG } from "../bgio-contexts/useBgioG";
+import { ExportMapAsImgButton } from "./ExportMapAsImgButton";
+
 export const MapControlButtons = ({
   handleClickZoomIn,
   handleClickZoomOut,
   htmlId,
+  printRef,
 }: {
   handleClickZoomIn: () => void;
   handleClickZoomOut: () => void;
   htmlId: string;
+  printRef: React.RefObject<HTMLDivElement>;
 }) => {
   const { G } = useBgioG();
   const { boardHexes } = G;
@@ -58,9 +62,16 @@ export const MapControlButtons = ({
           {altitudeViewer}
         </span>
       </StyledAltitudeSpan>
-      <button type="button" onClick={() => {}}>
-        Download as Image
-      </button>
+      <ExportMapAsImgButton
+        printRef={printRef}
+        imgType={"png"}
+        htmlIdMapControls={htmlId}
+      />
+      <ExportMapAsImgButton
+        printRef={printRef}
+        imgType={"jpg"}
+        htmlIdMapControls={htmlId}
+      />
     </StyledMapZoomControls>
   );
 };

@@ -4,7 +4,8 @@ import { Hexagon, Text } from "react-hexgrid";
 
 import { PenMode, useMapContext } from "../hooks/useMapContext";
 import { BoardHex, HexTerrain } from "../../game/types";
-import { useBgioG, useBgioMoves } from "../bgio-contexts";
+import { useBgioG } from "../bgio-contexts/useBgioG";
+import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
 
 type MapHexesProps = {
   hexSize: number;
@@ -37,14 +38,16 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
     const isVoidTerrainHex = hex.terrain === HexTerrain.void;
     if (penMode === PenMode.eraser) {
-      isVoidTerrainHex ? unVoidHex({hexID: hex.id}) : voidHex({hexID: hex.id});
+      isVoidTerrainHex
+        ? unVoidHex({ hexID: hex.id })
+        : voidHex({ hexID: hex.id });
     }
     if (penMode === PenMode.eraserStartZone) {
-      voidStartZone({hexID: hex.id});
+      voidStartZone({ hexID: hex.id });
     }
     // last letter in string is playerID, but this seems inelegant
     if (penMode.slice(0, -1) === "startZone") {
-      paintStartZone({hexID: hex.id, playerID: penMode.slice(-1)});
+      paintStartZone({ hexID: hex.id, playerID: penMode.slice(-1) });
     }
     if (penMode === PenMode.incAltitude && !isVoidTerrainHex) {
       /*
@@ -53,10 +56,10 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
         paintGrassHex(hex.id);
       }
       */
-      incAltitudeOfHex({hexID: hex.id});
+      incAltitudeOfHex({ hexID: hex.id });
     }
     if (penMode === PenMode.decAltitude && !isVoidTerrainHex) {
-      decAltitudeOfHex({hexID: hex.id});
+      decAltitudeOfHex({ hexID: hex.id });
       /*
       // when decreasing altitude on a level 1 hex to level 0, turn it to water, like digging a well
       if (hex.altitude === 1) {
@@ -65,16 +68,16 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       */
     }
     if (penMode === PenMode.water) {
-      paintWaterHex({hexID: hex.id});
+      paintWaterHex({ hexID: hex.id });
     }
     if (penMode === PenMode.grass) {
-      paintGrassHex({hexID: hex.id});
+      paintGrassHex({ hexID: hex.id });
     }
     if (penMode === PenMode.sand) {
-      paintSandHex({hexID: hex.id});
+      paintSandHex({ hexID: hex.id });
     }
     if (penMode === PenMode.rock) {
-      paintRockHex({hexID: hex.id});
+      paintRockHex({ hexID: hex.id });
     }
   };
   function calcClassNames(hex: BoardHex) {
@@ -145,7 +148,7 @@ const HexIDText = ({ hexSize, text }: { hexSize: number; text: string }) => {
   );
 };
 
-const StyledHexagon = styled.g<{altitude: number}>`
+const StyledHexagon = styled.g<{ altitude: number }>`
   polygon {
     stroke: gray;
     stroke-width: ${(props) => {

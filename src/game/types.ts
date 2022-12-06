@@ -4,7 +4,7 @@ export type GType = {
 };
 
 export type HexMap = {
-  mapShape:  string;
+  mapShape: string;
   mapSize: number;
   mapLength: number;
   mapWidth: number;
@@ -32,4 +32,10 @@ export enum HexTerrain {
   grass = "grass",
   sand = "sand",
   rock = "rock",
+}
+
+export enum MapShapes {
+  hexagon = "hexagon",
+  orientedRectangle = "orientedRectangle", // rectangle tilted 45 degrees
+  rectangle = "rectangle",
 }

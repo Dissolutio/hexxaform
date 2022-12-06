@@ -50,7 +50,7 @@ export const ExportMapAsImgButton = ({
   };
   return (
     <button type="button" onClick={handleDownloadImage}>
-      Download as Image
+      {`Download as ${imgType}`}
     </button>
   );
 };

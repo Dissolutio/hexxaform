@@ -3,7 +3,7 @@ import {
   generateOrientedRectangle,
   generateRectangle,
 } from "./hexGen";
-import { BoardHexes, GType } from "./types";
+import { BoardHexes, GType, MapShapes } from "./types";
 
 // All Maps follow these hex dimensions:
 const flatDimensions = {
@@ -27,8 +27,10 @@ type RectangleScenarioOptions = {
 type HexagonScenarioOptions = {
   mapSize?: number;
   flat?: boolean;
-}
-export function makeHexagonMapScenario(options?: HexagonScenarioOptions): GType {
+};
+export function makeHexagonMapScenario(
+  options?: HexagonScenarioOptions
+): GType {
   const mapSize = options?.mapSize ?? 1;
   const flat = options?.flat ?? false;
   const mapWidth = 1 + mapSize * 2;
@@ -39,7 +41,7 @@ export function makeHexagonMapScenario(options?: HexagonScenarioOptions): GType 
   const hexMap = {
     ...hexDimensions,
     hexSize,
-    mapShape: "hexagon",
+    mapShape: MapShapes.hexagon,
     mapSize,
     mapLength,
     mapWidth,
@@ -52,46 +54,12 @@ export function makeHexagonMapScenario(options?: HexagonScenarioOptions): GType 
   };
 }
 export const orientedRectangleScenario = makeOrientedRectangleScenario({
-  mapLength: 25,
-  mapWidth: 15,
+  mapLength: 30,
+  mapWidth: 30,
 });
-export function makeOrientedRectangleScenario(options?: RectangleScenarioOptions): GType {
-  const mapLength = options?.mapLength ?? 1;
-  const mapWidth = options?.mapWidth ?? 1;
-  const mapSize = Math.max(mapLength, mapWidth);
-  const flat = options?.flat ?? false;
-  const hexDimensions = flat ? flatDimensions : pointyDimensions;
-  const hexSize =
-  mapSize >= 20
-      ? 40
-      : mapSize <= 3
-      ? 15
-      : mapSize <= 5
-      ? 20
-      : mapSize <= 10
-      ? 25
-      : 30;
-      const hexMap = {
-    ...hexDimensions,
-    hexSize,
-    mapShape: "orientedRectangle",
-    mapSize: Math.max(mapLength, mapWidth),
-    mapLength,
-    mapWidth,
-  };
-  const boardHexes: BoardHexes = generateOrientedRectangle(mapLength, mapWidth);
-  return {
-    boardHexes,
-    hexMap,
-  };
-}
-
-// presumably this looks a lot like the oriented rectangle
-export const rectangleScenario = makeRectangleScenario({
-  mapLength: 21,
-  mapWidth: 18,
-});
-export function makeRectangleScenario(options?: RectangleScenarioOptions): GType {
+export function makeOrientedRectangleScenario(
+  options?: RectangleScenarioOptions
+): GType {
   const mapLength = options?.mapLength ?? 1;
   const mapWidth = options?.mapWidth ?? 1;
   const mapSize = Math.max(mapLength, mapWidth);
@@ -110,7 +78,45 @@ export function makeRectangleScenario(options?: RectangleScenarioOptions): GType
   const hexMap = {
     ...hexDimensions,
     hexSize,
-    mapShape: "rectangle",
+    mapShape: MapShapes.orientedRectangle,
+    mapSize: Math.max(mapLength, mapWidth),
+    mapLength,
+    mapWidth,
+  };
+  const boardHexes: BoardHexes = generateOrientedRectangle(mapLength, mapWidth);
+  return {
+    boardHexes,
+    hexMap,
+  };
+}
+
+// presumably this looks a lot like the oriented rectangle
+export const rectangleScenario = makeRectangleScenario({
+  mapLength: 21,
+  mapWidth: 18,
+});
+export function makeRectangleScenario(
+  options?: RectangleScenarioOptions
+): GType {
+  const mapLength = options?.mapLength ?? 1;
+  const mapWidth = options?.mapWidth ?? 1;
+  const mapSize = Math.max(mapLength, mapWidth);
+  const flat = options?.flat ?? false;
+  const hexDimensions = flat ? flatDimensions : pointyDimensions;
+  const hexSize =
+    mapSize >= 20
+      ? 40
+      : mapSize <= 3
+      ? 15
+      : mapSize <= 5
+      ? 20
+      : mapSize <= 10
+      ? 25
+      : 30;
+  const hexMap = {
+    ...hexDimensions,
+    hexSize,
+    mapShape: MapShapes.rectangle,
     mapSize: Math.max(mapLength, mapWidth),
     mapLength,
     mapWidth,

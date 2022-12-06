@@ -1,16 +1,14 @@
 import { BoardProps } from "boardgame.io/react";
 import { ChatMessage } from "boardgame.io";
 
-import {
-  BgioClientInfoProvider,
-  BgioGProvider,
-  BgioMovesProvider,
-  BgioEventsProvider,
-  BgioCtxProvider,
-  BgioChatProvider,
-} from "./ui/bgio-contexts";
 import { GType } from "./game/types";
 import { HexxaformUI } from "./HexxaformUI";
+import { BgioClientInfoProvider } from "./ui/bgio-contexts/useBgioClientInfo";
+import { BgioGProvider } from "./ui/bgio-contexts/useBgioG";
+import { BgioCtxProvider } from "./ui/bgio-contexts/useBgioCtx";
+import { BgioMovesProvider } from "./ui/bgio-contexts/useBgioMoves";
+import { BgioEventsProvider } from "./ui/bgio-contexts/useBgioEvents";
+import { BgioChatProvider } from "./ui/bgio-contexts/useBgioChat";
 
 type MyBoardProps = BoardProps<GType> & { chatMessages?: ChatMessage[] };
 
@@ -43,10 +41,10 @@ export function HexxaformBoard(props: MyBoardProps) {
   return (
     <BgioClientInfoProvider
       log={log}
-      playerID={playerID || ''}
+      playerID={playerID || ""}
       matchID={matchID}
       matchData={matchData}
-      credentials={credentials || ''}
+      credentials={credentials || ""}
       isMultiplayer={isMultiplayer}
       isConnected={isConnected}
       isActive={isActive}
