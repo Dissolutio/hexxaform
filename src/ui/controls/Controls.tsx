@@ -8,7 +8,7 @@ import {
   GiFallingRocks,
 } from "react-icons/gi";
 
-import { useMapContext } from "../hooks/useMapContext";
+import { PenMode, useMapContext } from "../hooks/useMapContext";
 import { useBgioG, useBgioMoves } from "../bgio-contexts";
 import giantsTable from "../../assets/giantsTable.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
@@ -28,19 +28,29 @@ export const Controls = () => {
     toggleSandPen,
     toggleRockPen,
     toggleStartZonePen,
+    penMode,
   } = useMapContext();
   const { moves } = useBgioMoves();
   const { loadMap } = moves;
   const greenOnRedOff = (state: boolean) => {
     return state
       ? {
-          color: "green",
+          boxShadow: `0 0 2px var(--white)`,
+          border: `1px solid var(--white)`,
+          backgroundColor: `var(--selected-green)`,
         }
-      : {
-          color: "black",
-        };
+      : {};
   };
   const flipOverStyle = { transform: "translateY(0.2em) rotate(180deg)" };
+  const activeStyle = (mode: string) => {
+    return mode === penMode
+      ? {
+          boxShadow: `0 0 2px var(--white)`,
+          border: `1px solid var(--white)`,
+          backgroundColor: `var(--selected-green)`,
+        }
+      : {};
+  };
   return (
     <>
       <StyledSection>
@@ -48,6 +58,7 @@ export const Controls = () => {
         <StyledButton
           aria-label="Increase Altitude"
           onClick={toggleIncAltitudePen}
+          style={activeStyle(PenMode.incAltitude)}
         >
           <GiUpCard />
           <span>Raise</span>
@@ -55,27 +66,48 @@ export const Controls = () => {
         <StyledButton
           aria-label="Decrease Altitude"
           onClick={toggleDecAltitudePen}
+          style={activeStyle(PenMode.decAltitude)}
         >
           <GiUpCard style={flipOverStyle} />
           <span>Lower</span>
         </StyledButton>
-        <StyledButton aria-label="Eraser" onClick={toggleEraserPen}>
+        <StyledButton
+          aria-label="Eraser"
+          style={activeStyle(PenMode.eraser)}
+          onClick={toggleEraserPen}
+        >
           <FaEraser />
           <span>Eraser</span>
         </StyledButton>
-        <StyledButton aria-label="Water" onClick={toggleWaterPen}>
+        <StyledButton
+          aria-label="Water"
+          style={activeStyle(PenMode.water)}
+          onClick={toggleWaterPen}
+        >
           <GiWaterSplash />
           <span>Water</span>
         </StyledButton>
-        <StyledButton aria-label="Grass" onClick={toggleGrassPen}>
+        <StyledButton
+          aria-label="Grass"
+          style={activeStyle(PenMode.grass)}
+          onClick={toggleGrassPen}
+        >
           <GiGrass />
           <span>Grass</span>
         </StyledButton>
-        <StyledButton aria-label="Sand" onClick={toggleSandPen}>
+        <StyledButton
+          aria-label="Sand"
+          style={activeStyle(PenMode.sand)}
+          onClick={toggleSandPen}
+        >
           <GiIsland />
           <span>Sand</span>
         </StyledButton>
-        <StyledButton aria-label="Rock" onClick={toggleRockPen}>
+        <StyledButton
+          aria-label="Rock"
+          style={activeStyle(PenMode.rock)}
+          onClick={toggleRockPen}
+        >
           <GiFallingRocks />
           <span>Rock</span>
         </StyledButton>
@@ -86,42 +118,42 @@ export const Controls = () => {
         <StyledButton
           aria-label="Start Zone 0"
           onClick={() => toggleStartZonePen("0")}
+          style={activeStyle(PenMode.startZone0)}
         >
           0
         </StyledButton>
         <StyledButton
           aria-label="Start Zone 1"
           onClick={() => toggleStartZonePen("1")}
+          style={activeStyle(PenMode.startZone1)}
         >
           1
         </StyledButton>
         <StyledButton
           aria-label="Start Zone 2"
           onClick={() => toggleStartZonePen("2")}
+          style={activeStyle(PenMode.startZone2)}
         >
           2
         </StyledButton>
         <StyledButton
           aria-label="Start Zone 3"
           onClick={() => toggleStartZonePen("3")}
+          style={activeStyle(PenMode.startZone3)}
         >
           3
         </StyledButton>
         <StyledButton
           aria-label="Start Zone 4"
           onClick={() => toggleStartZonePen("4")}
+          style={activeStyle(PenMode.startZone4)}
         >
           4
         </StyledButton>
         <StyledButton
-          aria-label="Start Zone 5"
-          onClick={() => toggleStartZonePen("5")}
-        >
-          5
-        </StyledButton>
-        <StyledButton
           aria-label="Start Zone"
           onClick={() => toggleEraserStartZonePen()}
+          style={activeStyle(PenMode.eraserStartZone)}
         >
           Erase Start Zones
         </StyledButton>
