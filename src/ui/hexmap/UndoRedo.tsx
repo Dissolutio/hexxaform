@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { ImUndo, ImRedo } from "react-icons/im";
 
 import { useBgioMoves } from "../bgio-contexts";
-
-export const UndoRedo = () => {
+type Props = {
+  htmlId: string;
+};
+export const UndoRedo = ({ htmlId }: Props) => {
   const { undo, redo } = useBgioMoves();
   return (
-    <StyledUndoRedo>
+    <StyledUndoRedo id={htmlId}>
       <button aria-label="Undo" onClick={undo}>
         <ImUndo color="var(--player-color)" />
       </button>

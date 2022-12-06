@@ -88,8 +88,8 @@ export function makeOrientedRectangleScenario(options?: RectangleScenarioOptions
 
 // presumably this looks a lot like the oriented rectangle
 export const rectangleScenario = makeRectangleScenario({
-  mapLength: 25,
-  mapWidth: 15,
+  mapLength: 21,
+  mapWidth: 18,
 });
 export function makeRectangleScenario(options?: RectangleScenarioOptions): GType {
   const mapLength = options?.mapLength ?? 1;

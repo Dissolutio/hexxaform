@@ -4,7 +4,11 @@ import { ImMoveDown, ImMoveUp } from "react-icons/im";
 import { useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts";
 
-export const UpDownAltitudeViewerButtons = () => {
+type Props = {
+  htmlId: string;
+};
+
+export const UpDownAltitudeViewerButtons = ({ htmlId }: Props) => {
   const { G } = useBgioG();
   const { boardHexes } = G;
   const maxHeightHex = Object.values(boardHexes).reduce((prev, curr) => {
@@ -25,7 +29,7 @@ export const UpDownAltitudeViewerButtons = () => {
   };
 
   return (
-    <StyledUpDownAltitudeViewer>
+    <StyledUpDownAltitudeViewer id={htmlId}>
       <button aria-label="Zoom out" onClick={goDownAltitudeViewer}>
         <ImMoveDown color="var(--player-color)" />
       </button>

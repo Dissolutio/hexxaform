@@ -4,7 +4,7 @@ import styled from "styled-components";
 type MapHexStylesProps = {
   hexSize: number;
   mapZoomScalePercentage: number;
-  ref: Ref<HTMLDivElement> | null
+  ref: Ref<HTMLDivElement> | null;
 };
 export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;
@@ -20,6 +20,7 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   .maphex_text {
     fill: var(--white);
     font-size: ${(props) => `${props.hexSize / 60}rem`};
+    transform: rotate(-30deg);
   }
 
   // highlight all hexes

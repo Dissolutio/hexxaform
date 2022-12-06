@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { ImZoomIn, ImZoomOut } from "react-icons/im";
 
-export const MapZoomControls = ({ handleClickZoomIn, handleClickZoomOut }: {
-  handleClickZoomIn: () => void
-  handleClickZoomOut: () => void
+export const MapZoomControls = ({
+  handleClickZoomIn,
+  handleClickZoomOut,
+  htmlId,
+}: {
+  handleClickZoomIn: () => void;
+  handleClickZoomOut: () => void;
+  htmlId: string;
 }) => {
   return (
-    <StyledMapZoomControls>
+    <StyledMapZoomControls id={htmlId}>
       <button aria-label="Zoom out" onClick={handleClickZoomOut}>
         <ImZoomOut color="var(--player-color)" />
       </button>
@@ -17,10 +22,10 @@ export const MapZoomControls = ({ handleClickZoomIn, handleClickZoomOut }: {
     </StyledMapZoomControls>
   );
 };
-export const StyledMapZoomControls = styled.span`
+export const StyledMapZoomControls = styled.span<{ x?: string; y?: string }>`
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: ${(props) => props?.y ?? "0%"};
+  left: ${(props) => props?.x ?? "0%"};
   padding-top: 36px;
   padding-left: 36px;
   @media screen and (max-width: 1100px) {

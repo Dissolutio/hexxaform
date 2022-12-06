@@ -9,8 +9,9 @@ import {
 } from "react-icons/gi";
 
 import { useMapContext } from "../hooks/useMapContext";
-import { useBgioMoves } from "../bgio-contexts";
+import { useBgioG, useBgioMoves } from "../bgio-contexts";
 import giantsTable from "../../assets/giantsTable.json";
+import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 
 export const Controls = () => {
   const {
@@ -146,6 +147,7 @@ export const Controls = () => {
           Load Giants Table Map
         </button>
       </StyledSection>
+      <LoadSaveMapControls />
     </>
   );
 };
@@ -167,3 +169,27 @@ const StyledButton = styled.button`
   flex-direction: column;
   align-items: center;
 `;
+
+const LoadSaveMapControls = () => {
+  const { G } = useBgioG();
+  const { boardHexes, hexMap } = G;
+  const currentSaveableMap = { boardHexes, hexMap };
+  const { map1, setMap1, map2, setMap2, map3, setMap3 } = useLocalMapMemory();
+  const { moves } = useBgioMoves();
+  const handleLoadMap1 = () => moves.loadMap({boardHexes: map1.boardHexes, hexMap: map1.hexMap});
+  const handleLoadMap2 = () => moves.loadMap({boardHexes: map2.boardHexes, hexMap: map2.hexMap});
+  const handleLoadMap3 = () => moves.loadMap({boardHexes: map3.boardHexes, hexMap: map3.hexMap});
+  const handleSaveMap1 = () => setMap1(currentSaveableMap);
+  const handleSaveMap2 = () => setMap2(currentSaveableMap);
+  const handleSaveMap3 = () => setMap3(currentSaveableMap);
+  return (
+    <StyledSection>
+      <button onClick={handleLoadMap1}>Load Map 1</button>
+      <button onClick={handleSaveMap1}>Save Map 1</button>
+      <button onClick={handleLoadMap2}>Load Map 2</button>
+      <button onClick={handleSaveMap2}>Save Map 2</button>
+      <button onClick={handleLoadMap3}>Load Map 3</button>
+      <button onClick={handleSaveMap3}>Save Map 3</button>
+    </StyledSection>
+  );
+};
