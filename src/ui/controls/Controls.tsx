@@ -12,6 +12,7 @@ import { PenMode, useMapContext } from "../hooks/useMapContext";
 import { useBgioG, useBgioMoves } from "../bgio-contexts";
 import giantsTable from "../../assets/giantsTable.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
+import { UndoRedo } from "./UndoRedo";
 
 export const Controls = () => {
   const {
@@ -52,7 +53,12 @@ export const Controls = () => {
       : {};
   };
   return (
-    <>
+    <StyledGrid>
+      <StyledSection>
+        <h4>Undo/Redo:</h4>
+        <UndoRedo />
+      </StyledSection>
+
       <StyledSection>
         <h4>Set Pen Mode:</h4>
         <StyledButton
@@ -172,7 +178,11 @@ export const Controls = () => {
         </button>
       </StyledSection>
       <StyledSection>
-        <h4>Load Map:</h4>
+        <h4>Load/Save Maps:</h4>
+        <LoadSaveMapButtons />
+      </StyledSection>
+      <StyledSection>
+        <h4>Example Maps:</h4>
         <button
           onClick={() =>
             loadMap({
@@ -184,11 +194,15 @@ export const Controls = () => {
           Load Giants Table Map
         </button>
       </StyledSection>
-      <LoadSaveMapControls />
-    </>
+    </StyledGrid>
   );
 };
-
+const StyledGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+`;
 export const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
@@ -207,7 +221,7 @@ export const StyledButton = styled.button`
   align-items: center;
 `;
 
-const LoadSaveMapControls = () => {
+const LoadSaveMapButtons = () => {
   const { G } = useBgioG();
   const { boardHexes, hexMap } = G;
   // const manipulatedBoardHexes = keyBy(
@@ -234,13 +248,13 @@ const LoadSaveMapControls = () => {
   const handleSaveMap2 = () => setMap2(currentSaveableMap);
   const handleSaveMap3 = () => setMap3(currentSaveableMap);
   return (
-    <StyledSection>
+    <>
       <button onClick={handleLoadMap1}>Load Map 1</button>
       <button onClick={handleSaveMap1}>Save Map 1</button>
       <button onClick={handleLoadMap2}>Load Map 2</button>
       <button onClick={handleSaveMap2}>Save Map 2</button>
       <button onClick={handleLoadMap3}>Load Map 3</button>
       <button onClick={handleSaveMap3}>Save Map 3</button>
-    </StyledSection>
+    </>
   );
 };
