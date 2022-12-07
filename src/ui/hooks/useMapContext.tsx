@@ -43,6 +43,8 @@ const MapContext = React.createContext<
       toggleSandPen: () => void;
       toggleRockPen: () => void;
       toggleStartZonePen: (playerID: string) => void;
+      penThickness: number;
+      togglePenThickness: () => void;
     }
   | undefined
 >(undefined);
@@ -50,6 +52,7 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const [altitudeViewer, setAltitudeViewer] = React.useState(0);
   const [penMode, setPenMode] = React.useState(PenMode.grass);
   const [selectedMapHex, setSelectedMapHex] = React.useState("");
+  const [penThickness, setPenThickness] = React.useState(1);
   // Lenses
   const [showStartzones, setShowStartzones] = React.useState(false);
   const [showTerrain, setShowTerrain] = React.useState(true);
@@ -63,6 +66,9 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
     }
   };
 
+  const togglePenThickness = () => {
+    setPenThickness((s) => (s === 0 ? 1 : 0));
+  };
   const toggleShowStartzones = () => {
     setShowStartzones((s) => !s);
   };
@@ -145,6 +151,8 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         toggleSandPen,
         toggleRockPen,
         toggleStartZonePen,
+        penThickness,
+        togglePenThickness,
       }}
     >
       {children}

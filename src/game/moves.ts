@@ -31,14 +31,26 @@ const decAltitudeOfHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
 const paintWaterHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
   G.boardHexes[hexID].terrain = HexTerrain.water;
 };
-const paintGrassHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
+const paintGrassHex: Move<GType> = (
+  { G },
+  { hexID, thickness }: { hexID: string; thickness: number }
+) => {
   G.boardHexes[hexID].terrain = HexTerrain.grass;
+  G.boardHexes[hexID].altitude += thickness;
 };
-const paintSandHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
+const paintSandHex: Move<GType> = (
+  { G },
+  { hexID, thickness }: { hexID: string; thickness: number }
+) => {
   G.boardHexes[hexID].terrain = HexTerrain.sand;
+  G.boardHexes[hexID].altitude += thickness;
 };
-const paintRockHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
+const paintRockHex: Move<GType> = (
+  { G },
+  { hexID, thickness }: { hexID: string; thickness: number }
+) => {
   G.boardHexes[hexID].terrain = HexTerrain.rock;
+  G.boardHexes[hexID].altitude += thickness;
 };
 const loadMap: Move<GType> = (
   { G },

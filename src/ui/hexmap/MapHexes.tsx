@@ -33,6 +33,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     showTerrain,
     penMode,
     altitudeViewer,
+    penThickness,
   } = useMapContext();
 
   const onClickBoardHex = (event: SyntheticEvent, hex: BoardHex) => {
@@ -71,13 +72,13 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       paintWaterHex({ hexID: hex.id });
     }
     if (penMode === PenMode.grass) {
-      paintGrassHex({ hexID: hex.id });
+      paintGrassHex({ hexID: hex.id, thickness: penThickness });
     }
     if (penMode === PenMode.sand) {
-      paintSandHex({ hexID: hex.id });
+      paintSandHex({ hexID: hex.id, thickness: penThickness });
     }
     if (penMode === PenMode.rock) {
-      paintRockHex({ hexID: hex.id });
+      paintRockHex({ hexID: hex.id, thickness: penThickness });
     }
   };
   function calcClassNames(hex: BoardHex) {

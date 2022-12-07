@@ -20,14 +20,14 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   .maphex_text {
     fill: var(--white);
     font-size: ${(props) => `${props.hexSize / 60}rem`};
-    transform: rotate(-30deg);
+    /* transform: rotate(-30deg); */
   }
 
   // highlight all hexes
-  /* svg g polygon {
+  svg g polygon {
     stroke: var(--white);
     stroke-width: 0.1;
-  } */
+  }
   .maphex__terrain--void {
     stroke: var(--white);
     stroke-width: 0.1;

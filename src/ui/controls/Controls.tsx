@@ -12,6 +12,7 @@ import { PenMode, useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
 import giantsTable from "../../assets/giantsTable.json";
+import theForsakenWaters from "../../assets/theForsakenWaters.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 import { UndoRedo } from "./UndoRedo";
 import { ChangeEvent } from "react";
@@ -37,6 +38,8 @@ export const Controls = () => {
     toggleRockPen,
     toggleStartZonePen,
     penMode,
+    penThickness,
+    togglePenThickness,
   } = useMapContext();
   const { moves } = useBgioMoves();
   const {
@@ -120,6 +123,13 @@ export const Controls = () => {
       <StyledSection>
         <h4>Undo/Redo:</h4>
         <UndoRedo />
+      </StyledSection>
+
+      <StyledSection>
+        <h4>Toggle pen thickness:</h4>
+        <button onClick={togglePenThickness}>
+          Toggle Pen Thickness (current {penThickness})
+        </button>
       </StyledSection>
 
       <StyledSection>
@@ -248,7 +258,6 @@ export const Controls = () => {
         <h4>Load/Save Maps:</h4>
         <LoadSaveMapButtons />
       </StyledSection>
-
       <StyledSection>
         <h4>Example Maps:</h4>
         <button onClick={() => loadMap(hexagonMapScenario)}>
@@ -269,6 +278,16 @@ export const Controls = () => {
           }
         >
           Load Giants Table Map
+        </button>
+        <button
+          onClick={() =>
+            loadMap({
+              boardHexes: theForsakenWaters.boardHexes,
+              hexMap: theForsakenWaters.hexMap,
+            })
+          }
+        >
+          Load The Forsaken Waters Map
         </button>
       </StyledSection>
 

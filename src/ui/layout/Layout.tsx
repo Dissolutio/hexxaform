@@ -42,7 +42,8 @@ const LayoutBottom = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  min-height: 30vh;
+  height: 30vh;
+  overflow: scroll;
   @media screen and (max-width: 1100px) {
     min-height: 40vh;
   }
