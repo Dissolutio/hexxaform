@@ -5,6 +5,7 @@ export type GType = {
 
 export type HexMap = {
   mapShape: string;
+  mapId: string;
   mapSize: number;
   mapLength: number;
   mapWidth: number;

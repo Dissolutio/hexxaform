@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -17,7 +17,7 @@ export const MapDisplay = ({ printRef }: Props) => {
   const { G } = useBgioG();
   // const printRef = React.useRef<HTMLDivElement>(null);
   const { hexMap } = G;
-  const { hexSize, mapSize, flat, mapShape } = hexMap;
+  const { hexSize, mapSize, flat, mapShape, mapId } = hexMap;
 
   //! MAP SETUP/LAYOUT CONFIG
   const isHexagonShapedMap = mapShape === MapShapes.hexagon;
@@ -51,6 +51,11 @@ export const MapDisplay = ({ printRef }: Props) => {
     ? rectangularMapState
     : orientedRectangularMapState;
   const [mapState, setMapState] = React.useState(() => initialMapState);
+  const recalculateMapState = () => setMapState(initialMapState);
+  useEffect(() => {
+    recalculateMapState();
+  }, [mapId]);
+
   const htmlIdMapControls = "hidemeZoom";
 
   const [mapZoomScalePercentage, setMapZoomScalePercentage] =

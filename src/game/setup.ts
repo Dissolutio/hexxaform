@@ -3,6 +3,7 @@ import {
   generateOrientedRectangle,
   generateRectangle,
 } from "./hexGen";
+import { nanoid } from "nanoid";
 import { BoardHexes, GType, MapShapes } from "./types";
 
 // All Maps follow these hex dimensions:
@@ -18,7 +19,7 @@ const pointyDimensions = {
 };
 
 //!! HEXAGON MAP SCENARIO
-export const hexagonMapScenario = makeHexagonMapScenario({ mapSize: 20 });
+export const hexagonMapScenario = makeHexagonMapScenario({ mapSize: 10 });
 type RectangleScenarioOptions = {
   mapWidth?: number;
   mapLength?: number;
@@ -40,6 +41,7 @@ export function makeHexagonMapScenario(
     mapSize <= 3 ? 15 : mapSize <= 5 ? 20 : mapSize <= 10 ? 25 : 25;
   const hexMap = {
     ...hexDimensions,
+    mapId: nanoid(),
     hexSize,
     mapShape: MapShapes.hexagon,
     mapSize,
@@ -79,6 +81,7 @@ export function makeOrientedRectangleScenario(
     ...hexDimensions,
     hexSize,
     mapShape: MapShapes.orientedRectangle,
+    mapId: nanoid(),
     mapSize: Math.max(mapLength, mapWidth),
     mapLength,
     mapWidth,
@@ -116,6 +119,7 @@ export function makeRectangleScenario(
   const hexMap = {
     ...hexDimensions,
     hexSize,
+    mapId: nanoid(),
     mapShape: MapShapes.rectangle,
     mapSize: Math.max(mapLength, mapWidth),
     mapLength,
