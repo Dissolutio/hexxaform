@@ -114,31 +114,32 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     return classNames;
   }
 
-  const hexJSX = () => {
-    return Object.values(boardHexes).map((hex, i) => {
-      const { altitude } = hex;
-      return (
-        <StyledHexagon key={i} altitude={hex.altitude}>
-          <Hexagon
-            q={hex.q}
-            r={hex.r}
-            s={hex.s}
-            data={hex}
-            onClick={(e) => onClickBoardHex(e, hex)}
-            className={calcClassNames(hex)}
-          >
-            <g>
-              {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
-              {hex.terrain === HexTerrain.void ? null : (
-                <HexIDText hexSize={hexSize} text={`${altitude}`} />
-              )}
-            </g>
-          </Hexagon>
-        </StyledHexagon>
-      );
-    });
-  };
-  return <>{hexJSX()}</>;
+  return (
+    <>
+      {Object.values(boardHexes).map((hex, i) => {
+        const { altitude } = hex;
+        return (
+          <StyledHexagon key={i} altitude={hex.altitude}>
+            <Hexagon
+              q={hex.q}
+              r={hex.r}
+              s={hex.s}
+              data={hex}
+              onClick={(e) => onClickBoardHex(e, hex)}
+              className={calcClassNames(hex)}
+            >
+              <g>
+                {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
+                {hex.terrain === HexTerrain.void ? null : (
+                  <HexIDText hexSize={hexSize} text={`${altitude}`} />
+                )}
+              </g>
+            </Hexagon>
+          </StyledHexagon>
+        );
+      })}
+    </>
+  );
 };
 
 const HexIDText = ({ hexSize, text }: { hexSize: number; text: string }) => {

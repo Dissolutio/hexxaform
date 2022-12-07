@@ -104,7 +104,6 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomOut={handleClickZoomOut}
       />
       <MapHexStyles
-        ref={mapRef}
         hexSize={hexSize}
         mapZoomScalePercentage={mapZoomScalePercentage}
       >

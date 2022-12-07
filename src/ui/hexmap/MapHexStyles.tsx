@@ -1,10 +1,8 @@
-import { Ref } from "react";
 import styled from "styled-components";
 
 type MapHexStylesProps = {
   hexSize: number;
   mapZoomScalePercentage: number;
-  ref: Ref<HTMLDivElement> | null;
 };
 export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;

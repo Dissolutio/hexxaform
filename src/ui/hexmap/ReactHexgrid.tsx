@@ -2,13 +2,13 @@ import React from "react";
 import { HexGrid, Layout } from "react-hexgrid";
 
 type ReactHexgridProps = {
-  children?:any;
+  children?: any;
   mapSize: number;
   width: string | number;
   height: string | number;
   className?: string;
   flat?: boolean;
-  origin?: {x: number; y: number};
+  origin?: { x: number; y: number };
   hexSize: number;
   spacing: number;
 };
@@ -29,16 +29,22 @@ export const ReactHexgrid = ({
     return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
   }
   return (
-    <HexGrid width={width} height={height} viewBox={calcViewBox(mapSize)}>
+    <svg
+      width={width}
+      height={height}
+      viewBox={calcViewBox(mapSize)}
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <Layout
         className={className}
-        size={{ x: hexSize , y: hexSize }}
+        size={{ x: hexSize, y: hexSize }}
         flat={flat}
         origin={origin}
         spacing={spacing}
       >
         {children}
       </Layout>
-    </HexGrid>
+    </svg>
   );
 };
