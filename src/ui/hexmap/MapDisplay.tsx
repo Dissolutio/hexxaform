@@ -15,7 +15,6 @@ type Props = {
 
 export const MapDisplay = ({ printRef }: Props) => {
   const { G } = useBgioG();
-  // const printRef = React.useRef<HTMLDivElement>(null);
   const { hexMap } = G;
   const { hexSize, mapSize, flat, mapShape, mapId } = hexMap;
 
@@ -62,37 +61,28 @@ export const MapDisplay = ({ printRef }: Props) => {
     React.useState<number>(100);
 
   const zoomScalePercentInterval = 20;
-  // const handleClickZoomIn = () => {
-  //   setMapZoomScalePercentage(s => (s + zoomScalePercentInterval))
-  // }
-  // const handleClickZoomOut = () => {
-  //   setMapZoomScalePercentage(s => (s - zoomScalePercentInterval))
-  // }
 
   //! ZOOM FEATURE
-  const mapRef = React.useRef<HTMLDivElement>(null);
   const zoomInterval = 10;
-  // increases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomIn = () => {
-    const el = mapRef.current;
+    // increases width and height by zoom interval, attempts scroll correction afterwards
+    const el = printRef.current;
     setMapState((mapState) => ({
       ...mapState,
       width: mapState.width + zoomInterval,
       height: mapState.height + zoomInterval,
     }));
-    // el && el.scrollBy(2 * zoomInterval, 2 * zoomInterval);
     el && el.scrollTo({ left: 50, top: 50 });
-    setMapZoomScalePercentage((s) => s + zoomScalePercentInterval);
   };
-  // decreases width and height by zoom interval, attempts scroll correction afterwards
   const handleClickZoomOut = () => {
+    // decreases width and height by zoom interval, attempts scroll correction afterwards
+    const el = printRef.current;
     setMapState((s) => ({
       ...s,
       width: s.width - zoomInterval,
       height: s.height - zoomInterval,
     }));
-    // el && el.scrollBy(-2 * zoomInterval, -2 * zoomInterval);
-    setMapZoomScalePercentage((s) => s - zoomScalePercentInterval);
+    el && el.scrollTo({ left: -50, top: -50 });
   };
   function calcViewBox(mapSize: number) {
     const xyMin = mapSize * -50;
@@ -107,10 +97,7 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <MapHexStyles
-        hexSize={hexSize}
-        mapZoomScalePercentage={mapZoomScalePercentage}
-      >
+      <MapHexStyles hexSize={hexSize}>
         <svg
           width={`${mapState.width}%`}
           height={`${mapState.height}%`}

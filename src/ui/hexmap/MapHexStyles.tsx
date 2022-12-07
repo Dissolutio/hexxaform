@@ -2,14 +2,10 @@ import styled from "styled-components";
 
 type MapHexStylesProps = {
   hexSize: number;
-  mapZoomScalePercentage: number;
 };
 export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;
   position: relative;
-  /* svg {
-    scale: ${(props) => `${props.mapZoomScalePercentage}%`};
-  } */
   &::-webkit-scrollbar-corner {
     background: var(--black);
   }
