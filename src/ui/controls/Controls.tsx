@@ -230,15 +230,18 @@ export const Controls = () => {
 
       <StyledSection>
         <h4>Toggle Lenses:</h4>
-        <button
+        <StyledButton
           style={greenOnRedOff(showStartzones)}
           onClick={toggleShowStartzones}
         >
           STARTZONES
-        </button>
-        <button style={greenOnRedOff(showTerrain)} onClick={toggleShowTerrain}>
+        </StyledButton>
+        <StyledButton
+          style={greenOnRedOff(showTerrain)}
+          onClick={toggleShowTerrain}
+        >
           TERRAIN
-        </button>
+        </StyledButton>
       </StyledSection>
 
       <StyledSection>
@@ -291,6 +294,7 @@ const StyledGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 1rem;
+  padding: 1rem;
 `;
 export const StyledSection = styled.section`
   display: flex;

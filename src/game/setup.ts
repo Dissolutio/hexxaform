@@ -56,8 +56,8 @@ export function makeHexagonMapScenario(
   };
 }
 export const orientedRectangleScenario = makeOrientedRectangleScenario({
-  mapLength: 30,
-  mapWidth: 30,
+  mapLength: 20,
+  mapWidth: 20,
 });
 export function makeOrientedRectangleScenario(
   options?: RectangleScenarioOptions
