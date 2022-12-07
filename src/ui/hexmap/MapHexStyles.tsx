@@ -5,7 +5,6 @@ type MapHexStylesProps = {
 };
 export const MapHexStyles = styled.div<MapHexStylesProps>`
   height: 100%;
-  position: relative;
   &::-webkit-scrollbar-corner {
     background: var(--black);
   }

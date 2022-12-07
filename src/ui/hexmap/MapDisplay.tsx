@@ -57,11 +57,6 @@ export const MapDisplay = ({ printRef }: Props) => {
 
   const htmlIdMapControls = "hidemeZoom";
 
-  const [mapZoomScalePercentage, setMapZoomScalePercentage] =
-    React.useState<number>(100);
-
-  const zoomScalePercentInterval = 20;
-
   //! ZOOM FEATURE
   const zoomInterval = 10;
   const handleClickZoomIn = () => {
@@ -85,40 +80,35 @@ export const MapDisplay = ({ printRef }: Props) => {
     el && el.scrollTo({ left: -50, top: -50 });
   };
   function calcViewBox(mapSize: number) {
-    const xyMin = mapSize * -50;
+    const xyMin = mapSize * -40;
     const xyLength = mapSize * 100;
     return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
   }
   return (
-    <MapStyle>
+    <MapHexStyles hexSize={hexSize}>
       <MapControlButtons
         printRef={printRef}
         htmlId={htmlIdMapControls}
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <MapHexStyles hexSize={hexSize}>
-        <svg
-          width={`${mapState.width}%`}
-          height={`${mapState.height}%`}
-          viewBox={calcViewBox(mapSize)}
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
+      <svg
+        width={`${mapState.width}%`}
+        height={`${mapState.height}%`}
+        viewBox={calcViewBox(mapSize)}
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Layout
+          size={{ x: hexSize, y: hexSize }}
+          flat={mapState.flat}
+          origin={mapState.origin}
+          spacing={mapState.spacing}
+          className="hexgrid-layout"
         >
-          <Layout
-            size={{ x: hexSize, y: hexSize }}
-            flat={mapState.flat}
-            origin={mapState.origin}
-            spacing={mapState.spacing}
-          >
-            <MapHexes hexSize={hexSize} />
-          </Layout>
-        </svg>
-      </MapHexStyles>
-    </MapStyle>
+          <MapHexes hexSize={hexSize} />
+        </Layout>
+      </svg>
+    </MapHexStyles>
   );
 };
-
-const MapStyle = styled.div`
-  height: 100%;
-`;
