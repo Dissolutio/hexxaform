@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useBgioG } from "../bgio-contexts/useBgioG";
-import { ReactHexgrid } from "./ReactHexgrid";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
 import { MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
+import { Layout } from "react-hexgrid";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
@@ -94,7 +94,11 @@ export const MapDisplay = ({ printRef }: Props) => {
     // el && el.scrollBy(-2 * zoomInterval, -2 * zoomInterval);
     setMapZoomScalePercentage((s) => s - zoomScalePercentInterval);
   };
-
+  function calcViewBox(mapSize: number) {
+    const xyMin = mapSize * -50;
+    const xyLength = mapSize * 100;
+    return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
+  }
   return (
     <MapStyle>
       <MapControlButtons
@@ -107,17 +111,22 @@ export const MapDisplay = ({ printRef }: Props) => {
         hexSize={hexSize}
         mapZoomScalePercentage={mapZoomScalePercentage}
       >
-        <ReactHexgrid
-          mapSize={mapSize}
-          hexSize={hexSize}
+        <svg
           width={`${mapState.width}%`}
           height={`${mapState.height}%`}
-          flat={mapState.flat}
-          spacing={mapState.spacing}
-          origin={mapState.origin}
+          viewBox={calcViewBox(mapSize)}
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <MapHexes hexSize={hexSize} />
-        </ReactHexgrid>
+          <Layout
+            size={{ x: hexSize, y: hexSize }}
+            flat={mapState.flat}
+            origin={mapState.origin}
+            spacing={mapState.spacing}
+          >
+            <MapHexes hexSize={hexSize} />
+          </Layout>
+        </svg>
       </MapHexStyles>
     </MapStyle>
   );
