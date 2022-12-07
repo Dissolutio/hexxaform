@@ -15,6 +15,11 @@ import giantsTable from "../../assets/giantsTable.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 import { UndoRedo } from "./UndoRedo";
 import { ChangeEvent } from "react";
+import {
+  hexagonMapScenario,
+  orientedRectangleScenario,
+  rectangleScenario,
+} from "../../game/setup";
 
 export const Controls = () => {
   const {
@@ -243,6 +248,15 @@ export const Controls = () => {
 
       <StyledSection>
         <h4>Example Maps:</h4>
+        <button onClick={() => loadMap(hexagonMapScenario)}>
+          Load Hexagon
+        </button>
+        <button onClick={() => loadMap(rectangleScenario)}>
+          Load Rectangle
+        </button>
+        <button onClick={() => loadMap(orientedRectangleScenario)}>
+          Load Oriented Rectangle
+        </button>
         <button
           onClick={() =>
             loadMap({

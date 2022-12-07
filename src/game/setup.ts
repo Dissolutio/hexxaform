@@ -93,10 +93,9 @@ export function makeOrientedRectangleScenario(
   };
 }
 
-// presumably this looks a lot like the oriented rectangle
 export const rectangleScenario = makeRectangleScenario({
-  mapLength: 21,
-  mapWidth: 18,
+  mapLength: 25,
+  mapWidth: 20,
 });
 export function makeRectangleScenario(
   options?: RectangleScenarioOptions
