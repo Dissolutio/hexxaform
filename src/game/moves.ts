@@ -30,6 +30,8 @@ const decAltitudeOfHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
 };
 const paintWaterHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
   G.boardHexes[hexID].terrain = HexTerrain.water;
+  // lower altitude one, like digging, for water
+  G.boardHexes[hexID].altitude -= 1;
 };
 const paintGrassHex: Move<GType> = (
   { G },
