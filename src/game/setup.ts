@@ -94,8 +94,8 @@ export function makeOrientedRectangleScenario(
 }
 
 export const rectangleScenario = makeRectangleScenario({
-  mapLength: 25,
-  mapWidth: 20,
+  mapLength: 26,
+  mapWidth: 15,
 });
 export function makeRectangleScenario(
   options?: RectangleScenarioOptions
