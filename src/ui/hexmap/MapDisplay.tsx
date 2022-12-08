@@ -7,7 +7,7 @@ import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
 import { MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
-import { Layout } from "react-hexgrid";
+import { Layout } from "./Layout";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
@@ -80,9 +80,25 @@ export const MapDisplay = ({ printRef }: Props) => {
     el && el.scrollTo({ left: -50, top: -50 });
   };
   function calcViewBox(mapSize: number) {
+    const contentWidth = window.outerWidth;
+    console.log(
+      "🚀 ~ file: MapDisplay.tsx:82 ~ calcViewBox ~ contentWidth",
+      contentWidth
+    );
+    const contentHeight = window.outerHeight * 0.6;
+    console.log(
+      "🚀 ~ file: MapDisplay.tsx:84 ~ calcViewBox ~ contentHeight",
+      contentHeight
+    );
     const xyMin = mapSize * -40;
     const xyLength = mapSize * 100;
-    return `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
+    const result = `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
+    console.log(
+      "🚀 ~ file: MapDisplay.tsx:81 ~ calcViewBox ~ mapSize",
+      mapSize,
+      { result: result }
+    );
+    return result;
   }
   return (
     <MapHexStyles hexSize={hexSize}>
