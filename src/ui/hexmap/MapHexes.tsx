@@ -1,11 +1,12 @@
 import React, { SyntheticEvent } from "react";
 import styled from "styled-components";
-import { Hexagon, Text } from "react-hexgrid";
+import { Text } from "react-hexgrid";
 
 import { PenMode, useMapContext } from "../hooks/useMapContext";
 import { BoardHex, HexTerrain } from "../../game/types";
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
+import Hexagon from "./Hexagon";
 
 type MapHexesProps = {
   hexSize: number;
@@ -83,7 +84,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
   };
   function calcClassNames(hex: BoardHex) {
     // blank start
-    let classNames = "";
+    let classNames = "maphex";
     // helper fn
     const isSelectedHex = (hex: BoardHex) => {
       return hex.id === selectedMapHex;
@@ -119,7 +120,11 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       {Object.values(boardHexes).map((hex, i) => {
         const { altitude } = hex;
         return (
-          <StyledHexagon key={i} altitude={hex.altitude}>
+          <StyledHexagon
+            key={i}
+            data-hex={`${hex.q},${hex.r},${hex.s}`}
+            altitude={hex.altitude}
+          >
             <Hexagon
               q={hex.q}
               r={hex.r}
@@ -131,17 +136,23 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
               <g>
                 {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
                 {hex.terrain === HexTerrain.void ? null : (
-                  <HexIDText hexSize={hexSize} text={`${altitude}`} />
+                  <HexIDText hexSize={hexSize} text={`${hex.id}`} />
                 )}
               </g>
             </Hexagon>
           </StyledHexagon>
         );
       })}
+      <StyledPolygon points="12.990381,7.499999999999999 9.18485099360515e-16,15 -12.990381056766577,7.500000000000005 -12.990381056766582,-7.499999999999996 -2.7554552980815444e-15,-15 12.990381056766582,-7.499999999999995"></StyledPolygon>
     </>
   );
 };
-
+const StyledPolygon = styled.polygon`
+  stroke: var(--neon-red);
+  stroke: red;
+  stroke-width: 5;
+  fill: yellow;
+`;
 const HexIDText = ({ hexSize, text }: { hexSize: number; text: string }) => {
   return (
     <Text className="maphex_text" y={hexSize * 0.7}>

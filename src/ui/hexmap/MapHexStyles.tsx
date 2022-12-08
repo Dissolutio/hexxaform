@@ -16,8 +16,8 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     /* transform: rotate(-30deg); */
   }
 
-  // highlight all hexes
-  svg g polygon {
+  // highlight all maphexes
+  .maphex {
     stroke: var(--white);
     stroke-width: 0.1;
   }
