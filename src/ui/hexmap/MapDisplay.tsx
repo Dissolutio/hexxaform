@@ -53,6 +53,7 @@ export const MapDisplay = ({ printRef }: Props) => {
   const recalculateMapState = () => setMapState(initialMapState);
   useEffect(() => {
     recalculateMapState();
+    // when the map changes, we recalculate, no other times
   }, [mapId]);
 
   const htmlIdMapControls = "hidemeZoom";
