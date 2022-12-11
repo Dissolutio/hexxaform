@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
-import { MapControlButtons } from "./MapControlButtons";
+import { DevMapPanButtons, MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
 import { Layout } from "./Layout";
 
@@ -80,25 +80,14 @@ export const MapDisplay = ({ printRef }: Props) => {
     }));
     el && el.scrollTo({ left: -50, top: -50 });
   };
-  function calcViewBox(mapSize: number) {
-    const contentWidth = window.outerWidth;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:82 ~ calcViewBox ~ contentWidth",
-      contentWidth
-    );
-    const contentHeight = window.outerHeight * 0.6;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:84 ~ calcViewBox ~ contentHeight",
-      contentHeight
-    );
-    const xyMin = mapSize * -40;
-    const xyLength = mapSize * 100;
-    const result = `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:81 ~ calcViewBox ~ mapSize",
-      mapSize,
-      { result: result }
-    );
+  // const contentWidth = window.outerWidth;
+  // const contentHeight = window.outerHeight * 0.7;
+  const [viewBoxLength, setViewBoxLength] = useState(mapSize * 100);
+  const [viewBoxHeight, setViewBoxHeight] = useState(mapSize * 100);
+  const [viewBoxX, setViewBoxX] = useState(mapSize * -40);
+  const [viewBoxY, setViewBoxY] = useState(mapSize * -40);
+  function calcViewBox() {
+    const result = `${viewBoxX} ${viewBoxY} ${viewBoxLength} ${viewBoxHeight}`;
     return result;
   }
   return (
@@ -109,10 +98,20 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
+      <DevMapPanButtons
+        onIncrementX={() => setViewBoxX((s) => s + 100)}
+        onDecrementX={() => setViewBoxX((s) => s - 100)}
+        onIncrementY={() => setViewBoxY((s) => s + 100)}
+        onDecrementY={() => setViewBoxY((s) => s - 100)}
+        onIncreaseLength={() => setViewBoxLength((s) => s + 100)}
+        onDecreaseLength={() => setViewBoxLength((s) => s - 100)}
+        onIncreaseHeight={() => setViewBoxHeight((s) => s + 100)}
+        onDecreaseHeight={() => setViewBoxHeight((s) => s - 100)}
+      />
       <svg
         width={`${mapState.width}%`}
         height={`${mapState.height}%`}
-        viewBox={calcViewBox(mapSize)}
+        viewBox={calcViewBox()}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >
