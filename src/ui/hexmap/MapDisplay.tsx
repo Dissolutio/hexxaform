@@ -8,20 +8,21 @@ import { MapHexStyles } from "./MapHexStyles";
 import { DevMapPanButtons, MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
 import { Layout } from "./Layout";
+import { useMapContext } from "../hooks/useMapContext";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
 };
 
 export const MapDisplay = ({ printRef }: Props) => {
+  const { viewBox } = useMapContext();
   const { G } = useBgioG();
   const { hexMap } = G;
-  const { hexSize, mapSize, flat, mapShape, mapId } = hexMap;
+  const { hexSize, flat, mapShape, mapId } = hexMap;
 
   //! MAP SETUP/LAYOUT CONFIG
   const isHexagonShapedMap = mapShape === MapShapes.hexagon;
   const isRectangleShapedMap = mapShape === MapShapes.rectangle;
-  const isOrientedRectangleShapedMap = mapShape === MapShapes.orientedRectangle;
   const hexagonalMapState = {
     width: 100,
     height: 100,
@@ -82,14 +83,6 @@ export const MapDisplay = ({ printRef }: Props) => {
   };
   // const contentWidth = window.outerWidth;
   // const contentHeight = window.outerHeight * 0.7;
-  const [viewBoxLength, setViewBoxLength] = useState(mapSize * 100);
-  const [viewBoxHeight, setViewBoxHeight] = useState(mapSize * 100);
-  const [viewBoxX, setViewBoxX] = useState(mapSize * -40);
-  const [viewBoxY, setViewBoxY] = useState(mapSize * -40);
-  function calcViewBox() {
-    const result = `${viewBoxX} ${viewBoxY} ${viewBoxLength} ${viewBoxHeight}`;
-    return result;
-  }
   return (
     <MapHexStyles hexSize={hexSize}>
       <MapControlButtons
@@ -98,20 +91,11 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <DevMapPanButtons
-        onIncrementX={() => setViewBoxX((s) => s + 100)}
-        onDecrementX={() => setViewBoxX((s) => s - 100)}
-        onIncrementY={() => setViewBoxY((s) => s + 100)}
-        onDecrementY={() => setViewBoxY((s) => s - 100)}
-        onIncreaseLength={() => setViewBoxLength((s) => s + 100)}
-        onDecreaseLength={() => setViewBoxLength((s) => s - 100)}
-        onIncreaseHeight={() => setViewBoxHeight((s) => s + 100)}
-        onDecreaseHeight={() => setViewBoxHeight((s) => s - 100)}
-      />
+      <DevMapPanButtons />
       <svg
         width={`${mapState.width}%`}
         height={`${mapState.height}%`}
-        viewBox={calcViewBox()}
+        viewBox={viewBox}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >

@@ -12,27 +12,19 @@ import { useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { ExportMapAsImgButton } from "./ExportMapAsImgButton";
 
-export const DevMapPanButtons = ({
-  onIncrementX,
-  onDecrementX,
-  onIncrementY,
-  onDecrementY,
-  onIncreaseLength,
-  onDecreaseLength,
-  onIncreaseHeight,
-  onDecreaseHeight,
-}: {
-  onIncrementX: () => void;
-  onDecrementX: () => void;
-  onIncrementY: () => void;
-  onDecrementY: () => void;
-  onIncreaseLength: () => void;
-  onDecreaseLength: () => void;
-  onIncreaseHeight: () => void;
-  onDecreaseHeight: () => void;
-}) => {
+export const DevMapPanButtons = () => {
+  const {
+    onIncrementX,
+    onDecrementX,
+    onIncrementY,
+    onDecrementY,
+    onIncreaseLength,
+    onDecreaseLength,
+    onIncreaseHeight,
+    onDecreaseHeight,
+  } = useMapContext();
   return (
-    <StyledMapZoomControls style={{ right: "0%" }}>
+    <StyledMapZoomControls style={{ bottom: "20%", top: "initial" }}>
       <StyledButton aria-label="- X" onClick={onDecrementX}>
         <ImMinus color="var(--black)" />
         <span>X</span>
