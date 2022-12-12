@@ -6,6 +6,7 @@ import {
   GiGrass,
   GiIsland,
   GiFallingRocks,
+  GiArrowCursor,
 } from "react-icons/gi";
 
 import { PenMode, useMapContext } from "../hooks/useMapContext";
@@ -13,6 +14,7 @@ import { useBgioG } from "../bgio-contexts/useBgioG";
 import { useBgioMoves } from "../bgio-contexts/useBgioMoves";
 import giantsTable from "../../assets/giantsTable.json";
 import theForsakenWaters from "../../assets/theForsakenWaters.json";
+import trollsfordSwamps from "../../assets/trollsfordSwamps.json";
 import { useLocalMapMemory } from "../hooks/useLocalMapMemory";
 import { UndoRedo } from "./UndoRedo";
 import { ChangeEvent } from "react";
@@ -28,6 +30,7 @@ export const Controls = () => {
     toggleShowStartzones,
     showTerrain,
     toggleShowTerrain,
+    toggleSelectHexMode,
     toggleEraserPen,
     toggleEraserStartZonePen,
     toggleIncAltitudePen,
@@ -135,7 +138,17 @@ export const Controls = () => {
       <StyledSection>
         <h4>Set Pen Mode:</h4>
         <StyledButton
+          aria-label="Select Mode"
+          title="Select Mode"
+          onClick={toggleSelectHexMode}
+          style={activeStyle(PenMode.none)}
+        >
+          <GiArrowCursor />
+          <span>Select</span>
+        </StyledButton>
+        <StyledButton
           aria-label="Increase Altitude"
+          title="Increase Altitude"
           onClick={toggleIncAltitudePen}
           style={activeStyle(PenMode.incAltitude)}
         >
@@ -144,6 +157,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Decrease Altitude"
+          title="Decrease Altitude"
           onClick={toggleDecAltitudePen}
           style={activeStyle(PenMode.decAltitude)}
         >
@@ -152,6 +166,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Eraser"
+          title="Eraser"
           style={activeStyle(PenMode.eraser)}
           onClick={toggleEraserPen}
         >
@@ -160,6 +175,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Water"
+          title="Water"
           style={activeStyle(PenMode.water)}
           onClick={toggleWaterPen}
         >
@@ -168,6 +184,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Grass"
+          title="Grass"
           style={activeStyle(PenMode.grass)}
           onClick={toggleGrassPen}
         >
@@ -176,6 +193,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Sand"
+          title="Sand"
           style={activeStyle(PenMode.sand)}
           onClick={toggleSandPen}
         >
@@ -184,6 +202,7 @@ export const Controls = () => {
         </StyledButton>
         <StyledButton
           aria-label="Rock"
+          title="Rock"
           style={activeStyle(PenMode.rock)}
           onClick={toggleRockPen}
         >
@@ -288,6 +307,16 @@ export const Controls = () => {
           }
         >
           Load The Forsaken Waters Map
+        </button>
+        <button
+          onClick={() =>
+            loadMap({
+              boardHexes: trollsfordSwamps.boardHexes,
+              hexMap: trollsfordSwamps.hexMap,
+            })
+          }
+        >
+          Load Trollsford Swamps Map
         </button>
       </StyledSection>
 

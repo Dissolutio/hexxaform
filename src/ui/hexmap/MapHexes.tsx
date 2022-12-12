@@ -70,7 +70,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
       */
     }
     if (penMode === PenMode.water) {
-      paintWaterHex({ hexID: hex.id });
+      paintWaterHex({ hexID: hex.id, thickness: penThickness });
     }
     if (penMode === PenMode.grass) {
       paintGrassHex({ hexID: hex.id, thickness: penThickness });
@@ -136,7 +136,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
               <g>
                 {/* <HexIDText hexSize={hexSize} text={hex.id} /> */}
                 {hex.terrain === HexTerrain.void ? null : (
-                  <HexIDText hexSize={hexSize} text={`${hex.id}`} />
+                  <HexIDText hexSize={hexSize} text={`${hex.altitude}`} />
                 )}
               </g>
             </Hexagon>

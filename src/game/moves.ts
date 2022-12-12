@@ -28,10 +28,13 @@ const incAltitudeOfHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
 const decAltitudeOfHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
   G.boardHexes[hexID].altitude -= 1;
 };
-const paintWaterHex: Move<GType> = ({ G }, { hexID }: { hexID: string }) => {
+const paintWaterHex: Move<GType> = (
+  { G },
+  { hexID, thickness }: { hexID: string; thickness: number }
+) => {
   G.boardHexes[hexID].terrain = HexTerrain.water;
   // lower altitude one, like digging, for water
-  G.boardHexes[hexID].altitude -= 1;
+  G.boardHexes[hexID].altitude -= thickness;
 };
 const paintGrassHex: Move<GType> = (
   { G },
