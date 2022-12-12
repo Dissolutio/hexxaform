@@ -1,65 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  ImMinus,
-  ImMoveDown,
-  ImMoveUp,
-  ImPlus,
-  ImZoomIn,
-  ImZoomOut,
-} from "react-icons/im";
+import { ImMoveDown, ImMoveUp, ImZoomIn, ImZoomOut } from "react-icons/im";
 import { useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { ExportMapAsImgButton } from "./ExportMapAsImgButton";
+import { StyledMapButton } from "../layout/buttons";
 
-export const DevMapPanButtons = () => {
-  const {
-    onIncrementX,
-    onDecrementX,
-    onIncrementY,
-    onDecrementY,
-    onIncreaseLength,
-    onDecreaseLength,
-    onIncreaseHeight,
-    onDecreaseHeight,
-  } = useMapContext();
-  return (
-    <StyledMapZoomControls style={{ bottom: "20%", top: "initial" }}>
-      <StyledButton aria-label="- X" onClick={onDecrementX}>
-        <ImMinus color="var(--black)" />
-        <span>X</span>
-      </StyledButton>
-      <StyledButton aria-label="+ X" onClick={onIncrementX}>
-        <ImPlus color="var(--black)" />
-        <span>X</span>
-      </StyledButton>
-      <StyledButton aria-label="- Y" onClick={onDecrementY}>
-        <ImMinus color="var(--black)" />
-        <span>Y</span>
-      </StyledButton>
-      <StyledButton aria-label="+ Y" onClick={onIncrementY}>
-        <ImPlus color="var(--black)" />
-        <span>Y</span>
-      </StyledButton>
-      <StyledButton aria-label="- length" onClick={onDecreaseLength}>
-        <ImMinus color="var(--black)" />
-        <span>Length</span>
-      </StyledButton>
-      <StyledButton aria-label="+ length" onClick={onIncreaseLength}>
-        <ImPlus color="var(--black)" />
-        <span>Length</span>
-      </StyledButton>
-      <StyledButton aria-label="- height" onClick={onDecreaseHeight}>
-        <ImMinus color="var(--black)" />
-        <span>Height</span>
-      </StyledButton>
-      <StyledButton aria-label="+ height" onClick={onIncreaseHeight}>
-        <ImPlus color="var(--black)" />
-        <span>Height</span>
-      </StyledButton>
-    </StyledMapZoomControls>
-  );
-};
 export const MapControlButtons = ({
   handleClickZoomIn,
   handleClickZoomOut,
@@ -91,22 +37,22 @@ export const MapControlButtons = ({
   };
   return (
     <StyledMapZoomControls id={htmlId}>
-      <StyledButton aria-label="Zoom out" onClick={handleClickZoomOut}>
+      <StyledMapButton aria-label="Zoom out" onClick={handleClickZoomOut}>
         <ImZoomOut color="var(--black)" />
         <span>Zoom out</span>
-      </StyledButton>
-      <StyledButton aria-label="Zoom in" onClick={handleClickZoomIn}>
+      </StyledMapButton>
+      <StyledMapButton aria-label="Zoom in" onClick={handleClickZoomIn}>
         <ImZoomIn color="var(--black)" />
         <span>Zoom in</span>
-      </StyledButton>
-      <StyledButton onClick={goDownAltitudeViewer}>
+      </StyledMapButton>
+      <StyledMapButton onClick={goDownAltitudeViewer}>
         <ImMoveDown color="var(--black)" />
         <span>Go Down</span>
-      </StyledButton>
-      <StyledButton onClick={handleUp}>
+      </StyledMapButton>
+      <StyledMapButton onClick={handleUp}>
         <ImMoveUp color="var(--black)" />
         <span>Go Up</span>
-      </StyledButton>
+      </StyledMapButton>
       <StyledAltitudeSpan>
         Altitude:{" "}
         <span
@@ -145,31 +91,7 @@ export const StyledMapZoomControls = styled.span`
   }
   z-index: 2;
 `;
-const StyledButton = styled.button`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  font-size: 0.8rem;
-  @media screen and (max-width: 1100px) {
-    font-size: 0.6rem;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 0.4rem;
-  }
-  svg {
-    width: 20px;
-    height: 20px;
-    @media screen and (max-width: 1100px) {
-      width: 18px;
-      height: 18px;
-    }
-    @media screen and (max-width: 600px) {
-      width: 14px;
-      height: 14px;
-    }
-  }
-`;
+
 const StyledAltitudeSpan = styled.span`
   font-size: 0.8rem;
   align-self: center;

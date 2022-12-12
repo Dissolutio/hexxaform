@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-
-import styled from "styled-components";
+import React, { useEffect } from "react";
 
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
-import { DevMapPanButtons, MapControlButtons } from "./MapControlButtons";
+import { MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
 import { Layout } from "./Layout";
 import { useMapContext } from "../hooks/useMapContext";
@@ -106,7 +104,6 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
-      <DevMapPanButtons />
       <svg
         width={`${mapState.width}%`}
         height={`${mapState.height}%`}
