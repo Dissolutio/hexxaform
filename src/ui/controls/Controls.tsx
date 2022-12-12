@@ -21,6 +21,7 @@ import {
   orientedRectangleScenario,
   rectangleScenario,
 } from "../../game/setup";
+import { DevMapPanButtons } from "./DevMapPanButtons";
 
 export const Controls = () => {
   const {
@@ -304,6 +305,10 @@ export const Controls = () => {
           accept="application/json"
           onChange={readFile}
         />
+      </StyledSection>
+      <StyledSection>
+        <h4>Adjust the map:</h4>
+        <DevMapPanButtons />
       </StyledSection>
     </StyledGrid>
   );
