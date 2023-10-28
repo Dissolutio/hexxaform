@@ -33,6 +33,9 @@ export enum HexTerrain {
   grass = "grass",
   sand = "sand",
   rock = "rock",
+  road = "road",
+  bush = "bush",
+  palm = "palm",
 }
 
 export enum MapShapes {

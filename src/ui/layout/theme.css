@@ -9,11 +9,14 @@ html {
   --gray: #5d576b;
   /* TERRAIN */
   --green: #60840d;
+  --bush: #f9fe6e;
+  --palm: #adf700;
   --forest-green: #37480d;
   --wood-brown: #573319;
   --water: #3794fd;
   --sand: #ab8e10;
   --rock: #475776;
+  --road: rgb(206, 206, 208);
   /* UTILITY */
   --selected-green: #0b5d1e;
   --orange: #e8aa14;

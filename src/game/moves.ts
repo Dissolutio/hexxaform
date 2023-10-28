@@ -54,6 +54,17 @@ const paintRockHex: Move<GType> = (
   G.boardHexes[hexID].terrain = HexTerrain.rock;
   G.boardHexes[hexID].altitude += thickness;
 };
+const paintTerrainHex: Move<GType> = (
+  { G },
+  {
+    hexID,
+    thickness,
+    terrain,
+  }: { hexID: string; thickness: number; terrain: string }
+) => {
+  G.boardHexes[hexID].terrain = terrain as HexTerrain;
+  G.boardHexes[hexID].altitude += thickness;
+};
 const loadMap: Move<GType> = (
   { G },
   {
@@ -82,5 +93,6 @@ export const moves = {
   paintGrassHex,
   paintSandHex,
   paintRockHex,
+  paintTerrainHex,
   loadMap,
 };

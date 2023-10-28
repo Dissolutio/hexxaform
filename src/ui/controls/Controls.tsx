@@ -6,6 +6,9 @@ import {
   GiGrass,
   GiIsland,
   GiFallingRocks,
+  GiRoad,
+  GiFern,
+  GiPalmTree,
 } from "react-icons/gi";
 
 import { PenMode, useMapContext } from "../hooks/useMapContext";
@@ -36,6 +39,9 @@ export const Controls = () => {
     toggleGrassPen,
     toggleSandPen,
     toggleRockPen,
+    toggleRoadPen,
+    toggleJungleBushPen,
+    toggleJungleTreePen,
     toggleStartZonePen,
     penMode,
     penThickness,
@@ -189,6 +195,31 @@ export const Controls = () => {
         >
           <GiFallingRocks />
           <span>Rock</span>
+        </StyledButton>
+
+        <StyledButton
+          aria-label="Road"
+          style={activeStyle(PenMode.road)}
+          onClick={toggleRoadPen}
+        >
+          <GiRoad />
+          <span>Road</span>
+        </StyledButton>
+        <StyledButton
+          aria-label="Bush"
+          style={activeStyle(PenMode.bush)}
+          onClick={toggleJungleBushPen}
+        >
+          <GiFern />
+          <span>Bush</span>
+        </StyledButton>
+        <StyledButton
+          aria-label="Palm"
+          style={activeStyle(PenMode.palm)}
+          onClick={toggleJungleTreePen}
+        >
+          <GiPalmTree />
+          <span>Palm Tree</span>
         </StyledButton>
       </StyledSection>
 

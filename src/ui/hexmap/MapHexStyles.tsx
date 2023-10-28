@@ -44,6 +44,18 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
     fill: var(--rock);
     fill-opacity: 0.4;
   }
+  .maphex__terrain--road {
+    fill: var(--road);
+    fill-opacity: 0.4;
+  }
+  .maphex__terrain--bush {
+    fill: var(--bush);
+    fill-opacity: 0.4;
+  }
+  .maphex__terrain--palm {
+    fill: var(--palm);
+    fill-opacity: 0.4;
+  }
   // Opacify
   .maphex__terrain--opacify > g polygon {
     fill-opacity: 0.01;

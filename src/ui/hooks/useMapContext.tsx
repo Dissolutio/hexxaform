@@ -8,6 +8,9 @@ export enum PenMode {
   grass = "grass",
   sand = "sand",
   rock = "rock",
+  road = "road",
+  bush = "bush",
+  palm = "palm",
   incAltitude = "incAltitude",
   decAltitude = "decAltitude",
   startZone0 = "startZone0",
@@ -42,6 +45,9 @@ const MapContext = React.createContext<
       toggleGrassPen: () => void;
       toggleSandPen: () => void;
       toggleRockPen: () => void;
+      toggleRoadPen: () => void;
+      toggleJungleBushPen: () => void;
+      toggleJungleTreePen: () => void;
       toggleStartZonePen: (playerID: string) => void;
       penThickness: number;
       togglePenThickness: () => void;
@@ -104,6 +110,15 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
   const toggleRockPen = () => {
     setPenMode(PenMode.rock);
   };
+  const toggleRoadPen = () => {
+    setPenMode(PenMode.road);
+  };
+  const toggleJungleBushPen = () => {
+    setPenMode(PenMode.bush);
+  };
+  const toggleJungleTreePen = () => {
+    setPenMode(PenMode.palm);
+  };
   const toggleStartZonePen = (playerID: string) => {
     switch (playerID) {
       case "0":
@@ -150,6 +165,9 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
         toggleGrassPen,
         toggleSandPen,
         toggleRockPen,
+        toggleRoadPen,
+        toggleJungleBushPen,
+        toggleJungleTreePen,
         toggleStartZonePen,
         penThickness,
         togglePenThickness,

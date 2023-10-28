@@ -27,6 +27,7 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     paintGrassHex,
     paintSandHex,
     paintRockHex,
+    paintTerrainHex,
   } = moves;
   const {
     selectedMapHex,
@@ -80,6 +81,27 @@ export const MapHexes = ({ hexSize }: MapHexesProps) => {
     }
     if (penMode === PenMode.rock) {
       paintRockHex({ hexID: hex.id, thickness: penThickness });
+    }
+    if (penMode === PenMode.road) {
+      paintTerrainHex({
+        hexID: hex.id,
+        thickness: penThickness,
+        terrain: PenMode.road,
+      });
+    }
+    if (penMode === PenMode.bush) {
+      paintTerrainHex({
+        hexID: hex.id,
+        thickness: penThickness,
+        terrain: PenMode.bush,
+      });
+    }
+    if (penMode === PenMode.palm) {
+      paintTerrainHex({
+        hexID: hex.id,
+        thickness: penThickness,
+        terrain: PenMode.palm,
+      });
     }
   };
   function calcClassNames(hex: BoardHex) {
