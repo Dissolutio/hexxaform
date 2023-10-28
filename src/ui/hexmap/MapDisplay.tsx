@@ -1,27 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { MapHexes } from "./MapHexes";
 import { MapHexStyles } from "./MapHexStyles";
-import { MapControlButtons } from "./MapControlButtons";
+import { DevMapPanButtons, MapControlButtons } from "./MapControlButtons";
 import { MapShapes } from "../../game/types";
 import { Layout } from "./Layout";
+import { useMapContext } from "../hooks/useMapContext";
 
 type Props = {
   printRef: React.RefObject<HTMLDivElement>;
 };
 
 export const MapDisplay = ({ printRef }: Props) => {
+  const { viewBox } = useMapContext();
   const { G } = useBgioG();
   const { hexMap } = G;
-  const { hexSize, mapSize, flat, mapShape, mapId } = hexMap;
+  const { hexSize, flat, mapShape, mapId } = hexMap;
 
   //! MAP SETUP/LAYOUT CONFIG
   const isHexagonShapedMap = mapShape === MapShapes.hexagon;
   const isRectangleShapedMap = mapShape === MapShapes.rectangle;
-  const isOrientedRectangleShapedMap = mapShape === MapShapes.orientedRectangle;
   const hexagonalMapState = {
     width: 100,
     height: 100,
@@ -80,27 +81,8 @@ export const MapDisplay = ({ printRef }: Props) => {
     }));
     el && el.scrollTo({ left: -50, top: -50 });
   };
-  function calcViewBox(mapSize: number) {
-    const contentWidth = window.outerWidth;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:82 ~ calcViewBox ~ contentWidth",
-      contentWidth
-    );
-    const contentHeight = window.outerHeight * 0.6;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:84 ~ calcViewBox ~ contentHeight",
-      contentHeight
-    );
-    const xyMin = mapSize * -40;
-    const xyLength = mapSize * 100;
-    const result = `${xyMin} ${xyMin} ${xyLength} ${xyLength}`;
-    console.log(
-      "🚀 ~ file: MapDisplay.tsx:81 ~ calcViewBox ~ mapSize",
-      mapSize,
-      { result: result }
-    );
-    return result;
-  }
+  // const contentWidth = window.outerWidth;
+  // const contentHeight = window.outerHeight * 0.7;
   return (
     <MapHexStyles hexSize={hexSize}>
       <MapControlButtons
@@ -109,10 +91,11 @@ export const MapDisplay = ({ printRef }: Props) => {
         handleClickZoomIn={handleClickZoomIn}
         handleClickZoomOut={handleClickZoomOut}
       />
+      <DevMapPanButtons />
       <svg
         width={`${mapState.width}%`}
         height={`${mapState.height}%`}
-        viewBox={calcViewBox(mapSize)}
+        viewBox={viewBox}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >

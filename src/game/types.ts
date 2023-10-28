@@ -7,8 +7,6 @@ export type HexMap = {
   mapShape: string;
   mapId: string;
   mapSize: number;
-  mapLength: number;
-  mapWidth: number;
   flat: boolean;
   hexHeight: number;
   hexWidth: number;

@@ -1,10 +1,65 @@
 import React from "react";
 import styled from "styled-components";
-import { ImMoveDown, ImMoveUp, ImZoomIn, ImZoomOut } from "react-icons/im";
+import {
+  ImMinus,
+  ImMoveDown,
+  ImMoveUp,
+  ImPlus,
+  ImZoomIn,
+  ImZoomOut,
+} from "react-icons/im";
 import { useMapContext } from "../hooks/useMapContext";
 import { useBgioG } from "../bgio-contexts/useBgioG";
 import { ExportMapAsImgButton } from "./ExportMapAsImgButton";
 
+export const DevMapPanButtons = () => {
+  const {
+    onIncrementX,
+    onDecrementX,
+    onIncrementY,
+    onDecrementY,
+    onIncreaseLength,
+    onDecreaseLength,
+    onIncreaseHeight,
+    onDecreaseHeight,
+  } = useMapContext();
+  return (
+    <StyledMapZoomControls style={{ bottom: "20%", top: "initial" }}>
+      <StyledButton aria-label="- X" onClick={onDecrementX}>
+        <ImMinus color="var(--black)" />
+        <span>X</span>
+      </StyledButton>
+      <StyledButton aria-label="+ X" onClick={onIncrementX}>
+        <ImPlus color="var(--black)" />
+        <span>X</span>
+      </StyledButton>
+      <StyledButton aria-label="- Y" onClick={onDecrementY}>
+        <ImMinus color="var(--black)" />
+        <span>Y</span>
+      </StyledButton>
+      <StyledButton aria-label="+ Y" onClick={onIncrementY}>
+        <ImPlus color="var(--black)" />
+        <span>Y</span>
+      </StyledButton>
+      <StyledButton aria-label="- length" onClick={onDecreaseLength}>
+        <ImMinus color="var(--black)" />
+        <span>Length</span>
+      </StyledButton>
+      <StyledButton aria-label="+ length" onClick={onIncreaseLength}>
+        <ImPlus color="var(--black)" />
+        <span>Length</span>
+      </StyledButton>
+      <StyledButton aria-label="- height" onClick={onDecreaseHeight}>
+        <ImMinus color="var(--black)" />
+        <span>Height</span>
+      </StyledButton>
+      <StyledButton aria-label="+ height" onClick={onIncreaseHeight}>
+        <ImPlus color="var(--black)" />
+        <span>Height</span>
+      </StyledButton>
+    </StyledMapZoomControls>
+  );
+};
 export const MapControlButtons = ({
   handleClickZoomIn,
   handleClickZoomOut,

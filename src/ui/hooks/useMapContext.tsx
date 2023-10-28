@@ -22,12 +22,22 @@ export enum PenMode {
 
 type MapContextProviderProps = {
   children: React.ReactNode;
+  mapSize: number;
 };
 
 const MapContext = React.createContext<
   | {
       selectedMapHex: string;
       selectMapHex: (hexID: string) => void;
+      viewBox: string;
+      onIncrementX: () => void;
+      onDecrementX: () => void;
+      onIncrementY: () => void;
+      onDecrementY: () => void;
+      onIncreaseLength: () => void;
+      onDecreaseLength: () => void;
+      onIncreaseHeight: () => void;
+      onDecreaseHeight: () => void;
       penMode: PenMode;
       toggleSelectHexMode: () => void;
       altitudeViewer: number;
@@ -54,10 +64,44 @@ const MapContext = React.createContext<
     }
   | undefined
 >(undefined);
-export function MapContextProvider({ children }: MapContextProviderProps) {
+export function MapContextProvider({
+  children,
+  mapSize,
+}: MapContextProviderProps) {
+  const [selectedMapHex, setSelectedMapHex] = React.useState("");
+  // Map Display
+  const [viewBoxLength, setViewBoxLength] = React.useState(mapSize * 100);
+  const [viewBoxHeight, setViewBoxHeight] = React.useState(mapSize * 100);
+  const [viewBoxX, setViewBoxX] = React.useState(mapSize * -40);
+  const [viewBoxY, setViewBoxY] = React.useState(mapSize * -40);
+  const viewBox = `${viewBoxX} ${viewBoxY} ${viewBoxLength} ${viewBoxHeight}`;
+  const onIncrementX = () => {
+    setViewBoxX((s) => s + 100);
+  };
+  const onDecrementX = () => {
+    setViewBoxX((s) => s - 100);
+  };
+  const onIncrementY = () => {
+    setViewBoxY((s) => s + 100);
+  };
+  const onDecrementY = () => {
+    setViewBoxY((s) => s - 100);
+  };
+  const onIncreaseLength = () => {
+    setViewBoxLength((s) => s + 100);
+  };
+  const onDecreaseLength = () => {
+    setViewBoxLength((s) => s - 100);
+  };
+  const onIncreaseHeight = () => {
+    setViewBoxHeight((s) => s + 100);
+  };
+  const onDecreaseHeight = () => {
+    setViewBoxHeight((s) => s - 100);
+  };
+  // Pen Mode
   const [altitudeViewer, setAltitudeViewer] = React.useState(0);
   const [penMode, setPenMode] = React.useState(PenMode.grass);
-  const [selectedMapHex, setSelectedMapHex] = React.useState("");
   const [penThickness, setPenThickness] = React.useState(1);
   // Lenses
   const [showStartzones, setShowStartzones] = React.useState(false);
@@ -148,6 +192,15 @@ export function MapContextProvider({ children }: MapContextProviderProps) {
       value={{
         selectedMapHex,
         selectMapHex,
+        viewBox,
+        onIncrementX,
+        onDecrementX,
+        onIncrementY,
+        onDecrementY,
+        onIncreaseLength,
+        onDecreaseLength,
+        onIncreaseHeight,
+        onDecreaseHeight,
         penMode,
         toggleSelectHexMode,
         altitudeViewer,

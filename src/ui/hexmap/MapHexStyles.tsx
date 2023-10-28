@@ -58,7 +58,7 @@ export const MapHexStyles = styled.div<MapHexStylesProps>`
   }
   // Opacify
   .maphex__terrain--opacify > g polygon {
-    fill-opacity: 0.01;
+    fill-opacity: 0.1;
   }
   // Selected Map Hex
   .maphex__selected--active > g polygon {

@@ -45,8 +45,6 @@ export function makeHexagonMapScenario(
     hexSize,
     mapShape: MapShapes.hexagon,
     mapSize,
-    mapLength,
-    mapWidth,
   };
   const boardHexes: BoardHexes = generateHexagon(mapSize);
 

@@ -57,7 +57,7 @@ export function HexxaformBoard(props: MyBoardProps) {
                 chatMessages={chatMessages}
                 sendChatMessage={sendChatMessage}
               >
-                <HexxaformUI />
+                <HexxaformUI mapSize={G.hexMap.mapSize} />
               </BgioChatProvider>
             </BgioEventsProvider>
           </BgioMovesProvider>
